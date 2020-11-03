@@ -1,0 +1,10 @@
+.logoVaiDarBom {
+    height: 70px;
+    width: 70px;
+}
+
+.text-h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-shadow: .05em .05em #6f65df;
+    color: #42d1fd;
+}
