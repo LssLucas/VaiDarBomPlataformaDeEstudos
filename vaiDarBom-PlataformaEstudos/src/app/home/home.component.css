@@ -1,0 +1,16 @@
+.parallax {
+    background-image: url('https://canaldoensino.com.br/blog/wp-content/uploads/2018/06/manter_o_foco_nos_estudos-01.jpg');
+  
+    min-height: 500px;
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.text-h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-shadow: .05em .05em #6f65df;
+    color: #42d1fd;
+}
