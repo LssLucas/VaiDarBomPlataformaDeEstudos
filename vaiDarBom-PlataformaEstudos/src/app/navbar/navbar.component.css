@@ -5,6 +5,6 @@
 
 .text-h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    text-shadow: .05em .05em #6f65df;
-    color: #42d1fd;
+    text-shadow: .1em .1em #7b43d5;
+    color: #42d1fd !important;
 }
