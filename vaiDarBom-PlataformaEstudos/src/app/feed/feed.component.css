@@ -1,0 +1,43 @@
+.circleImg {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.circleImg img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.img-wrapper {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.img-wrapper>img {
+    height: 100%
+}
+
+.round-container {
+    width: 17rem;
+    height: 17rem;
+    align-self: center;
+    border-radius: 100%;
+    margin: 2.3rem auto 2.5rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.round-container img {
+    width: initial;
+    height: inherit;
+    max-width: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
