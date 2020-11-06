@@ -3,13 +3,13 @@
     width: 70px;
 }
 
-.text-h1:hover {
+.text-h1 {
     font-family: 'Barlow Condensed', sans-serif;
     text-shadow: .1em .1em #7b43d5;
     color: #42d1fd !important;
 }
 
-.text-h1 {
+.text-h1:hover {
     font-family: 'Barlow Condensed', sans-serif;
     text-shadow: .1em .1em #8f6aca;
     color: #94e6ff !important;
@@ -17,12 +17,12 @@
 
 h5:hover {
     font-family: 'Barlow Condensed', sans-serif;
-    text-shadow: .1em .1em #7b43d5;
-    color: #42d1fd !important;
+    text-shadow: .1em .1em #8f6aca;
+    color: #94e6ff !important;
 }
 
 h5 {
     font-family: 'Barlow Condensed', sans-serif;
-    text-shadow: .1em .1em #8f6aca;
-    color: #94e6ff !important;
+    text-shadow: .1em .1em #7b43d5;
+    color: #42d1fd !important;
 }
