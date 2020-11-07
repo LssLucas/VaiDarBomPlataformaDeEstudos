@@ -1,7 +1,8 @@
 export class UserLogin{
-    private usuario: string
-    private email: string
-    private senha: string
-    private token: string
+    public usuario: string
+    public nome: string
+    public email: string
+    public senha: string
+    public token: string
     
 }
