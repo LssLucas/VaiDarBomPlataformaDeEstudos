@@ -8,4 +8,6 @@ export class Postagem{
     private link: string
     private euLi: number
     private mensagem: string 
+  titulo: any
+  texto: any
 }
