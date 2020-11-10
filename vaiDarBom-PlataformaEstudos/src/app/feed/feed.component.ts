@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
-
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -11,15 +10,17 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-key = 'data'
-reverse = true
-postagem: Postagem= new Postagem()
-listaPostagens: Postagem[]
 
-tema: Tema = new Tema()
-listaTemas: Tema[]
+  key = 'data'
+  reverse = true
 
-idTema: number
+  postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+
+  tema: Tema = new Tema()
+  listaTemas: Tema[]
+  idTema: number
+
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService) { }
@@ -38,12 +39,12 @@ idTema: number
   publicar(){
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
+
     if(this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null){
       alert ('Preencha todos os campos corretamente')
-    }
-    else {
+    }else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
-        this.postagem= resp
+        this.postagem = resp
         this.postagem = new Postagem()
         alert ('postagem realizada com sucesso!')
         this.findAllPostagens()
