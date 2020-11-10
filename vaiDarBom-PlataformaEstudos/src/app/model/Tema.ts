@@ -6,4 +6,5 @@ export class Tema{
     public nivelEnsino: string
     public ativo: boolean
     public listPostagem: Postagem []
+  descricao: any
 }
