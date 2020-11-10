@@ -32,7 +32,7 @@ fidByIdTema(){
         this.tema = resp
       })
     }
-    cadastra(){
+    cadastrar(){
       if(this.tema.descricao == null){
         alert ('Preencha o campo de nome corretamente')
       } else {
