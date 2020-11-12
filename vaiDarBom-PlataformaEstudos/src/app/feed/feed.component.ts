@@ -40,7 +40,7 @@ export class FeedComponent implements OnInit {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
-    if(this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null){
+    if(this.postagem.titulo == null || this.postagem.mensagem == null || this.postagem.tema == null){
       alert ('Preencha todos os campos corretamente')
     }else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
