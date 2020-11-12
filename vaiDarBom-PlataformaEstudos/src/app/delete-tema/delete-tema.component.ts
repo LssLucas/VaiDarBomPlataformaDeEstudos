@@ -10,7 +10,12 @@ import { TemaService } from '../service/tema.service';
 })
 export class DeleteTemaComponent implements OnInit {
 
+
   tema: Tema = new Tema()
+
+tema: Tema = new Tema()
+idTema: number;
+
 
   constructor(
     private temaService: TemaService,
@@ -20,6 +25,7 @@ export class DeleteTemaComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+
     let id: number = this.route.snapshot.params['id']
     this.findByIdTema(id)
   }
@@ -43,4 +49,15 @@ export class DeleteTemaComponent implements OnInit {
   }
   
 
+}
+    let id: number= this.route.snapshot.params['id'];
+    this.fidByIdTema(id);
+
+  }
+  fidByIdTema(id: number){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+      this.tema = resp
+    })
+
+}
 }

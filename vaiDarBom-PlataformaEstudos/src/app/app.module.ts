@@ -18,6 +18,10 @@ import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [

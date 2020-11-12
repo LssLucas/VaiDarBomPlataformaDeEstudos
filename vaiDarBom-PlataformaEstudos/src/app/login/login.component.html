@@ -6,40 +6,9 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Entrar</h5>
 
-                    <!-- Formulario contendo informações para logar -->
-                    <div class="form-signin body">
-
-
-                        <!--####################### LUCAS
-                            tive que add os atributos de usuario e nome para conseguir efetuar o login
-                            pois o back end está solicitando essas informações conforme UserLogin.ts
-                        -->
-
                         <div class="form-label-group">
                             <input type="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]='userLogin.usuario'>
-                            <label for="inputUsuario">
-                                Usuario
-                            </label>
-                        </div>
-
-                        <div class="form-label-group">
-                            <input type="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus [(ngModel)]='userLogin.nome'>
-                            <label for="inputNome">
-                                Nome
-                            </label>
-                        </div>
-
-                        <!--####################### LUCAS
-                            tive que add os atributos de usuario e nome para conseguir efetuar o login
-                            pois o back end está solicitando essas informações conforme UserLogin.ts
-                        -->
-
-                        <!-- input do usuario / email -->
-                        <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus [(ngModel)]='userLogin.email'>
-                            <label for="inputEmail">
-                                Email
-                            </label>
+                            <label for="inputUsuario"> Usuario </label>
                         </div>
 
                         <!-- input da senha -->
@@ -50,15 +19,14 @@
                             </label>
                         </div>
 
-                        <!-- controlador para lembrar a senha -->
+                        <!-- controlador para lembrar a senha  DELETADO ATÉ AQUI --> 
                         <div class="custom-control custom-checkbox mb-3"> <input type="checkbox" class="custom-control-input" id="customCheck1"> <label class="custom-control-label" for="customCheck1">
                             Lembrar Senha
-                            </label>
-                        </div> <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)='entrar()'>
-                            Entrar
-                            </button>
+                        </label> </div>
 
-                    </div>
+                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)='entrar()'>Sign in</button>
+
+                   
                 </div>
             </div>
         </div>
