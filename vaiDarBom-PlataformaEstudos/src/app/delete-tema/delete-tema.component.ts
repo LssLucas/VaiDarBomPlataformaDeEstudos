@@ -41,5 +41,6 @@ export class DeleteTemaComponent implements OnInit {
     this.router.navigate(['/cadastro-tema'])
 
   }
+  
 
 }
