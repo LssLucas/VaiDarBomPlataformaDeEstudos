@@ -1,120 +1,87 @@
-<!-- CONTEINER DA PAGINA -->
-<div class="container w3-content" style="max-width:1400px;margin-top:80px">
-    <!-- The Grid -->
-    <div class="w3-row">
-        <!-- Left Column -->
-        <div class="w3-col m3">
+<div class="container-fluid">
+    <div class="row">
 
-            <!--
-                 * Profile 
-                 * Nome, avatar, e descrição do usuario :D
-            -->
-            <div class="w3-card-2 w3-round w3-white">
-                <div class="w3-container">
-                    
-                    <h4 class="w3-center ng-binding">Pelé</h4>
-                    <p class="w3-center"><img
+        <!-- COLUNA COM 4 ESPAÇOS PARA PERFIL DO USUARIO-->
+        <div class="col-3">
+
+            <!-- CARD-->
+            <div class="card">
+                <!-- 
+                     * * * * * *
+                     * INICIO  *
+                     * * * * * *
+                     CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
+                 -->
+                <div class="container">
+
+                    <!-- NOME DO USUARIO -->
+                    <h4 class="text-center">Pelé</h4>
+
+                    <!-- AVATAR -->
+                    <p class="text-center"><img
                             src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg"
-                            class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-                    <hr>
-                    <p class="ng-binding"><i class="w3-margin-right w3-text-theme"></i>Jogador</p>
-                    <p class="ng-binding"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Cidade
-                        de deus, RJ</p>
-                    <p class="ng-binding"><i class="w3-margin-right w3-text-theme">Eu curto jogar uma pelada e
-                            tomar cachaça</i>
+                            class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
+                    </p>
+
+                    <hr> <!-- PULO DE LINHA -->
+
+                    <!-- DECRICÃO BASICA DO USUARIO-->
+                    <p class="ng-binding"><i class="margin-right w3-text-theme"></i>
+                        Jogador de bola
+                    </p>
+
+                    <!-- ENDEREÇO DO USUARIO-->
+                    <p class="ng-binding">
+                         Cidade de deus, RJ
+                    </p>
+
+                    <!-- COISA QUE O USUARIO CURTE FAZER -->
+                    <p class="ng-binding">
+                     teste
                     </p>
 
                 </div>
 
-                <!-- conteiner da Lista da habilidades  -->
-                <div class="w3-container">
+                <!-- 
+                     * * * *
+                     * FIM *
+                     * * * *
+            -->
+                <!-- 
+                     * * * * * *
+                     * INICIO  *
+                     * * * * * *
+                    Container Inicio dos niveis de atributos de cada materia que  o usuario tem ( BETA ) --> 
+                <div class="container">
+
                     <p>Portugueês</p>
                     <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" 
-                        style="width:20%">20%</div>
-                    </div>
-
-                    <p>Matemática</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" 
-                        style="width:80%">
-                            <div class="w3-center w3-text-white">80%</div>
-                        </div>
+                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:20%">20%</div>
                     </div>
 
                     <p>Ciências Naturais</p>
                     <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal"
-                         style="width:75%">75%</div>
+                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
                     </div>
-                    <p>Geografia</p>
 
+                    <p>Geografia</p>
                     <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal"
-                         style="width:50%">50%</div>
+                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
                     </div>
 
                     <p>Historia</p>
                     <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" 
-                        style="width:50%">50%</div>
+                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
                     </div>
 
                     <p>Arte</p>
                     <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal w3-margin-bottom"
-                            style="width:50%">50%</div>
-                    </div>
-
-                </div>
-            </div>
-             <!-- FIM DO PROFILE -->
-            <br>
-
-            <!-- 
-                * LISTA DE TEMAS / SELECIONE PARA PROCURAR OS TEMAS ( FINDBYTEMA)
-                * 
-            -->
-            <div class="w3-card-2 w3-round">
-                <div class="w3-white">
-                    <p class="w3-center ng-binding p-1"> TEMAS </p>
-
-                    <button class="w3-button w3-block w3-theme-l1  w3-left-align"><i
-                            class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Matematica</button>
-                    
-                    <button class="w3-button w3-block w3-theme-l1 w3-left-align "><i
-                            class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Ciencias</button>
-                    
-                    <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i
-                            class="fa fa-users fa-fw w3-margin-right"></i>Lingua Portugues</button>
-                </div>
-            </div>
-            <br>
-
-                                <!-- Interests 
-                <div class="w3-card-2 w3-round w3-white w3-hide-small">
-                    <div class="w3-container">
-                    <p>Interests</p>
-                    <p>
-                        <span class="w3-tag w3-small w3-theme-d5">News</span>
-                        <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-                        <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-                        <span class="w3-tag w3-small w3-theme-d2">Games</span>
-                        <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-                        <span class="w3-tag w3-small w3-theme">Games</span>
-                        <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-                        <span class="w3-tag w3-small w3-theme-l2">Food</span>
-                        <span class="w3-tag w3-small w3-theme-l3">Design</span>
-                        <span class="w3-tag w3-small w3-theme-l4">Art</span>
-                        <span class="w3-tag w3-small w3-theme-l5">Photos</span>
-                    </p>
+                        <div class="w3-container w3-center w3-round-xlarge w3-teal w3-margin-bottom" style="width:50%">
+                            50%</div>
                     </div>
                 </div>
-                -->
-
-            <!-- End Left Column -->
+            </div>
         </div>
-
         <!-- Coluna do meio -->
         <div class="w3-col m7 ">
 
@@ -126,93 +93,117 @@
                                 <label class="text-monospace" for="tema">Escolha um tema ou <a
                                         routerLink='cadastro-tema'>Cadastre um novo</a>
                                 </label>
-                                <select name="tema" id='tema' class="form-control"><!-- [(ngModel)]='idTema' (change)='findByIdtema()' -->
+                                <select name="tema" id='tema' class="form-control" >
                                     <option >
                                         <!--{{item.descricao}}-->
+         <!-- 
+                     * * * * * *
+                     * INICIO  *
+                     * * * * * *
+                     Colunas para realizar um post com o usuario logado --> 
+        <div class="col-5">
+        
+            <div class="row p-0">
+                <div class="col">
+
+                     <!-- CAIXA PARA ESCOLHER UM TEMA, UM TITULO E ESCREVER A MENSSAGEM  -->
+                    <div class="card bg-white">
+                        <div class="row">
+                            
+                            <!-- ESCOLHER TEMA -->
+                            <div class="col m-2">
+                                <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a> </label>
+       
+                                <!-- [(ngModel)]='idTema' (change)='findByIdtema()' FEED -->
+                                <select name="tema" id='tema' class="form-control">
+                                    <option>
+                                           <!--{{item.descricao}}-->
+
                                     </option>
                                 </select>
                             </div>
-                            <div class="form-group m-0">
-                                <label class="text-monospace" for="tema">Digite o titulo 
+
+                            <!-- DIGITAR O TITULO -->
+                            <div class="col-auto">
+                                
+                                <label class="text-monospace" for="tema">Digite o titulo
                                 </label>
-                                <input type="text" class="form-control" id="ControlInput" placeholder="Titulo" [(ngModel)]='postagem.titulo'>
+                                <input type="text" class="form-control" id="ControlInput" placeholder="Titulo">
+                            
                             </div>
                         </div>
-                        <div class="w3-container w3-padding">
+                        <!-- DIGITAR A MENSAGEM -->
+                        <div class="container">
+                            
                             <label for="ControlInput">Digite Sua mensagem :)</label>
-                            <input type="text" class="form-control" id="ControlInput" placeholder="" [(ngModel)]='postagem.texto'>
-                            <button type="button" class="w3-button w3-theme "><i></i>
-
-                                Postar</button>
+                            <input type="text" class="form-control" id="ControlInput">
+                            <button type="button" class="w3-button w3-theme "><i></i>Postar</button>
                         </div>
+
                     </div>
                 </div>
             </div>
+              <!-- 
+                     * * * * FIM DO CONTAINER
+                     * FIM *
+                     * * * * 
+            -->
+              <!-- 
+                     * * * * * *
+                     * INICIO  *
+                     * * * * * *
+        
+                Container do POST -->
+        <div class="container">
+            <div class="card">
 
-            <!--Container do post feito, logo depois a IMG com o avatar-->
-            <div class="w3-container w3-card-2 w3-white w3-round w3-margin w3-margin-top ">
+                <!-- AVATAR -->
                 <img src="https://i1.wp.com/www.selectgame.com.br/wp-content/uploads/2017/12/Ian-McKellen-Gandalf.jpg?fit=1753%2C1000&ssl=1"
-                    alt="Avatar" class="w3-left w3-circle w3-margin" style="width:60px">
-                <span class="w3-right w3-opacity">2 min</span>
+                alt="Avatar" class="w3-left rounded-circle m-2" style="width:60px">
+                 <span class="right-align">2 min</span>
 
-                <!-- Aqui fica o nome do usuario que postou a menssagem :D -->
-                <h4 class="text-uppercase font-weight-bold text-h1 w3-margin-top">Gandalf</h4>
-                <hr class="w3-clear">
+                 <!-- NOME -->
+                 <h4 class="text-uppercase font-weight-bold text-h1 w3-margin-top">Gandalf</h4>
+                 <hr class="w3-clear">
 
-                <p class="text-uppercase font-weight-bold text-h1 ">Lorem ipsum dolor sit amet, consectetur
+                 <!-- titulo e tema do poste // postagem.titulo e tema.titulo -->
+                 <div class="row">
+                     <div class="col">
+                        <div class="p"> titulo </div>
+                     </div>
+                     <div class="col">
+                        <div class="p"> tema </div>
+                     </div>
+                 </div>
+                 <!-- titulo do post -->
+                 
+
+                <!-- MENSAGEM DO POSTE ( POSTAGEM.MENSAGEM )-->
+                 <p class="text-uppercase font-weight-bold text-h1  " >Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
+                    consequat.
+                </p>
+
+                <!-- IMAGEM // POSTAGEM.IMAGEM -->
                 <div class="w3-row-padding" style="margin:0 -16px">
                     <div class="w3-half">
                         <img src="https://cdn.domtotal.com/img/noticias/2017-10/1191232_330731.jpg"
                             style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
                     </div>
                 </div>
+
+                <!-- BOTÕES -->
                 <button type="button" class="btn btn-outline-primary w3-margin">Eu li!</button>
-                <button type="button" class="btn btn-primary  w3-margin">Comentar</button>
-                <button type="button" class="btn btn-primary w3-margin d-flex">Delete</button>        
+                
+                <button type="button" class="btn btn-primary w3-margin">Comentar</button>
+
+                <button type="button" class="btn btn-danger w3-margin">Deletar</button>  
+
+                <button type="button" class="btn btn-primary w3-margin">Editar</button>      
+
             </div>
-
-
-            <!-- End Middle Column -->
         </div>
-
-        <!--  Coluna direita -->
-        <div class="w3-col m2">
-            <div class="w3-card-2 w3-round w3-white w3-center w3-margin-bottom">
-                <div class="w3-container">
-                    <!--
-                        * Aqui a gente coloca algo legal : tabuada
-                        * alguma promoção, uma dica, algo que chame a atenção do nosso publico
-                        * pode ser randomico, cada vez que atualiar a pag pode mudar o conteudo
-                    -->
-                    <p class="text-uppercase font-weight-bold p-3 text-h1 ">Recomentação</p>
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/71VsXo+tmvL.jpg" alt="Forest"
-                        style="width:100%;">
-
-                    <p class="w3-card-2 w3-round w3-dark-gray w3-padding-16 w3-center">
-                        <strong> 
-                            50% OFF
-                        </strong>
-                    </p>
-                    <p><button class="btn btn-outline-warning">LINK AQUI !</button></p>
-                </div>
-            </div>
-
-            <div class="w3-card-2 w3-round w3-white w3-center">
-                <div class="w3-container">
-                    <p class="text-uppercase font-weight-bold p-3 text-h1 ">Taboada</p>
-                    <img src="https://4.bp.blogspot.com/-ZBeS7_-ThP0/UE76oWDXJ3I/AAAAAAAACkw/R4rNes2IA_I/s1600/tabuada+de+Pit%C3%A1goras+1+-+matheusm%C3%A1thica.JPG" alt="Forest"
-                        style="width:100%;">
-                    <p>teSTE</p>
-                    <p><button class="btn btn-outline-warning">LINK AQUI !</button></p>
-                </div>
-            </div>
-
-            <!-- End Right Column -->
-        </div>
-        <!-- End Grid -->
+      </div>
     </div>
-    <!-- End Page Container -->
 </div>

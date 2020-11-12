@@ -12,7 +12,6 @@ export class PutTemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   idTema: number;
-
   constructor(
     private temaService: TemaService,
     private router: Router,
@@ -21,7 +20,25 @@ export class PutTemaComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    let id: number = this.route.snapshot.params["id"];
+    this.findByIdTema(id);
+  }
 
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
+      this.tema = resp
+    } )
+  }
+
+  salvar() {
+    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
+      this.tema = resp
+      this.router.navigate(['/cadastro-tema'])
+      alert('Tema alterado com sucesso!')
+    })
+  }
+
+}
     let id: number= this.route.snapshot.params['id'];
     this.fidByIdTema(id);
   }
@@ -45,4 +62,3 @@ export class PutTemaComponent implements OnInit {
   }
   
   }
-

@@ -130,12 +130,12 @@ textarea:valid~label {
 
 .highlight {
     position: absolute;
-    height: 60%;
+    height: 35%;
     width: 100px;
     top: 25%;
     left: 0;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 5;
 }
 
 input:focus~.highlight,
