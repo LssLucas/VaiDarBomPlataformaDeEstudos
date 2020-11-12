@@ -7,7 +7,7 @@
                     <h5 class="card-title text-center">Entrar</h5>
 
                     <!-- Formulario contendo informações para logar -->
-                    <form class="form-signin body">
+                    <div class="form-signin body">
 
 
                         <!--####################### LUCAS
@@ -16,14 +16,14 @@
                         -->
 
                         <div class="form-label-group">
-                            <input type="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+                            <input type="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]='userLogin.usuario'>
                             <label for="inputUsuario">
                                 Usuario
                             </label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+                            <input type="nome" id="inputNome" class="form-control" placeholder="Nome" required autofocus [(ngModel)]='userLogin.nome'>
                             <label for="inputNome">
                                 Nome
                             </label>
@@ -36,7 +36,7 @@
 
                         <!-- input do usuario / email -->
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus [(ngModel)]='userLogin.email'>
                             <label for="inputEmail">
                                 Email
                             </label>
@@ -44,7 +44,7 @@
 
                         <!-- input da senha -->
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required [(ngModel)]='userLogin.senha'>
                             <label for="inputPassword">
                                 Senha
                             </label>
@@ -58,7 +58,7 @@
                             Entrar
                             </button>
 
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
