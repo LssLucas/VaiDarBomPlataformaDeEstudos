@@ -1,22 +1,20 @@
 <div class="container">
-    <form>
-        <div class="form-row">
-            <div class="col form-group">
-                <div class="group">
-                    <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Nome</label>
-                    <span>No máximo 100 caracteres</span>
-                </div>
+    <div class="row m-5">
+        <div class="col">
+            <div class="group">
+                <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Nome</label>
+                <span>No máximo 100 caracteres</span>
+            </div>
 
-                <div class="group">
-                    <input type="text" [(ngModel)]='user.usuario' id="usuario" name="nomeUsuario" required>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Nome de Usuarie</label>
-                    <span>No máximo 100 caracteres</span>
-                </div>
+            <div class="group">
+                <input type="text" [(ngModel)]='user.usuario' id="usuario" name="nomeUsuario" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Nome de Usuarie</label>
+                <span>No máximo 100 caracteres</span>
             </div>
 
             <div class="group">
@@ -27,7 +25,16 @@
                 <span>No minimo 10 caracteres</span>
             </div>
         </div>
-        <div class="col form-group">
+
+        <div class="col">
+            <div class="group">
+                <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Confirmar Senha</label>
+                <span>   </span>
+            </div>
+
             <div class="group">
                 <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
                 <span class="highlight"></span>
@@ -37,19 +44,16 @@
             </div>
 
             <div class="group">
-                <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Confirmar Senha</label>
-            </div>
-
-            <div class="group">
                 <input type="text" [(ngModel)]='user.tipoUsuario' id="tipoUsuario" name="tipoUsuario" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Tipos de usuario</label>
             </div>
         </div>
-        <button class="big-button" (click)='cadastrar()'>Enviar</button>
-    </form>
+    </div>
+
+    <div class="row">
+        <button class="big-button w-100" (click)='cadastrar()'>Enviar</button>
+    </div>
+
 </div>
