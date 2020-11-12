@@ -29,4 +29,11 @@ export class TemaService {
   postTema(tema: Tema){
       return this.http.post('http://localhost:8080/temas', tema, this.token)
     }
+  putTema(tema: Tema){
+      return this.http.put('http://localhost:8080/temas', tema, this.token)
+    }
+  deleteTema(id:number){
+      return this.http.delete(`http://localhost:8080/temas/${id}`, this.token)
+  
+    }
 }
