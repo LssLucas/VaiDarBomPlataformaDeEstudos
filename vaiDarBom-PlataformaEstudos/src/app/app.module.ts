@@ -15,6 +15,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 @NgModule({
   declarations: [
