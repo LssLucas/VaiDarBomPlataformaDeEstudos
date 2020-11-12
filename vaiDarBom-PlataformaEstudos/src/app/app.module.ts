@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { PostTemaComponent } from './post-tema/post-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
     FeedComponent,
     LoginComponent,
     CadastroComponent,
-    PostTemaComponent
+    PostTemaComponent,
+    DeletePostagemComponent
   ],
   imports: [
     BrowserModule,

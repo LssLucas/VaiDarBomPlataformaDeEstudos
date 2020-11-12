@@ -126,7 +126,8 @@
                                 <label class="text-monospace" for="tema">Escolha um tema ou <a
                                         routerLink='cadastro-tema'>Cadastre um novo</a>
                                 </label>
-                                <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdtema()'>
+                                <!-- [(ngModel)]='idTema' (change)='findByIdtema()' FEED -->
+                                <select name="tema" id='tema' class="form-control" >
                                     <option >
                                         <!--{{item.descricao}}-->
                                     </option>
@@ -140,7 +141,7 @@
                         </div>
                         <div class="w3-container w3-padding">
                             <label for="ControlInput">Digite Sua mensagem :)</label>
-                            <input type="text" class="form-control" id="ControlInput" placeholder="" [(ngModel)]='postagem.texto'>
+                            <input type="text" class="form-control" id="ControlInput" placeholder="" [(ngModel)]='postagem.mensagem'>
                             <button type="button" class="w3-button w3-theme "><i></i>
 
                                 Postar</button>
@@ -159,6 +160,12 @@
                 <h4 class="text-uppercase font-weight-bold text-h1 w3-margin-top">Gandalf</h4>
                 <hr class="w3-clear">
 
+                <!-- <h5 class="card-title"> {{item.titulo}} </h5>
+                <small>Tema: {{item.tema.descricao}} </small> -->
+
+                <h5 class="card-title"> item.titulo </h5>
+                <small>Tema: item.tema.descricao </small>
+
                 <p class="text-uppercase font-weight-bold text-h1 ">Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -171,7 +178,8 @@
                 </div>
                 <button type="button" class="btn btn-outline-primary w3-margin">Eu li!</button>
                 <button type="button" class="btn btn-primary  w3-margin">Comentar</button>
-                <button type="button" class="btn btn-primary w3-margin d-flex">Delete</button>        
+               <!-- <button type="button" class="btn btn-primary w3-margin d-flex" [routerLink]="['/delete-post', item.id]" >Delete</button> -->  
+                <button type="button" class="btn btn-primary w3-margin d-flex">Editar</button>       
             </div>
 
 
