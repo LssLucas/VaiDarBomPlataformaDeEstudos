@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {OrderModule} from 'ngx-order-pipe'
 import { AppRoutingModule } from './app-routing.module';
+import {ModalModule} from 'ngx-bootstrap/modal';
+
 import { AppComponent } from './app.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FormulariosComponent } from './formularios/formularios.component';
@@ -17,6 +19,8 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { from } from 'rxjs';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
@@ -38,6 +42,7 @@ import { OrderModule } from 'ngx-order-pipe';
     PutPostagemComponent,
     PutTemaComponent,
     DeleteTemaComponent,
+    AlertasComponent,
     DeletePostagemComponent
   ],
   imports: [
@@ -45,7 +50,8 @@ import { OrderModule } from 'ngx-order-pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    OrderModule
+    OrderModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
