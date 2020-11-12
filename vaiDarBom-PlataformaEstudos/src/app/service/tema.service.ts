@@ -7,4 +7,13 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
   constructor(private http: HttpClient) { }
+
+  token = {
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
+  }
+
+  getByNomeTema(nome: string){
+    return this.http.get(`http://localhost:8080/tema/${nome}`, this.token)
+  }
+
 }
