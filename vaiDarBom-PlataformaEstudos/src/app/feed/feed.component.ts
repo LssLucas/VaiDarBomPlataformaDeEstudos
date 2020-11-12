@@ -11,6 +11,45 @@ import { TemaService } from '../service/tema.service';
 })
 export class FeedComponent implements OnInit {
 
+  key: 'data'
+  reverse: true
+
+  tema: Tema = new Tema()
+  listaTemas: Tema[]
+  nomeTema: string
+
+  listaPostagens: Postagem[]
+
+  titulo: string
+
+  constructor(
+    private postagemService: PostagemService,
+    private temaService: TemaService
+  ) { }
+
+  ngOnInit(): void {
+
+  }
+
+  findByTituloPostagem(){
+    if(titulo === ''){
+      this.findFindAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema === ''){
+      this.findAllTemas()
+    }else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
+        this.listaTemas = resp
+      })
+    }
+=======
   key = 'data'
   reverse = true
 
@@ -40,7 +79,7 @@ export class FeedComponent implements OnInit {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
-    if(this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null){
+    if(this.postagem.titulo == null || this.postagem.mensagem == null || this.postagem.tema == null){
       alert ('Preencha todos os campos corretamente')
     }else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{

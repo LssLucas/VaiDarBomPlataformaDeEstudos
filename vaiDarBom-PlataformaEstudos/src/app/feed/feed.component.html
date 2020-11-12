@@ -1,3 +1,334 @@
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
+
+        <!-- Page Container
+
+w3-container
+w3-content
+w3-row
+w3-col
+m3
+w3-card-2
+w3-round
+w3-white
+w3-container
+w3-center
+ng-binding
+w3-circle
+fa-fw w3-margin-right w3-text-theme
+fa fa-home fa-fw w3-margin-right w3-text-theme
+w3-button w3-block w3-theme-l1 w3-left-align
+
+ w3-hide w3-container
+ w3-row-padding
+ w3-half
+ w3-margin-bottom
+ w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small
+ w3-button w3-theme-l3 w3-display-topright
+ fa fa-remove
+  w3-row-padding
+    w3-col m12
+    w3-card-2 w3-round w3-white
+    w3-container w3-padding
+    text-uppercase font-weight-bold p-3 text-h1 text-monospace w3-opacity
+    w3-border w3-padding
+    w3-border w3-padding
+    w3-button w3-theme
+    fa fa-pencil
+        
+     w3-container w3-card-2 w3-white w3-round w3-margin
+    w3-left w3-circle w3-margin-right
+    w3-right w3-opacity
+    text-uppercase font-weight-bold p-3 text-h1 text-monospace
+    w3-clear
+    w3-row-padding
+    w3-half
+    w3-margin-bottom
+    w3-button w3-theme-d1 w3-margin-bottom
+    fa fa-thumbs-up
+    fa fa-comment
+    w3-left w3-circle w3-margin-right
+    w3-right w3-opacity
+    w3-button w3-theme-d1 w3-margin-bottom
+    w3-col m2
+    w3-card-2 w3-round w3-white w3-center
+    w3-container
+    w3-card-2 w3-round w3-dark-gray w3-padding-16 w3-center
+    w3-button w3-block w3-theme-l4
+    w3-card-2 w3-round w3-white w3-padding-16 w3-center
+    w3-card-2 w3-round w3-white w3-padding-32 w3-center
+    fa fa-bug w3-xxlarge
+-->
+        <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+            <!-- The Grid -->
+            <div class="w3-row">
+                <!-- Left Column -->
+                <div class="w3-col m3">
+                    <!-- Profile -->
+                    <div class="w3-card-2 w3-round w3-white">
+                        <div class="w3-container">
+                            <h4 class="w3-center ng-binding">Pelé</h4>
+                            <p class="w3-center"><img src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                            <hr>
+                            <p class="ng-binding"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Developer</p>
+                            <p class="ng-binding"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Cidade de deus, RJ</p>
+                            <p class="ng-binding"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme">infomação</i>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Accordion -->
+                    <div class="w3-card-2 w3-round">
+                        <div class="w3-white">
+                            <!-- (click)="VerMateria('IdButton')"  -->
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Matematica</button>
+                            <div id="IdButton" class="w3-hide w3-container">
+                                <p>Some text..</p>
+                            </div>
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align "><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Ciencias</button>
+                            <div id="Demo2" class="w3-hide w3-container">
+                                <p>Some other text..</p>
+                            </div>
+                            <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Portugues</button>
+                            <div id="Demo3" class="w3-hide w3-container">
+                                <div class="w3-row-padding">
+                                    <br>
+                                    <div class="w3-half">
+                                        <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                    <div class="w3-half">
+                                        <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                    <div class="w3-half">
+                                        <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                    <div class="w3-half">
+                                        <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                    <div class="w3-half">
+                                        <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                    <div class="w3-half">
+                                        <img src="/w3images/fjords.jpg" style="width:100%" class="w3-margin-bottom">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-10 pr-0">
+                                <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='titulo'>
+                            </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-outline-warning w-100" type="button" (click)='   ()'>Pesquisar</button>
+                            </div>
+                        </div>
+
+                        <!-- EDITADO POR LUCAS PESQUISA DE TEMA -->
+                        <!-- PESQUISA POR TEMA -->
+                        <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
+                            <div class="row mt-3 mb-3">
+                                <div class="col-md-10 pr-0">
+                                    <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+                                </div>
+                                <div class="col-md-2 pl-0">
+                                    <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12" *ngFor="let item of listaTemas | orderBy : key : reverse">
+                                    <div *ngFor='let post of item.postagem'>
+
+                                        <div class="card mt-5 mb-5">
+                                            <div class="card-header">
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-12">
+                                                        <h5 class="card-title"> {{post.titulo}} </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <p class="card-text" aria-describedby="texto"> {{post.texto}} </p>
+                                                <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                    Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- PESQUISA POR POSTAGEM -->
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                                <div class="row mt-3 mb-3">
+                                    <div class="col-md-10 pr-0">
+                                        <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='titulo'>
+                                    </div>
+                                    <div class="col-md-2 pl-0">
+                                        <button class="btn btn-outline-warning w-100" type="button" (click)='findByTituloPostagem()'>Pesquisar</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                                            <div class="card-header">
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-8">
+                                                        <h5 class="card-title"> {{item.titulo}} </h5>
+                                                        <small>Tema: {{item.tema.descricao}} </small>
+                                                    </div>
+                                                    <div class="col-md-4 d-flex justify-content-end">
+
+                                                        <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
+                                                    Editar
+                                                </button>
+
+                                                        <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
+                                                    Apagar
+                                                </button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <p class="card-text" aria-describedby="texto"> {{item.texto}} </p>
+                                                <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                                        Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDITADO POR LUCAS -->
+
+            <!-- Interests 
+      <div class="w3-card-2 w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Interests</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">News</span>
+            <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+            <span class="w3-tag w3-small w3-theme-d2">Games</span>
+            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+            <span class="w3-tag w3-small w3-theme">Games</span>
+            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+            <span class="w3-tag w3-small w3-theme-l2">Food</span>
+            <span class="w3-tag w3-small w3-theme-l3">Design</span>
+            <span class="w3-tag w3-small w3-theme-l4">Art</span>
+            <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+          </p>
+        </div>
+      </div>
+    -->
+            <br>
+
+            <!-- Alert Box -->
+            <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+                <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+                <p><strong>NOTICIA!</strong></p>
+                <p>AQUI VEM UMA NOTICIA ALEATORIA SOBRE ALGO LEGAL :)</p>
+            </div>
+
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+
+
+
+            <div class="w3-row-padding ">
+                <div class="w3-col m12">
+                    <div class="w3-card-2 w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h6 class="text-uppercase font-weight-bold p-3 text-h1 text-monospace w3-opacity">Faça sua postagem</h6>
+                            <p contenteditable="true" class="w3-border w3-padding" spellcheck="false" data-gramm="false">Mensagem</p>
+                            <button type="button" class="w3-button w3-theme "><i class="fa fa-pencil"></i> &nbsp;Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-container w3-card-2 w3-white w3-round w3-margin "><br>
+                <img src="https://i1.wp.com/www.selectgame.com.br/wp-content/uploads/2017/12/Ian-McKellen-Gandalf.jpg?fit=1753%2C1000&ssl=1" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <span class="w3-right w3-opacity">2 min</span>
+                <h4 class="text-uppercase font-weight-bold p-3 text-h1 text-monospace ">Gandalf</h4><br>
+                <hr class="w3-clear">
+                <p class="text-uppercase font-weight-bold p-3 text-h1 text-monospace">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-half">
+                        <img src="https://cdn.domtotal.com/img/noticias/2017-10/1191232_330731.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+                    </div>
+                </div>
+                <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Eu li!</button>
+                <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comentar</button>
+            </div>
+
+            <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+                <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <span class="w3-right w3-opacity">10 min</span>
+                <h4>Jane Doe</h4><br>
+                <hr class="w3-clear">
+                <p class="text-uppercase font-weight-bold p-3 text-h1 text-monospace">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Eu li!</button>
+                <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comentario</button>
+            </div>
+
+            <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+                <img src="/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <span class="w3-right w3-opacity">15 min</span>
+                <h4>Angie Jane</h4><br>
+                <hr class="w3-clear">
+                <p>Have you seen this?</p>
+                <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Eu li</button>
+                <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comentario</button>
+            </div>
+
+            <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-col m2">
+            <div class="w3-card-2 w3-round w3-white w3-center">
+                <div class="w3-container">
+                    <p class="text-uppercase font-weight-bold p-3 text-h1 text-monospace">Recomentação</p>
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/71VsXo+tmvL.jpg" alt="Forest" style="width:100%;">
+                    <p class="w3-card-2 w3-round w3-dark-gray w3-padding-16 w3-center"><strong> 50% OFF </strong></p>
+                    <p></p>
+                    <p><button class="w3-button w3-block w3-theme-l4">LINK AQUI !</button></p>
+                </div>
+            </div>
+            <br>
+
+
+            <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
+                <p class="text-uppercase font-weight-bold p-3 text-h1 text-monospace">Você já estudou hoje?</p>
+=======
 <!-- CONTEINER DA PAGINA -->
 <div class="container w3-content" style="max-width:1400px;margin-top:80px">
     <!-- The Grid -->
@@ -127,6 +458,8 @@
                                         routerLink='cadastro-tema'>Cadastre um novo</a>
                                 </label>
                                 <select name="tema" id='tema' class="form-control"><!-- [(ngModel)]='idTema' (change)='findByIdtema()' -->
+                                <!-- [(ngModel)]='idTema' (change)='findByIdtema()' FEED -->
+                                <select name="tema" id='tema' class="form-control" >
                                     <option >
                                         <!--{{item.descricao}}-->
                                     </option>
@@ -140,7 +473,7 @@
                         </div>
                         <div class="w3-container w3-padding">
                             <label for="ControlInput">Digite Sua mensagem :)</label>
-                            <input type="text" class="form-control" id="ControlInput" placeholder="" [(ngModel)]='postagem.texto'>
+                            <input type="text" class="form-control" id="ControlInput" placeholder="" [(ngModel)]='postagem.mensagem'>
                             <button type="button" class="w3-button w3-theme "><i></i>
 
                                 Postar</button>
@@ -159,6 +492,12 @@
                 <h4 class="text-uppercase font-weight-bold text-h1 w3-margin-top">Gandalf</h4>
                 <hr class="w3-clear">
 
+                <!-- <h5 class="card-title"> {{item.titulo}} </h5>
+                <small>Tema: {{item.tema.descricao}} </small> -->
+
+                <h5 class="card-title"> item.titulo </h5>
+                <small>Tema: item.tema.descricao </small>
+
                 <p class="text-uppercase font-weight-bold text-h1 ">Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -171,7 +510,8 @@
                 </div>
                 <button type="button" class="btn btn-outline-primary w3-margin">Eu li!</button>
                 <button type="button" class="btn btn-primary  w3-margin">Comentar</button>
-                <button type="button" class="btn btn-primary w3-margin d-flex">Delete</button>        
+               <!-- <button type="button" class="btn btn-primary w3-margin d-flex" [routerLink]="['/delete-post', item.id]" >Delete</button> -->  
+                <button type="button" class="btn btn-primary w3-margin d-flex">Editar</button>       
             </div>
 
 
@@ -208,11 +548,27 @@
                     <p>teSTE</p>
                     <p><button class="btn btn-outline-warning">LINK AQUI !</button></p>
                 </div>
+
+            </div>
+            <br>
+            <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
+                <p><i class="fa fa-bug w3-xxlarge"></i></p>
             </div>
 
+            <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+    </div>
+    <br>
+    <br>
             <!-- End Right Column -->
         </div>
         <!-- End Grid -->
     </div>
     <!-- End Page Container -->
 </div>
+

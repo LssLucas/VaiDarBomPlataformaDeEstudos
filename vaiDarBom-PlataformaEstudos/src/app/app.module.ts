@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
     CadastroComponent,
     PostTemaComponent,
     PutTemaComponent,
-    DeleteTemaComponent
+    DeleteTemaComponent,
+    DeletePostagemComponent
   ],
   imports: [
     BrowserModule,
