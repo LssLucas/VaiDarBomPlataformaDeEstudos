@@ -1,3 +1,4 @@
+
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
 
 html {
@@ -1141,7 +1142,7 @@ a {
 
 .w3-animate-top {
     position: relative;
-    animation: animatetop 0.4s
+    animation: animatetop 1.1s
 }
 
 @keyframes animatetop {
@@ -1157,7 +1158,7 @@ a {
 
 .w3-animate-left {
     position: relative;
-    animation: animateleft 0.4s
+    animation: animateleft 1.1s
 }
 
 @keyframes animateleft {
@@ -1189,7 +1190,7 @@ a {
 
 .w3-animate-bottom {
     position: relative;
-    animation: animatebottom 0.4s
+    animation: animatebottom 1.s
 }
 
 @keyframes animatebottom {

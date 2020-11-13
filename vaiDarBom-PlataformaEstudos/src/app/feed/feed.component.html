@@ -1,209 +1,174 @@
-<div class="container-fluid">
+<div class="container-fluid gedf-wrapper">
     <div class="row">
-
-        <!-- COLUNA COM 4 ESPAÇOS PARA PERFIL DO USUARIO-->
-        <div class="col-3">
-
+        <div class="col-md-3 p-3">
             <!-- CARD-->
-            <div class="card">
-                <!-- 
-                     * * * * * *
-                     * INICIO  *
-                     * * * * * *
-                     CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
-                 -->
-                <div class="container">
+            <div class="card gedf-card w3-animate-left ">
 
-                    <!-- NOME DO USUARIO -->
-                    <h4 class="text-center">Pelé</h4>
-
-                    <!-- AVATAR -->
-                    <p class="text-center"><img
-                            src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg"
-                            class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
-                    </p>
-
-                    <hr> <!-- PULO DE LINHA -->
-
-                    <!-- DECRICÃO BASICA DO USUARIO-->
-                    <p class="ng-binding"><i class="margin-right w3-text-theme"></i>
-                        Jogador de bola
-                    </p>
-
-                    <!-- ENDEREÇO DO USUARIO-->
-                    <p class="ng-binding">
-                         Cidade de deus, RJ
-                    </p>
-
-                    <!-- COISA QUE O USUARIO CURTE FAZER -->
-                    <p class="ng-binding">
-                     teste
-                    </p>
-
-                </div>
-
-                <!-- 
-                     * * * *
-                     * FIM *
-                     * * * *
-            -->
-                <!-- 
-                     * * * * * *
-                     * INICIO  *
-                     * * * * * *
-                    Container Inicio dos niveis de atributos de cada materia que  o usuario tem ( BETA ) --> 
-                <div class="container">
-
-                    <p>Portugueês</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:20%">20%</div>
-                    </div>
-
-                    <p>Ciências Naturais</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-                    </div>
-
-                    <p>Geografia</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                    </div>
-
-                    <p>Historia</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                    </div>
-
-                    <p>Arte</p>
-                    <div class="w3-light-grey w3-round-xlarge w3-small">
-                        <div class="w3-container w3-center w3-round-xlarge w3-teal w3-margin-bottom" style="width:50%">
-                            50%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Coluna do meio -->
-        <div class="w3-col m7 ">
-
-            <div class="w3-row-padding ">
-                <div class="w3-col m12">
-                    <div class="w3-card-2 w3-round w3-white">
-                        <div class="col-md-6">
-                            <div class="form-group m-0">
-                                <label class="text-monospace" for="tema">Escolha um tema ou <a
-                                        routerLink='cadastro-tema'>Cadastre um novo</a>
-                                </label>
-                                <select name="tema" id='tema' class="form-control" >
-                                    <option >
-                                        <!--{{item.descricao}}-->
-         <!-- 
-                     * * * * * *
-                     * INICIO  *
-                     * * * * * *
-                     Colunas para realizar um post com o usuario logado --> 
-        <div class="col-5">
-        
-            <div class="row p-0">
-                <div class="col">
-
-                     <!-- CAIXA PARA ESCOLHER UM TEMA, UM TITULO E ESCREVER A MENSSAGEM  -->
-                    <div class="card bg-white">
-                        <div class="row">
-                            
-                            <!-- ESCOLHER TEMA -->
-                            <div class="col m-2">
-                                <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a> </label>
-       
-                                <!-- [(ngModel)]='idTema' (change)='findByIdtema()' FEED -->
-                                <select name="tema" id='tema' class="form-control">
-                                    <option>
-                                           <!--{{item.descricao}}-->
-
-                                    </option>
-                                </select>
-                            </div>
-
-                            <!-- DIGITAR O TITULO -->
-                            <div class="col-auto">
-                                
-                                <label class="text-monospace" for="tema">Digite o titulo
-                                </label>
-                                <input type="text" class="form-control" id="ControlInput" placeholder="Titulo">
-                            
-                            </div>
-                        </div>
-                        <!-- DIGITAR A MENSAGEM -->
-                        <div class="container">
-                            
-                            <label for="ControlInput">Digite Sua mensagem :)</label>
-                            <input type="text" class="form-control" id="ControlInput">
-                            <button type="button" class="w3-button w3-theme "><i></i>Postar</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-              <!-- 
-                     * * * * FIM DO CONTAINER
-                     * FIM *
-                     * * * * 
-            -->
-              <!-- 
-                     * * * * * *
-                     * INICIO  *
-                     * * * * * *
-        
-                Container do POST -->
-        <div class="container">
-            <div class="card">
-
-                <!-- AVATAR -->
-                <img src="https://i1.wp.com/www.selectgame.com.br/wp-content/uploads/2017/12/Ian-McKellen-Gandalf.jpg?fit=1753%2C1000&ssl=1"
-                alt="Avatar" class="w3-left rounded-circle m-2" style="width:60px">
-                 <span class="right-align">2 min</span>
-
-                 <!-- NOME -->
-                 <h4 class="text-uppercase font-weight-bold text-h1 w3-margin-top">Gandalf</h4>
-                 <hr class="w3-clear">
-
-                 <!-- titulo e tema do poste // postagem.titulo e tema.titulo -->
-                 <div class="row">
-                     <div class="col">
-                        <div class="p"> titulo </div>
-                     </div>
-                     <div class="col">
-                        <div class="p"> tema </div>
-                     </div>
-                 </div>
-                 <!-- titulo do post -->
+                <hr>
                  
+                <!--  ==== INICIO ==== 
+                  CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
+               -->
+               <div class="container">
+                  <!-- NOME DO USUARIO -->
+                  <h4 class="text-center">
+                      Pelé
+                 </h4>
 
-                <!-- MENSAGEM DO POSTE ( POSTAGEM.MENSAGEM )-->
-                 <p class="text-uppercase font-weight-bold text-h1  " >Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                </p>
+                 <hr>
 
-                <!-- IMAGEM // POSTAGEM.IMAGEM -->
-                <div class="w3-row-padding" style="margin:0 -16px">
-                    <div class="w3-half">
-                        <img src="https://cdn.domtotal.com/img/noticias/2017-10/1191232_330731.jpg"
-                            style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+                  <!-- AVATAR -->
+                  <p class="text-center"><img
+                     src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg"
+                     class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
+                  </p>
+                  <hr>
+
+                  <!-- PULO DE LINHA -->
+                  <!-- DECRICÃO BASICA DO USUARIO-->
+                  <p class="ng-binding"><i class="margin-right w3-text-theme"></i>
+                     Jogador de bola
+                  </p>
+
+                  <!-- ENDEREÇO DO USUARIO-->
+                  <p class="ng-binding">
+                     Cidade de deus, RJ
+                  </p>
+
+                  <!-- COISA QUE O USUARIO CURTE FAZER -->
+                  <h2> EU CURTO ESSAS COISAS</h2>
+                  <p class="ng-binding">
+                     
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ut voluptates et, omnis saepe eos sit minima perferendis nobis, velit neque porro maiores quo aspernatur amet aut. Facere, quos nemo! 
+                  </p>
+               </div>    
+                <!--  ==== FIM ====  -->
+            </div>
+            <div class="card gedf-card mb-3 mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Temas</h5>
+                    <ul class="nav-news-feed">
+                        <li><i class=""></i><div><a href=" LINK "> AAAAAA</a></div></li>
+                        <li><i class=""></i><div><a href=" LINK "> BBBBBB</a></div></li>
+                        <li><i class=""></i><div><a href=" LINK "> CCCCCC</a></div></li>
+                        <li><i class=""></i><div><a href=" LINK "> DDDDDDD</a></div></li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+
+         <!--  ==== COLUNA MEIO ====  -->
+        <div class="col-md-6">
+
+           <!--  ==== SISTEMA DE POSTAGEM ====  -->
+            <div class="card mb-3 mt-3">
+                <div class="card-header">
+                    <div class = "d-flex justify-content-arround align-items-center">
+
+                         <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm">
+                          </div>
+                        
+                          <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Temas </label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>Escolher...</option>
+                              <option value="1">Um</option>
+                              <option value="2">Dois</option>
+                              <option value="3">Três</option>
+                            </select>
+                          </div>
+                          
+                    </div>
+
+                    <a href=""> ADICIONA UM NOVO TEMA AQUI :3 </a>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary">JOGA NA REDE :D</button>
+                        </div>
+
                     </div>
                 </div>
+            </div>
+            <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
 
-                <!-- BOTÕES -->
-                <button type="button" class="btn btn-outline-primary w3-margin">Eu li!</button>
-                
-                <button type="button" class="btn btn-primary w3-margin">Comentar</button>
+             <!--  ==== POST ====  -->
+            <div class="card gedf-card mb-3">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">      
+                                <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                            </div>
+                            <div class="ml-2">
+                                <div class="h5 m-0"> NOME </div>
+                                <div class="h7 text-muted"> estudante do 6º ano </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="highlight">
+                                <p> HORA </p>
+                            </div>
+                        </div>
+                    </div>
 
-                <button type="button" class="btn btn-danger w3-margin">Deletar</button>  
+                </div>
+                <div class="card-body">
+                    
+                        <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
 
-                <button type="button" class="btn btn-primary w3-margin">Editar</button>      
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+                        sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                    </p>
 
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="card-link"> DELETAR</a>
+                    <a href="#" class="card-link"> EDITAR </a>
+                </div>
+            </div>
+            <!--  ==== POST ====  -->
+
+         <!--  ==== COLUNA MEIO ====  -->
+        </div>
+        
+         <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
+        <div class="col-md-3">
+            <div class="card gedf-card mb-3 mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Titulo</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
+                    <p class="card-text"> Você sabia que ... etc etc etc ...  .</p>
+                    <a href="#" class="card-link">Link</a>
+                    <a href="#" class="card-link">Outro Link</a>
+                </div>
+            </div>
+            <div class="card gedf-card ">
+                <div class="card-body">
+                    <h5 class="card-title">Titulo</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum qui ratione, quidem itaque sunt excepturi cum ut, repellat voluptatum explicabo dolorum at doloremque tenetur distinctio nobis! Soluta quaerat harum laborum?.</p>
+                    <a href="#" class="card-link">Link</a>
+                    <a href="#" class="card-link">Outro Link</a>
+                </div>
             </div>
         </div>
-      </div>
     </div>
 </div>
