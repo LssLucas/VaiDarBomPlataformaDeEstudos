@@ -15,9 +15,9 @@ export class TemaService {
   getByNomeTema(nome: string){
     return this.http.get(`http://localhost:8080/tema/${nome}`, this.token)
   }
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
-  }
+ // token = {
+ //   headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
+ // }
   getAllTemas(){
     return this.http.get('http://localhost:8080/tema', this.token)
   }
@@ -30,16 +30,6 @@ export class TemaService {
       return this.http.post('http://localhost:8080/temas', tema, this.token)
     }
 
-  putTema(tema: Tema){
-      return this.http.put('http://localhost:8080/temas', tema, this.token)
-    }
-
-    deleteTema(id:number){
-      return this.http.delete(`http://localhost:8080/temas/${id}`, this.token)
-  
-    }
-
-    }
   putTema(tema: Tema){
       return this.http.put('http://localhost:8080/temas', tema, this.token)
     }
