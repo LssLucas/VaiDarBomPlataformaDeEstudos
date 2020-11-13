@@ -179,3 +179,27 @@ textarea:focus~.highlight {
     margin-bottom: 45px;
     border-radius: 30px;
 }
+
+.btn-cadastrar{
+  padding: 15px 25px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #42d1fd;
+  background-color: #7b43d5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
+}
+
+.btn-cadastrar:hover {
+    background-color: #42d1fd;
+    color: #7b43d5;
+}
+
+.btn-cadastrar:active{
+  background-color: #42d1fd;
+  box-shadow: 0 5px #999;
+  transform: translateY(4px);
+}
