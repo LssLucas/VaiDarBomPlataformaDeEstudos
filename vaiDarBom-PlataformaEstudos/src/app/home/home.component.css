@@ -10,7 +10,15 @@
   }
 
 .text-h1 {
+
     font-family: 'Barlow Condensed', sans-serif;
-    text-shadow: .05em .05em #6f65df;
-    color: #42d1fd;
+    text-shadow: .1em .1em #8f6aca;
+    color: #94e6ff !important;
+}
+
+.text-h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-shadow: black;
+  color: white;
+  
 }
