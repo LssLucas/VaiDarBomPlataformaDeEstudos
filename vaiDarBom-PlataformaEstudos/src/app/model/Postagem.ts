@@ -2,14 +2,10 @@ import { Tema } from './Tema'
 
 export class Postagem {
   public id: number
-  public ativo: boolean
-  public tema: Tema // SEM TEMA
-  public imagem: string
-  public link: string
-  public euLi: number
+  public titulo: string
   public mensagem: string
   public data: Date
-  public titulo: string // SEM TITULO
+  public tema: Tema
 }
 
 /*
