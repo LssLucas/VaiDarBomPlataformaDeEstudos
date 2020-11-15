@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', this.userLogin.token)
       this.router.navigate(['/feed'])
     })
+
   }
+
 
 }

@@ -1,23 +1,31 @@
 <div class="container">
-    <div class="row m-5">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Cadastrar</h5>
+
+                          <!-- COLUNA DE NOME E USUARIO LOGIN -->
         <div class="col">
             <div class="group">
                 <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Nome</label>
-                <span>No máximo 100 caracteres</span>
             </div>
 
             <div class="group">
                 <input type="text" [(ngModel)]='user.usuario' id="usuario" name="nomeUsuario" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>Nome de Usuarie</label>
+                <label>Usuario de login</label>
                 <span>No máximo 100 caracteres</span>
             </div>
         </div>
+         <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
 
+
+          <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
         <div class="col">
             <div class="group">
                 <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
@@ -34,11 +42,12 @@
                 <label>Senha</label>
                 <span>No minimo 8 caracteres</span>
             </div>
+        </div>
+        <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)='cadastrar()'>Logar</button>
 
+    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <button class="big-button w-100" (click)='cadastrar()'>Enviar</button>
-    </div>
-</div>

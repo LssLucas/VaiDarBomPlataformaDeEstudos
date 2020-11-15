@@ -1,8 +1,7 @@
 <div class="container">
     <div class="row mt-5 mb-5">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-8">
+       
+        <div class="col-md-12">
             <h3 class="text-center mb-4 text-monospace">Cadastro de um novo tema</h3>
             <div class="form-group">
                 <label class="text-monospace" for="texto">Nome do tema</label>
@@ -41,8 +40,6 @@
                         <a class="btn btn-outline-danger"  [routerLink]="['/delete-tema', item.id]" 
                          >Apagar</a>
 
-                        <a class="btn btn-outline-info mr-3" [routerLink]="['/editar-tema', item.id]">Editar</a>
-                        <a class="btn btn-outline-danger"  [routerLink]="['/delete-tema', item.id]">Apagar</a>
                     </td>
                   </tr>
                 </tbody>

@@ -1,25 +1,23 @@
-<div class="container">
+ <div class="container">
 
-    <div class="row mt-5 mb-5">
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-8">
-          <div class="card mt-5">
+    <div class="row m-4">
+
+        <div class="col d-flex justify-content-center">
+
+           <div>
+            <h5 class="text-center">Tem certeza que deseja apagar esse Tema?</h5>
+            <div class="card mt-5">
+                <p class="card-body" aria-describedby="texto">{{tema.descricao}} </p>
+           </div>
+
+           <div class="d-flex justify-content-around mt-5">
+            <button class="btn btn-success w-25" (click)="btnSim()">Sim</button>
+            <button class="btn btn-danger w-25" (click)="btnNao()" >Não</button>
+         </div>
   
-             <div class="card-body" >
-               <p class="card-text" aria-describedby="texto">{{tema.descricao}} </p>
-             </div>
+           </div>
           </div>
-  
-          <hr class="mt-4 mb-4">
-  
-          <h5 class="text-center">Tem certeza que deseja apagar esse Tema?</h5>
-          <div class="d-flex justify-content-center mt-5">
-             <button class="btn btn-outline-success mr-3" (click)="btnSim()">Sim</button>
-             <button class="btn btn-outline-danger" (click)="btnNao()" >Não</button>
-          </div>
-        </div>
-    </div>
+      </div>
   </div>
+
   
