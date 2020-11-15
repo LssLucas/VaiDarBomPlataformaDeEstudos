@@ -2,3 +2,16 @@
     height: 70px;
     width: 70px;
 }
+
+a,
+p {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h6 {
+    color: white;
+}
