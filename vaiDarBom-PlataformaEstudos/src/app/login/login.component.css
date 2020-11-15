@@ -67,3 +67,185 @@ body {
 .form-control:focus {
     box-shadow: 10px 0px 0px 0px #ffffff !important
 }
+
+.h4-contato {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.btn-enviar {
+    color: #7b43d5;
+    background-color: #42d1fd;
+}
+
+.btn-enviar:hover {
+    color: #42d1fd;
+    background-color: #7b43d5d3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* .btn-container {
+    font-family: 'Roboto';
+    width: 600px;
+    margin: 30px auto 0;
+    display: block;
+    background: #FFF;
+    padding: 10px 50px 50px;
+} */
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h2 small {
+    font-weight: normal;
+    color: #42d1fd;
+    display: block;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input,
+textarea {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 300px;
+    color: #42d1fd;
+    border-bottom: 1px solid #7b43d5;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+
+/* input:focus {
+    outline: none;
+} */
+
+label {
+    color: #7b43d5;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+/*Animação da label*/
+
+input:focus~label,
+input:valid~label,
+textarea:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: rgb(223, 11, 11);
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+/*Animação da label*/
+
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+input:focus~.bar:before,
+input:focus~.bar:after,
+textarea:valid~label {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 35%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 5;
+}
+
+input:focus~.highlight,
+textarea:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.container-bg {
+    margin-bottom: 45px;
+    border-radius: 30px;
+}

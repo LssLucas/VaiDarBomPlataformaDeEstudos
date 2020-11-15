@@ -5,6 +5,7 @@ import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-feed',

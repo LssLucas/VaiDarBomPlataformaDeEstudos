@@ -30,7 +30,6 @@ export class DeletePostagemComponent implements OnInit {
 
   btnSim(){
     this.postagemService.getByIdPostagem(this.postagem.id).subscribe((resp : Postagem) => {
-
       this.router.navigate(['/feed'])
       alert('Deu bom, seu poste foi pra lixeira :D')
     })

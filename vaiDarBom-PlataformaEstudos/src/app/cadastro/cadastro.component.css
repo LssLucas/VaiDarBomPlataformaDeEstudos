@@ -88,7 +88,7 @@ input:valid~label,
 textarea:valid~label {
     top: -20px;
     font-size: 14px;
-    color: white;
+    color: rgb(223, 11, 11);
     font-family: 'Barlow Condensed', sans-serif;
 }
 

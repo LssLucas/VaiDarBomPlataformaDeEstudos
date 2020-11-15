@@ -1,18 +1,25 @@
 <div class="container-fluid gedf-wrapper">
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Como funciona a vai dar bom?</h1>
+          <p class="lead"> Aqui é sua pagina de feeds, você pode postar conteudos sobre questões e suas resoluções para ajudar a galera, também é valido postar alguma duvida :D     
+        </p>
+        </div>
+      </div>
+
     <div class="row">
         <div class="col-md-3 p-3">
             <!-- CARD-->
             <div class="card gedf-card w3-animate-left">
-
-                <hr>
-                 
+                
                 <!--  ==== INICIO ==== 
                   CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
                -->
                <div class="container">
                   <!-- NOME DO USUARIO -->
                   <h4 class="text-center">
-                      Pelé
+                    NOME
                  </h4>
 
                  <hr>
@@ -65,16 +72,18 @@
                 <div class="card-header">
                     <div class = "d-flex justify-content-arround align-items-center">
 
-                         <div class="input-group input-group-sm mb-3">
+                         <div class="col-md-6">
                             <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
+                              
+                              <label class="text-monospace" for="tema">Titulo</label>
+
                             </div>
                             <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
                           </div>
                         
                           <div class="col-md-6">
                             <div class="form-group m-0">
-                              <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
+                              <label class="text-monospace" for="tema">Escolha um tema
                               </label>
                               <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                                 <option *ngFor='let item of listaTemas' value={{item.id}}>
@@ -86,7 +95,12 @@
                           
                     </div>
 
-                    <a routerLink='/cadastro-tema'> ADICIONA UM NOVO TEMA AQUI :3 </a>
+                    <div class = "d-flex justify-content-center m-1">
+
+                    <a routerLink='/cadastro-tema'> ADICIONA UM NOVO TEMA AQUI :3 </a> 
+                    
+                </div>
+
                 </div>
                 <div class="card-body">
                     <div class="tab-content" id="myTabContent">
@@ -100,7 +114,7 @@
                     </div>
                     <div class="btn-toolbar justify-content-between">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-outline-info w-25" (click)='publicar()'>Publicar</button>
+                            <button type="button" class="btn btn-info brilhar" (click)='publicar()'>Publicar</button>
                         </div>
 
                     </div>
@@ -109,7 +123,10 @@
             <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
 
              <!--  ==== POST ====  -->
-            <div class="card gedf-card mb-3"  *ngFor="let item of listaPostagens | orderBy : key : reverse">
+
+             
+            <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-between align-items-center">
@@ -123,7 +140,7 @@
                         </div>
                         <div>
                             <div class="highlight">
-                                <p> HORA </p>
+                                Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
                             </div>
                         </div>
                     </div>
@@ -131,18 +148,20 @@
                 </div>
                 <div class="card-body">
                     
-                        <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+                        <h5 class="card-title"> {{item.titulo}} </h5>
 
                     <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                        sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                        {{item.mensagem}}
                     </p>
 
+                    <hr>
+
+                    <button type="button" class=" mr-3 btn btn-info w-25"  [routerLink]="['/editar-post', item.id]"> EDITAR </button>
+                    
+                    <button type="button" class="btn btn-danger w-25"   [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                   
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="card-link"> DELETAR</a>
-                    <a href="#" class="card-link"> EDITAR </a>
-                </div>
+                
             </div>
             <!--  ==== POST ====  -->
 
@@ -153,13 +172,14 @@
         <div class="col-md-3">
             <div class="card gedf-card mb-3 mt-3">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
-                    <p class="card-text"> Você sabia que ... etc etc etc ...  .</p>
-                    <a href="#" class="card-link">Link</a>
-                    <a href="#" class="card-link">Outro Link</a>
+                    <h5 class="card-title">Taboada de Pitagoras</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Matematica</h6>
+                    <p class="card-text"> Existem formas mais simples de resolver calculos de multiplicação, veja:</p>
+                    <a href="#" class="card-link">DA UMA OLHADA :D </a>
+                    
                 </div>
             </div>
+
             <div class="card gedf-card ">
                 <div class="card-body">
                     <h5 class="card-title">Titulo</h5>
