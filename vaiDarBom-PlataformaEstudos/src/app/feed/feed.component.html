@@ -1,227 +1,333 @@
 <div class="container-fluid gedf-wrapper">
-    <div class="jumbotron jumbotron-fluid">
-       <div class="container">
-          <h1 class="display-4">Como funciona a vai dar bom?</h1>
-          <p class="lead"> Aqui é sua pagina de feeds, você pode postar conteudos sobre questões e suas resoluções para ajudar a galera, também é valido postar alguma duvida :D     
-          </p>
-       </div>
+
+    <div class='d-flex justify-content-center'>
+        <h2>Como funciona o FEED?</h2>
+        <h3> Aqui você pode postar suas ideias, duvidas</h3>
     </div>
+
     <div class="row">
-       <div class="col-md-3 p-3">
-          <!-- CARD-->
-          <div class="card gedf-card w3-animate-left">
-             <!--  ==== INICIO ==== 
+        <div class="col-md-3 p-3">
+            <!-- CARD-->
+            <div class="card gedf-card w3-animate-left">
+                <!--  ==== INICIO ==== 
                 CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
                 -->
-             <div class="container">
-                <!-- NOME DO USUARIO -->
-                <h4 class="text-center">
-                   NOME
-                </h4>
-                <hr>
-                <!-- AVATAR -->
-                <p class="text-center"><img
-                   src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg"
-                   class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
-                </p>
-                <hr>
-                <!-- PULO DE LINHA -->
-                <!-- DECRICÃO BASICA DO USUARIO-->
-                <p class="ng-binding"><i class="margin-right w3-text-theme"></i>
-                   Jogador de bola
-                </p>
-                <!-- ENDEREÇO DO USUARIO-->
-                <p class="ng-binding">
-                   Cidade de deus, RJ
-                </p>
-                <!-- COISA QUE O USUARIO CURTE FAZER -->
-                <h2> EU CURTO ESSAS COISAS</h2>
-                <p class="ng-binding">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ut voluptates et, omnis saepe eos sit minima perferendis nobis, velit neque porro maiores quo aspernatur amet aut. Facere, quos nemo! 
-                </p>
-             </div>
-             <!--  ==== FIM ====  -->
-          </div>
-          <div class="card gedf-card mb-3 mt-3">
-             <div class="card-body">
-                <h5 class="card-title">Temas</h5>
-                <nav class="d-flex justify-content-center">
-                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
-                         role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
-                      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab"
-                         aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
-                   </div>
-                </nav>
-             </div>
-          </div>
-       </div>
-       <!--  ==== COLUNA MEIO ====  -->
-       <div class="col-md-6">
-          <!--  ==== SISTEMA DE POSTAGEM ====  -->
-          <nav class="d-flex justify-content-center">
-             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
-                   role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
-                <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab"
-                   aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
-             </div>
-          </nav>
-          <div class="card mb-3 mt-3">
-             <div class="card-header">
-                <div class = "d-flex justify-content-arround align-items-center">
-                   <div class="col-md-6">
-                      <div class="input-group-prepend">
-                         <label class="text-monospace" for="tema">Titulo</label>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group m-0">
-                         <label class="text-monospace" for="tema">Escolha um tema
+                <div class="container">
+                    <!-- NOME DO USUARIO -->
+                    <h4 class="text-center">
+                        NOME
+                    </h4>
+                    <hr>
+                    <!-- AVATAR -->
+                    <p class="text-center"><img src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
+                    </p>
+                    <hr>
+                    <!-- PULO DE LINHA -->
+                    <!-- DECRICÃO BASICA DO USUARIO-->
+                    <p class="ng-binding"><i class="margin-right w3-text-theme"></i> Jogador de bola
+                    </p>
+                    <!-- ENDEREÇO DO USUARIO-->
+                    <p class="ng-binding">
+                        Cidade de deus, RJ
+                    </p>
+                    <!-- COISA QUE O USUARIO CURTE FAZER -->
+                    <h2> EU CURTO ESSAS COISAS</h2>
+                    <p class="ng-binding">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ut voluptates et, omnis saepe eos sit minima perferendis nobis, velit neque porro maiores quo aspernatur amet aut. Facere, quos nemo!
+                    </p>
+                </div>
+                <!--  ==== FIM ====  -->
+            </div>
+            <div class="card gedf-card mb-3 mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Temas</h5>
+                    <nav class="d-flex justify-content-center">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+                            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--  ==== COLUNA MEIO ====  -->
+        <div class="col-md-6">
+            <!--  ==== SISTEMA DE POSTAGEM ====  -->
+            <nav class="d-flex justify-content-center">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
+                </div>
+            </nav>
+            <div class="card mb-3 mt-3">
+                <div class="card-header">
+                    <div class="d-flex justify-content-arround align-items-center">
+                        <div class="col-md-6">
+                            <div class="input-group-prepend">
+                                <label class="text-monospace" for="tema">Titulo</label>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group m-0">
+                                <label class="text-monospace" for="tema">Escolha um tema
                          </label>
-                         <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                                <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                          <option *ngFor='let item of listaTemas' value={{item.id}}>
                             {{item.descricao}}
                          </option>
                          </select>
-                      </div>
-                   </div>
-                </div>
-                <div class = "d-flex justify-content-center m-1">
-                   <a routerLink='/cadastro-tema'> ADICIONA UM NOVO TEMA AQUI :3 </a> 
-                </div>
-             </div>
-             <div class="card-body">
-                <div class="tab-content" id="myTabContent">
-                   <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                      <div class="form-group">
-                         <label class="sr-only" for="message">post</label>
-                         <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem' ></textarea>
-                      </div>
-                   </div>
-                </div>
-                <div class="btn-toolbar justify-content-between">
-                   <div class="btn-group">
-                      <button type="button" class="btn btn-info brilhar" (click)='publicar()'>Publicar</button>
-                   </div>
-                </div>
-             </div>
-          </div>
-          <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
-          <!--  ==== POST ====  -->
-
-          <div class="tab-content" id="nav-tabContent">
-
-            <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
-
-             <div class="row mt-3 mb-3">
-                <div class="col-md-10 pr-0">
-                  <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='titulo'>
-                </div>
-                <div class="col-md-2 pl-0">
-                  <button class="btn btn-outline-warning w-100" type="button" (click)='findByTituloPostagem()'>Pesquisar</button>
-                </div>
-              </div>
-
-             
-                <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
-                   <div class="card-header">
-                      <div class="d-flex justify-content-between">
-                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-2">      
-                               <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
                             </div>
-                            <div class="ml-2">
-                               <div class="h5 m-0">  {{item.titulo}} </div>
-                               <div class="h7 text-muted"> {{item.tema.descricao}} </div>
-                            </div>
-                         </div>
-                         <div>
-                            <div class="highlight">
-                               Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="card-body">
-                      <h5 class="card-title"> {{item.titulo}} </h5>
-                      <p class="card-text">
-                         {{item.mensagem}}
-                      </p>
-                      <hr>
-                      <button type="button" class=" mr-3 btn btn-info w-25"  [routerLink]="['/editar-post', item.id]"> EDITAR </button>
-                      <button type="button" class="btn btn-danger w-25"   [routerLink]="['/delete-post', item.id]"> DELETAR </button>
-                   </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center m-1">
+                        <a routerLink='/cadastro-tema'> ADICIONA UM NOVO TEMA AQUI :3 </a>
+                    </div>
                 </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem'></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info brilhar" (click)='publicar()'>Publicar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
+            <!--  ==== POST ====  -->
+
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        </div>
+                        <div class="col-md-2 pl-0">
+                            <button class="btn btn-outline-warning w-100" type="button" (click)='findByTituloPostagem()'>Pesquisar</button>
+                        </div>
+                    </div>
 
 
-             </div>
+                    <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                    </div>
+                    <div class="d-flex justify-content-center m-1">
+                        <a routerLink='/cadastro-tema'> ADICIONA UM NOVO TEMA AQUI :3 </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem'></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info brilhar" (click)='publicar()'>Publicar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
+            <!--  ==== POST ====  -->
+
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        </div>
+                    </div>
+
+
+                    <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="h5 m-0"> {{item.titulo}} </div>
+                                        <div class="h7 text-muted"> {{item.tema.descricao}} </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="highlight">
+                                        Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"> {{item.titulo}} </h5>
+                            <p class="card-text">
+                                {{item.mensagem}}
+                            </p>
+                            <hr>
+                            <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
+                            <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                        </div>
+                    </div>
+
+
+                </div>
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
 
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
-                          <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                         </div>
                         <div class="col-md-2 pl-0">
-                          <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
+                            <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
                         </div>
-                      </div>
+                    </div>
 
-                <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
-                   <div class="card-header">
-                      <div class="d-flex justify-content-between">
-                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-2">      
-                               <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                    <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
+                        <div *ngFor="let item of tema.postagem">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="h5 m-0"> {{item.titulo}} </div>
+                                            <div class="h7 text-muted"> {{item.tema.descricao}} </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="highlight">
+                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="ml-2">
-                               <div class="h5 m-0">  {{item.titulo}} </div>
-                               <div class="h7 text-muted"> {{item.tema.descricao}} </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> {{item.titulo}} </h5>
+                                <p class="card-text">
+                                    {{item.mensagem}}
+                                </p>
+                                <hr>
+                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
+                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
                             </div>
-                         </div>
-                         <div>
-                            <div class="highlight">
-                               Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-10 pr-0">
+                                <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                             </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="card-body">
-                      <h5 class="card-title"> {{item.titulo}} </h5>
-                      <p class="card-text">
-                         {{item.mensagem}}
-                      </p>
-                      <hr>
-                      <button type="button" class=" mr-3 btn btn-info w-25"  [routerLink]="['/editar-post', item.id]"> EDITAR </button>
-                      <button type="button" class="btn btn-danger w-25"   [routerLink]="['/delete-post', item.id]"> DELETAR </button>
-                   </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
+                            </div>
+                        </div>
+
+                        <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <div class="h5 m-0"> {{item.titulo}} </div>
+                                            <div class="h7 text-muted"> {{item.tema.descricao}} </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="highlight">
+                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> {{item.titulo}} </h5>
+                                <p class="card-text">
+                                    {{item.mensagem}}
+                                </p>
+                                <hr>
+                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
+                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-          </div>
 
-          <!--  ==== POST ====  -->
-          <!--  ==== COLUNA MEIO ====  -->
-       </div>
-       <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
-       <div class="col-md-3">
-          <div class="card gedf-card mb-3 mt-3">
-             <div class="card-body">
-                <h5 class="card-title">Taboada de Pitagoras</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Matematica</h6>
-                <p class="card-text"> Existem formas mais simples de resolver calculos de multiplicação, veja:</p>
-                <a href="#" class="card-link">DA UMA OLHADA :D </a>
-             </div>
-          </div>
-          <div class="card gedf-card ">
-             <div class="card-body">
-                <h5 class="card-title">Titulo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
-                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum qui ratione, quidem itaque sunt excepturi cum ut, repellat voluptatum explicabo dolorum at doloremque tenetur distinctio nobis! Soluta quaerat harum laborum?.</p>
-                <a href="#" class="card-link">Link</a>
-                <a href="#" class="card-link">Outro Link</a>
-             </div>
-          </div>
-       </div>
+                <!--  ==== POST ====  -->
+                <!--  ==== COLUNA MEIO ====  -->
+            </div>
+            <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
+            <div class="col-md-3">
+                <div class="card gedf-card mb-3 mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Taboada de Pitagoras</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Matematica</h6>
+                        <p class="card-text"> Existem formas mais simples de resolver calculos de multiplicação, veja:</p>
+                        <a href="#" class="card-link">DA UMA OLHADA :D </a>
+                    </div>
+                </div>
+                <div class="card gedf-card ">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum qui ratione, quidem itaque sunt excepturi cum ut, repellat voluptatum explicabo dolorum at doloremque tenetur distinctio nobis! Soluta quaerat harum laborum?.</p>
+                        <a href="#" class="card-link">Link</a>
+                        <a href="#" class="card-link">Outro Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+</div>
+</div>
+
+<!--  ==== POST ====  -->
+<!--  ==== COLUNA MEIO ====  -->
+</div>
+<!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
+<div class="col-md-3">
+    <div class="card gedf-card mb-3 mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Taboada de Pitagoras</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Matematica</h6>
+            <p class="card-text"> Existem formas mais simples de resolver calculos de multiplicação, veja:</p>
+            <a href="#" class="card-link">DA UMA OLHADA :D </a>
+        </div>
+    </div>
+    <div class="card gedf-card ">
+        <div class="card-body">
+            <h5 class="card-title">Titulo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Sub Titulo</h6>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum qui ratione, quidem itaque sunt excepturi cum ut, repellat voluptatum explicabo dolorum at doloremque tenetur distinctio nobis! Soluta quaerat harum laborum?.</p>
+            <a href="#" class="card-link">Link</a>
+            <a href="#" class="card-link">Outro Link</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div *ngIf="teste; else falso">
+
  </div>
+ <ng-template #falso>
+
+ </ng-template> -->

@@ -20,14 +20,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){ }
 
-  entrar(){
-    this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
+  entrar() {
+      this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-      environment.token = this.userLogin.token
       this.router.navigate(['/feed'])
+      environment.token = this.userLogin.token
     })
-
   }
-
-
 }
