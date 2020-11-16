@@ -1974,3 +1974,15 @@ a {
 .w3-hover-border-pale-blue:hover {
     border-color: #e7ffff!important
 }
+
+.btnPublicar {
+    background-color: #42d1fd2f;
+    color: #7b43d5;
+}
+
+.btnPublicar:hover {
+    background-color: #7b43d52d;
+    color: #7b43d5;
+}
+
+.feed-fade:hover {}
