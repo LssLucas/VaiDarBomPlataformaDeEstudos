@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
+import { environment } from './../../environments/environment.prod';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +11,14 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    public auth: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
+  sair(){
+
+  }
 }
