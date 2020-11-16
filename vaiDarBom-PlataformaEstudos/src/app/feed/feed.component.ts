@@ -6,6 +6,7 @@ import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-feed',
@@ -36,7 +37,9 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(){
 
-    window.scroll(0, 0)
+    let token = environment.token
+
+    window.scroll(0,0)
 
     this.findAllPostagens()
     this.findAllTemas()
