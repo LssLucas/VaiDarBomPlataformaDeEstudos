@@ -19,6 +19,5 @@ export class NavbarComponent implements OnInit {
   }
 
   sair(){
-
   }
 }
