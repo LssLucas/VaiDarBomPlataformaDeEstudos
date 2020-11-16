@@ -14,7 +14,7 @@ export class TemaService {
   }
 
   getByNomeTema(nome: string){
-    return this.http.get(`http://localhost:8080/tema/${nome}`, this.token)
+    return this.http.get(`http://localhost:8080/tema/nome/${nome}`, this.token)
   }
   
   getAllTemas(){
