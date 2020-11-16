@@ -1,42 +1,42 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top justify-content-center">
+ <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top pb-0 pt-0">
+
         <a routerLink='/home'>
-            <img class="logoVaiDarBom d-img" src="../../assets/logoVaiDarBom.jpeg" alt="logoVaiDarBom">
+            <img class="logoVaiDarBom d-img m-2" src="../../assets/logoVaiDarBom.jpeg" alt="logoVaiDarBom">
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    
+        <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto text-center">
-                <li class="nav-item">
+
+            <ul class="navbar-nav m-auto text-center">
+                <li class="nav-item m-2">
                   <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
                 </li>
-                <li class="nav-item">
+
+                <li class="nav-item m-2">
                   <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/feed'>Feed</a>
                 </li>
         
                 <div *ngIf='auth.btnLogin()'>
-                  <li class="nav-item">
+                  <li class="nav-item m-2">
                     <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
                   </li>
                 </div>
         
                 <div *ngIf='auth.btnLogin()'>
-                  <li class="nav-item">
+                  <li class="nav-item m-2">
                     <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/cadastro'>Cadastro</a>
                   </li>
                 </div>
         
                 <div *ngIf='auth.btnSair()'>
-                  <li class="nav-item">
+                  <li class="nav-item m-2">
                     <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" (click)='sair()'>Sair</a>
                   </li>
                 </div>
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                  </form>
-        
               </ul>
         </div>
     </nav>
