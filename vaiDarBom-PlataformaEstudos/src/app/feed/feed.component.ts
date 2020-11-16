@@ -29,6 +29,8 @@ export class FeedComponent implements OnInit {
   idTema: number
   nomeTema: string
 
+  teste : boolean
+
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
