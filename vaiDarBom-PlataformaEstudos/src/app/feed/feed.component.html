@@ -2,7 +2,7 @@
 
    <div class = 'd-flex justify-content-center'>
       <h2>Como funciona o FEED?</h2>
-      <h3> Aqui você pode postar suas ideias, duvidas</h3>
+      <p> Aqui você pode postar suas ideias, duvidas</p>
    </div>
 
     <div class="row">
@@ -43,14 +43,13 @@
           </div>
           <div class="card gedf-card mb-3 mt-3">
              <div class="card-body">
-                <h5 class="card-title">Temas</h5>
                 <nav class="d-flex justify-content-center">
-                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
-                         role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
-                      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab"
-                         aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
-                   </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Taboada de Pitagoras</h5>
+                     <h6 class="card-subtitle mb-2 text-muted">Matematica</h6>
+                     <p class="card-text"> Existem formas mais simples de resolver calculos de multiplicação, veja:</p>
+                     <a href="#" class="card-link">DA UMA OLHADA :D </a>
+                  </div>
                 </nav>
              </div>
           </div>
@@ -77,8 +76,11 @@
                    </div>
                    <div class="col-md-6">
                       <div class="form-group m-0">
-                         <label class="text-monospace" for="tema">Escolha um tema
+
+                         <label class="text-monospace" for="tema">Escolha um tema ou  
+                            <a routerLink='/cadastro-tema'>CRIE UM</a> 
                          </label>
+                         
                          <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                          <option *ngFor='let item of listaTemas' value={{item.id}}>
                             {{item.descricao}}
@@ -133,11 +135,10 @@
                                <div class="h7 text-muted"> {{item.tema.descricao}} </div>
                             </div>
                          </div>
-                         <div>
                             <div class="highlight">
                                Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
-                            </div>
-                         </div>
+                           </div>        
+            
                       </div>
                    </div>
                    <div class="card-body">
@@ -146,8 +147,8 @@
                          {{item.mensagem}}
                       </p>
                       <hr>
-                      <button type="button" class=" mr-3 btn btn-info w-25"  [routerLink]="['/editar-post', item.id]"> EDITAR </button>
-                      <button type="button" class="btn btn-danger w-25"   [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                      <button type="button" class="btn btn-info mr-2"  [routerLink]="['/editar-post', item.id]"> EDITAR </button>
+                      <button type="button" class="btn btn-danger mr-2"[routerLink]="['/delete-post', item.id]"> DELETAR </button>
                    </div>
                 </div>
 
