@@ -38,7 +38,7 @@ public class SwaggerConfig {
 		}    
 	private Contact contact(){
 		return new Contact("Antonia Martins, Gabriela França, Jefferson Russo, Lucas Silveira, Matheus Jesus",
-				"https://github.com/antonia-stephanie, https://github.com/JeffersonRusso, https://github.com/LssLucas, https://github.com/mjfo1910",
+				"https://github.com/antonia-stephanie, https://github.com/gaabiizynha, https://github.com/JeffersonRusso, https://github.com/LssLucas, https://github.com/mjfo1910",
 				"Grupo Projeto Integrador - Full Stack Java/Angular");
 		}
 	}

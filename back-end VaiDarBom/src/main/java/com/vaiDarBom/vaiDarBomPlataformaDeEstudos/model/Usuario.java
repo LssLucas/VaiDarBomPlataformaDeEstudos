@@ -1,5 +1,6 @@
 package com.vaiDarBom.vaiDarBomPlataformaDeEstudos.model;
 
+import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,45 @@ public class Usuario {
 	@NotNull
 	@Size(min=8)
 	private String senha;
+	
+	/*  ########### INFO USUARIO ########### */
+	
+	@NotNull
+	private String cidade;
+	
+	@NotNull
+	@Size(max=300)
+	private String sobreUsuario;
+	
+	@NotNull
+	private String ano;
+	
+
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getSobreUsuario() {
+		return sobreUsuario;
+	}
+
+	public void setSobreUsuario(String sobreUsuario) {
+		this.sobreUsuario = sobreUsuario;
+	}
+	
+	/*  ########### INFO USUARIO ########### */
 
 	public long getId() {
 		return id;
