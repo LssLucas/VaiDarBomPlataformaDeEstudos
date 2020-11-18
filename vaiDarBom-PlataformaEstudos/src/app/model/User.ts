@@ -3,6 +3,9 @@ export class User{
     public usuario: string
     public nome: string
 	public senha: string
+	public cidade: string
+	public sobreUsuario: string
+	public ano: string
 }
 
 /*
@@ -25,4 +28,14 @@ public class Usuario {
 	@NotNull
 	@Size(min=8)
 	private String senha;
+
+	@NotNull
+	private String cidade;
+	
+	@NotNull
+	@Size(max=300)
+	private String sobreUsuario;
+	
+	@NotNull
+	private String ano;
 */

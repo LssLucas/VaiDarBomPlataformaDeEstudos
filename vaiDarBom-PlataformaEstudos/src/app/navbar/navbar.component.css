@@ -3,11 +3,11 @@
 }
 
 .logoVaiDarBom {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
-.text-h1 {
+.h1 {
     font-family: 'Barlow Condensed', sans-serif;
     text-shadow: .1em .1em #7b43d5;
     color: #42d1fd !important;
@@ -30,6 +30,7 @@ h5 {
     text-shadow: .1em .1em #7b43d5;
     color: #42d1fd !important;
 }
+
 ul {
     padding: 0;
     margin: 0;
@@ -39,21 +40,15 @@ ul {
 ul li {
     list-style-type: none;
     width: 100px;
-    height: 53px;
-    margin: 0 20px;
-    border: 2px solid #0a3d62;
+    height: 45px;
+    margin: 0px;
+    border: 2px solid #ffffff;
     border-radius: 10%;
     transition: all 0.5s;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-ul li i {
-    font-size: 48px;
-    color: #0a3d62;
-    transition: 0.5s;
 }
 
 ul li:before {
@@ -63,23 +58,17 @@ ul li:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0a3d62;
+    background-color: #42d1fd;
     border-radius: 10%;
     transition: all 0.5s;
     opacity: 0;
     z-index: -1;
+    color: #7b43d5;
 }
 
 ul li:hover:before {
     opacity: 1;
     transform: scale(0.8);
-}
-
-
-
-ul li:hover:after {
-    opacity: 1;
-    animation: rotating 10s linear infinite;
 }
 
 @keyframes rotating {
@@ -93,5 +82,5 @@ ul li:hover:after {
 
 ul li:hover i {
     color: white;
+    border: white;
 }
-

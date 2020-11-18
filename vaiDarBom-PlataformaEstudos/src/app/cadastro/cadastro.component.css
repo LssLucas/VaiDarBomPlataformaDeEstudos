@@ -20,6 +20,16 @@ a {
 * {
     box-sizing: border-box;
 }
+.option {
+    color: #7b43d5;
+}
+
+.falasobrevc
+{
+    color: #7b43d5;
+    font-weight: normal;
+    font-family: 'Barlow Condensed', sans-serif;
+}
 
 
 /* .btn-container {
