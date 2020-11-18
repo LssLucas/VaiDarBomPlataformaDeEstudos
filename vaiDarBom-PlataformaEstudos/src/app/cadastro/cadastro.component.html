@@ -22,28 +22,25 @@
                         </div>
                     </div>
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
-
-
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <div class="col">
-                        <div class="group">
-                            <input type="text" [(ngModel)]='user.ano' id="ano" name="ano" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Ano Matriculado</label>
-                        </div>
+                <select name="select-simples" class="ls-select">
+                    <option value="MG">SELECIONE SUA IDADE</option>
+                  <option value="MG">6º ANO</option>
+                  <option value="SP">7º ANO</option>
+                  <option value="RJ">8º ANO</option>
+                </select>
                         <div class="group">
                             <input type="text" [(ngModel)]='user.cidade' id="cidade" name="cidade" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Cidade</label>
                         </div>
-                        <div class="group">
-                            <textarea type="text" [(ngModel)]='user.bio' id="bio" name="bio" required></textarea>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Conta um pouco sobre vc</label>
-                        </div>
+            <div class="group">                
+                <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>                
+                </textarea>
+                <span class="falasobrevc">Fale sobre você</span>
+              </div>
                     </div>
                     <div class="col">
                         <div class="group">
@@ -63,7 +60,6 @@
 
                     <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <button class="btn btn-lg btnCadastrar btn-block text-uppercase" (click)='cadastrar()'>cadastrar</button>
-
                 </div>
             </div>
         </div>

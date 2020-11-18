@@ -3,8 +3,8 @@
 }
 
 .logoVaiDarBom {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
 .h1 {
@@ -40,9 +40,10 @@ ul {
 ul li {
     list-style-type: none;
     width: 100px;
-    height: 53px;
-    margin: 0 20px;
-    border: 2px solid #42d1fd;
+
+    height: 45px;
+    margin: 0px;
+    border: 2px solid #ffffff;
     border-radius: 10%;
     transition: all 0.5s;
     position: relative;

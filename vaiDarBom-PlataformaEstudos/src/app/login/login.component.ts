@@ -1,9 +1,9 @@
 import { environment } from './../../environments/environment.prod';
 
-import { Component, OnInit } from '@angular/core';
+import { UserLogin } from './../model/UserLogin';
 import { Router } from '@angular/router';
-import { UserLogin } from '../model/UserLogin';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from './../service/auth.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -31,4 +31,5 @@ export class LoginComponent implements OnInit {
       environment.cidade = this.userLogin.cidade
     })
   }
+
 }

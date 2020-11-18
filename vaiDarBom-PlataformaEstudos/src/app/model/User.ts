@@ -28,4 +28,14 @@ public class Usuario {
 	@NotNull
 	@Size(min=8)
 	private String senha;
+
+	@NotNull
+	private String cidade;
+	
+	@NotNull
+	@Size(max=300)
+	private String sobreUsuario;
+	
+	@NotNull
+	private String ano;
 */

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PutPostagemComponent } from './put-postagem.component';
 
 describe('PutPostagemComponent', () => {

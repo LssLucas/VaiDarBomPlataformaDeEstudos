@@ -1,7 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-
 import { PutTemaComponent } from './put-tema.component';
 
 describe('PutTemaComponent', () => {
