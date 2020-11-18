@@ -1,9 +1,9 @@
 import { environment } from './../../environments/environment.prod';
 
-import { Component, OnInit } from '@angular/core';
+import { UserLogin } from './../model/UserLogin';
 import { Router } from '@angular/router';
-import { UserLogin } from '../model/UserLogin';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from './../service/auth.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -21,11 +21,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){ }
 
-  entrar() {
-      this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
-      this.userLogin = resp
-      this.router.navigate(['/feed'])
-      environment.token = this.userLogin.token
-    })
-  }
+  entrar() { this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
+    this.userLogin = resp
+    environment.token = this.userLogin.token
+    environment.nome = this.userLogin.nome
+   
+    this.router.navigate(['/feed'])
+  })
+}
 }

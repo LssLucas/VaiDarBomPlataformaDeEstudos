@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Router } from '@angular/router';
 import { AlertasService } from './../service/alertas.service';
 import { TemaService } from './../service/tema.service';
@@ -5,8 +6,7 @@ import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
-import { User } from '../model/User';
-import { environment } from './../../environments/environment.prod';
+
 
 @Component({
   selector: 'app-feed',
@@ -20,6 +20,7 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  
   titulo: string
   
 
@@ -42,6 +43,7 @@ export class FeedComponent implements OnInit {
 
     window.scroll(0, 0)
     let token = environment.token
+    let nome = environment.nome
   
     this.findAllPostagens()
     this.findAllTemas()

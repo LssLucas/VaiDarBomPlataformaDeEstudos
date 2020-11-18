@@ -24,24 +24,54 @@
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
 
 
-                    <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
-                    <div class="col">
-                        <div class="group">
-                            <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Confirmar Senha</label>
-                        </div>
 
-                        <div class="group">
-                            <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Senha</label>
-                        </div>
-                    </div>
-                    <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
-                    <button class="btn btn-lg btnCadastrar btn-block text-uppercase" (click)='cadastrar()'>cadastrar</button>
+          <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
+        <div class="col">
+
+            <div class="group">
+                <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Senha</label>
+                <span>No minimo 8 caracteres</span>
+            </div>
+
+            <div class="group">
+                <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Confirmar Senha</label>
+                <span>   </span>
+            </div>
+            
+            <div class="group">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>cidade</label>
+                <span>   </span>
+            </div>
+
+        </div>
+
+        
+        <div class="col">
+                <select name="select-simples" class="ls-select">
+                    <option value="MG">SELECIONE SUA IDADE</option>
+                  <option value="MG">6º ANO</option>
+                  <option value="SP">7º ANO</option>
+                  <option value="RJ">8º ANO</option>
+                </select>
+            <div class="group">
+                
+                <textarea class="text" rows="3">        
+                
+                </textarea>
+                <span class="falasobrevc">Fale sobre você</span>
+              </div>
+        </div>
+        <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)='cadastrar()'>Logar</button>
 
                 </div>
             </div>

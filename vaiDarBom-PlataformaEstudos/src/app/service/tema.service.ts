@@ -10,7 +10,8 @@ export class TemaService {
   constructor(private http: HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('Authorization',  environment.token)
+
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
   getByNomeTema(nome: string){
@@ -34,6 +35,5 @@ export class TemaService {
     }
   deleteTema(id:number){
       return this.http.delete(`http://localhost:8080/tema/${id}`, this.token)
-  
     }
 }
