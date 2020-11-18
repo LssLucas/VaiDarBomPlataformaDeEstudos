@@ -42,27 +42,6 @@
              <!--  ==== FIM ====  -->
           </div>
 
-
-          <div class="card gedf-card mb-3 mt-3">
-             <div class="card-body">
-                <nav class="d-flex justify-content-center">
-                  <div class="card-body">
-                     <h5 class="card-title">
-                         <!-- TITULO OU TEMA -->
-                     </h5>
-                     <h6 class="card-subtitle mb-2 text-muted">
-                         <!-- TITULO OU TEMA -->
-                         Matematica
-                        </h6>
-                        <p class="card-text">
-                         <!-- MENSAGEM -->
-                          Existem formas mais simples de resolver calculos de multiplicação, veja:
-                        </p>
-                     <a href="#" class="card-link">DA UMA OLHADA :D </a>
-                  </div>
-                </nav>
-             </div>
-          </div>
        </div>
 
 
@@ -129,8 +108,8 @@
                 <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
 
              <div class="row mt-3 mb-3">
-                <div class="col-md-12 pr-0">
-                  <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                <div class="col pr-0 d-flex">
+                  <input class="form-control w-75" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
                 </div>
               </div>
 
@@ -180,13 +159,13 @@
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
                                 
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                          <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        <div class="col pr-0 d-flex">
+                          <input class="form-control w-75" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                         </div>
                       </div>
     
                     <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                        <div *ngFor="let item of tema.postagem">
+                        <div *ngFor="let post of tema.postagem">
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -194,24 +173,24 @@
                                             <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
                                         </div>
                                         <div class="ml-2">
-                                            <div class="h5 m-0"> {{item.titulo}} </div>
+                                            <div class="h5 m-0"> {{post.titulo}} </div>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="highlight">
-                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                            Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"> {{item.titulo}} </h5>
+                                <h5 class="card-title"> {{post.titulo}} </h5>
                                 <p class="card-text">
-                                    {{item.mensagem}}
+                                    {{post.mensagem}}
                                 </p>
                                 <hr>
-                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
-                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', post.id]"> EDITAR </button>
+                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', post.id]"> DELETAR </button>
                             </div>
                         </div>
                     </div>

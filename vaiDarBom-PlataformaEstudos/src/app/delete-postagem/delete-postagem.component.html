@@ -4,8 +4,6 @@
           <div class="card card-signin my-5">
               <div class="card-body">
                   <h5 class="card-title text-center">{{postagem.titulo}}</h5>
-
-                  <hr>
                 
                       
                <div class="col">
@@ -15,18 +13,22 @@
                     <small id="texto" class="form-text m-0 text-muted mb-3">
                       Postado em {{ postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
                 </div>
-              </div>
-                  
-               </div>
-               <div class="row">
-                <div class="col">
-                  <div class="d-flex justify-content-around">
-                    <button class="btn btn-outline-success" (click)="btnSim()">Sim</button>
+              
+                  <div class="row">
+                    <div class="d-flex ">
+                      <button class="btn btn-outline-success" (click)="btnSim()">Sim</button>
+                    </div>
+                  </div>
+                 <div class="row">
+                  <div class="d-flex">
                     <button class="btn btn-outline-danger" (click)="btnNao()" >Não</button>
                   </div>
-                </div>
+                 </div>
+                
+               
+
               </div>
-              </div>
+
               
           </div>
 
