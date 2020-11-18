@@ -3,6 +3,9 @@ export class User{
     public usuario: string
     public nome: string
 	public senha: string
+	public cidade: string
+	public ano: string
+	public bio: string
 }
 
 /*

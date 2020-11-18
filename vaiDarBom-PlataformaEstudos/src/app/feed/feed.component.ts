@@ -5,7 +5,6 @@ import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
-import { User } from '../model/User';
 import { environment } from './../../environments/environment.prod';
 
 @Component({
@@ -14,6 +13,13 @@ import { environment } from './../../environments/environment.prod';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
+  bioUser = environment.bio
+  fotoUser = environment.foto
+  cidadeUser = environment.cidade
+  nomeUser = environment.nome
+  anoUser = environment.ano
+  idUser = environment.token //Quero deixar no alt da tag img o id do usuario
 
   key = 'data'
   reverse = true

@@ -26,6 +26,9 @@ export class LoginComponent implements OnInit {
       this.userLogin = resp
       this.router.navigate(['/feed'])
       environment.token = this.userLogin.token
+      environment.foto = this.userLogin.foto
+      environment.bio = this.userLogin.bio
+      environment.cidade = this.userLogin.cidade
     })
   }
 }
