@@ -11,7 +11,7 @@
                             <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label>Nome</label>
+                            <label for="nome">Nome</label>
                         </div>
 
                         <div class="group">
@@ -24,23 +24,24 @@
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <div class="col">
-                <select name="select-simples" class="ls-select">
-                    <option value="MG">SELECIONE SUA IDADE</option>
-                  <option value="MG">6º ANO</option>
-                  <option value="SP">7º ANO</option>
-                  <option value="RJ">8º ANO</option>
-                </select>
+                        <select name="select-simples" class="ls-select">
+                            <option value="selected">SELECIONE SUA IDADE</option>
+                            <option value="sextoano">6º ANO</option>
+                            <option value="setimoano">7º ANO</option>
+                            <option value="oitavoano">8º ANO</option>
+                            <option value="nonoano">9º ANO</option>
+                        </select>
                         <div class="group">
                             <input type="text" [(ngModel)]='user.cidade' id="cidade" name="cidade" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Cidade</label>
                         </div>
-            <div class="group">                
-                <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>                
+                        <div class="group">
+                            <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>
                 </textarea>
-                <span class="falasobrevc">Fale sobre você</span>
-              </div>
+                            <span class="falasobrevc">Fale sobre você</span>
+                        </div>
                     </div>
                     <div class="col">
                         <div class="group">
