@@ -1,4 +1,3 @@
-import { environment } from './../../environments/environment.prod';
 import { Router } from '@angular/router';
 import { AlertasService } from './../service/alertas.service';
 import { TemaService } from './../service/tema.service';
@@ -17,7 +16,6 @@ import { environment } from './../../environments/environment.prod';
 export class FeedComponent implements OnInit {
 
   bioUser = environment.bio
-  fotoUser = environment.foto
   cidadeUser = environment.cidade
   nomeUser = environment.nome
   anoUser = environment.ano
@@ -58,7 +56,7 @@ export class FeedComponent implements OnInit {
 
     if(token == ''){
       this.router.navigate(['/login'])
-      this.alerta.showAlertInfo('Faz o login ae mano')
+      this.alerta.showAlertInfo('Para acessar faça login')
     }
   }
 
