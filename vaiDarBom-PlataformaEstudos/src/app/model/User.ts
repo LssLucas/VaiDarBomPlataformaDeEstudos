@@ -4,8 +4,8 @@ export class User{
     public nome: string
 	public senha: string
 	public cidade: string
-	public sobreUsuario: string
 	public ano: string
+	public bio: string
 }
 
 /*
