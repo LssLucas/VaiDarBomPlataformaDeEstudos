@@ -158,7 +158,7 @@ input:valid~label,
 textarea:valid~label {
     top: -20px;
     font-size: 14px;
-    color: rgb(223, 11, 11);
+    color: #42d1fd;
     font-family: 'Barlow Condensed', sans-serif;
 }
 
@@ -248,4 +248,14 @@ textarea:focus~.highlight {
 .container-bg {
     margin-bottom: 45px;
     border-radius: 30px;
+}
+
+.btnEntrar {
+    background-color: #42d1fd;
+    color: #7b43d5;
+}
+
+.btnEntrar:hover {
+    background-color: #7b43d5;
+    color: #42d1fd;
 }

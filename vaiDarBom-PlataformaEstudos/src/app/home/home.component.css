@@ -29,8 +29,10 @@
     padding: 30px;
   }
 
+
 .text-h1 {
     font-family:'Roboto Condensed', sans-serif;
+
     color:#7b43d5;
 }
 
@@ -40,7 +42,9 @@
   color: white;
   
 
+
 }
+
 #video{
   width: 750px;
   margin:0 auto;
@@ -53,3 +57,4 @@
   color: black;
   font-weight: bold;
 }
+

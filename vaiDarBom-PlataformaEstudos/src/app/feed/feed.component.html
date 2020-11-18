@@ -1,9 +1,9 @@
 <div class="container-fluid gedf-wrapper">
 
-   <div class = 'd-flex justify-content-center'>
-      <h2>Como funciona o FEED?</h2>
-      <p> Aqui você pode postar suas ideias, duvidas</p>
-   </div>
+    <div class='d-flex justify-content-center m-3'>
+        <h2 class="mr-2">Como funciona o FEED? </h2>
+        <h2 class="feed-fade"> Aqui você pode postar suas ideias, duvidas</h2>
+    </div>
 
     <div class="row">
         <div class="col-md-3 p-3">
@@ -12,6 +12,7 @@
                 <!--  ==== INICIO ==== 
                 CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
                 -->
+
              <div class="container">
                 <!-- NOME DO USUARIO -->
                 <h4 class="text-center">
@@ -96,6 +97,7 @@
                          </label>
                          
                          <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                           
                          <option *ngFor='let item of listaTemas' value={{item.id}}>
                             {{item.descricao}}
                          </option>
@@ -103,6 +105,7 @@
                             </div>
                         </div>
                     </div>
+<
                     
                 </div>
                 <div class="card-body">
@@ -122,6 +125,7 @@
                 </div>
             </div>
             <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
+
             <!-- ==== POST ====  -->
 
             <div class="tab-content" id="nav-tabContent">
@@ -181,6 +185,7 @@
                                 
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
+
                           <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
                         </div>
                       </div>
@@ -203,6 +208,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"> {{item.titulo}} </h5>
@@ -213,6 +219,7 @@
                                 <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
                                 <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -223,6 +230,7 @@
         </div>
         <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
         <div class="col-md-3">
+
             <div class="card bg bg-info mb-3 mt-3">
                 <div class="card-body">
                     <h4 class="card-title">MENTALIDADE</h4>

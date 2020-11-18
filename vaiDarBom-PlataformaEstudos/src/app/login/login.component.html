@@ -12,6 +12,7 @@
                         <span class="bar"></span>
                         <label>USUARIO</label>
                     </div>
+
                         
                         <!-- input da senha -->
                         <div class="group">
@@ -21,7 +22,15 @@
                             <label>SENHA</label>
                         </div>
 
-                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)='entrar()'>Entrar</button>
+                    <!-- input da senha -->
+                    <div class="group">
+                        <input type="text" [(ngModel)]='userLogin.senha' id="nome" name="nome" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>SENHA</label>
+                    </div>
+
+                    <button class="btn btn-lg btnEntrar btn-block text-uppercase" type="submit" (click)='entrar()'>Entrar</button>
                 </div>
             </div>
         </div>
