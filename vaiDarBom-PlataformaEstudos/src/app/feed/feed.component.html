@@ -30,7 +30,7 @@
                     <p class="ng-binding"><i class="margin-right w3-text-theme"></i> {{anoUser}}
                     </p>
 
-                    
+
                     <!-- COISA QUE O USUARIO CURTE FAZER -->
                     <h3>Sobre mim: </h3>
                     <p class="ng-binding">
@@ -123,7 +123,7 @@
                                     <div class="ml-2">
                                         <h3 class="h5 m-0"> {{item.titulo}} </h3>
                                         <h4 class="h7 text-muted"> {{item.tema.descricao}} </h4>
-                                      
+
                                     </div>
                                 </div>
                                 <div class="highlight">
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                        <div *ngFor="let post of tema.postagem">
+                        <div *ngFor="let item of tema.postagem">
                             <div class="card-header">
                                 <div class="col m-0 d-flex justify-content-end">
                                     <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
@@ -169,23 +169,23 @@
                                         <div class="ml-2">
 
                                             <h3 class="h5 m-0"> {{item.titulo}} </h3>
-                                        <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
-                                            
+                                            <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
+
                                         </div>
                                     </div>
                                     <div>
                                         <div class="highlight">
-                                            Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
+                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
                                         </div>
                                     </div>
 
-                                   </div>
-                                
+                                </div>
+
                             </div>
                             <div class="card-body">
 
                                 <p class="card-text">
-                                    {{post.mensagem}}
+                                    {{item.mensagem}}
                                 </p>
                                 <hr>
 
@@ -222,7 +222,7 @@
 
                     <h6 class="card-subtitle mb-2">MATEMATICA</h6>
                     <p class="card-text d-flex"> 50 + 50 = ?
-                    
+
                     </p>
                     <button class="btn btn-outline-warning w-100" type="button" (click)='resposta()'>RESPOSTA</button>
 
