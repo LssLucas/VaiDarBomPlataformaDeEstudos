@@ -1,263 +1,179 @@
-<div class="container-fluid gedf-wrapper">
+Skip to content
+Search or jump to…
 
-  <div class = 'd-flex justify-content-center'>
-     <h2>Como funciona o FEED?</h2>
-     <p> Aqui você pode postar suas ideias, duvidas</p>
-  </div>
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@JeffersonRusso 
+limathiagos
+/
+blogPessoal
+1
+21
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+blogPessoal/blogPessoal/src/app/feed/feed.component.html
+@limathiagos
+limathiagos Inserção de foto, nome, bio, linkGithub, linkLinkedin de forma dinami…
+…
+Latest commit b92aa10 28 days ago
+ History
+ 1 contributor
+149 lines (113 sloc)  5.73 KB
+  
+<div class="container">
 
-   <div class="row">
-       <div class="col-md-3 p-3">
-           <!-- CARD-->
-           <div class="card gedf-card w3-animate-left">
-               <!--  ==== INICIO ==== 
-               CONTEINER DAS INFORMAÇÕES PESSOAIS DO USUARIO
-               -->
-            <div class="container">
-               <!-- NOME DO USUARIO -->
-               <h4 class="text-center">
-                   
-               </h4>
-               <hr>
-               <!-- AVATAR -->
-               <p class="text-center"><img
-                  src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg"
-                  class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
-               </p>
-               <hr>
-               <!-- PULO DE LINHA -->
-               <!-- DECRICÃO BASICA DO USUARIO-->
-               <p class="ng-binding"><i class="margin-right w3-text-theme"></i>
-                  Jogador de bola
-               </p>
-               <!-- ENDEREÇO DO USUARIO-->
-               <p class="ng-binding">
-                  Cidade de deus, RJ
-               </p>
-               <!-- COISA QUE O USUARIO CURTE FAZER -->
-               <h2> EU CURTO ESSAS COISAS</h2>
-               <p class="ng-binding">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ut voluptates et, omnis saepe eos sit minima perferendis nobis, velit neque porro maiores quo aspernatur amet aut. Facere, quos nemo! 
-               </p>
-            </div>
-            <!--  ==== FIM ====  -->
-         </div>
+  <div class="row">
+
+    <div class="col-md-4">
+      <app-perfil-lateral></app-perfil-lateral>
+    </div>
+
+    <div class="col-md-8">
+
+      <h3 class="text-center mb-4 text-monospace">Como tem sido minha experiência na Generation?</h3>
+
+      <div class="form-group">
+        <label class="text-monospace" for="titulo">Título:</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo" [(ngModel)]='postagem.titulo'>
+      </div>
+
+      <div class="form-group">
+          <label class="text-monospace" for="texto">Texto:</label>
+          <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto" [(ngModel)]='postagem.texto'></textarea>
+          <small class="text-danger">*Digite no minimo 10 caracteres</small>
+      </div>
+
+      <div class="row d-flex align-items-end">
+
+        <div class="col-md-6">
+          <div class="form-group m-0">
+            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
+            </label>
+            <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option *ngFor='let item of listaTemas' value={{item.id}}>
+                {{item.descricao}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-info w-25" (click)='publicar()'>Publicar</button>
+        </div>
 
       </div>
 
+      <hr class="mt-5 mb-5">
 
-      <!--  ==== COLUNA MEIO ====  -->
-      <div class="col-md-6">
-         <!--  ==== SISTEMA DE POSTAGEM ====  -->
-         <nav class="d-flex justify-content-center">
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-               <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
-                  role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
-               <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab"
-                  aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
+      <nav class="d-flex justify-content-center">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
+            role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+
+          <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab"
+            aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
+        </div>
+      </nav>
+
+      <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+          <div class="row mt-3 mb-3">
+            <div class="col-md-10 pr-0">
+              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='titulo'>
             </div>
-         </nav>
-         <div class="card mb-3 mt-3">
-            <div class="card-header">
+            <div class="col-md-2 pl-0">
+              <button class="btn btn-outline-warning w-100" type="button" (click)='findByTituloPostagem()'>Pesquisar</button>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-md-12">
 
-               <div class = "d-flex justify-content-arround align-items-center">
-                  <div class="col-md-5">
-                     <div class="input-group-prepend">
-                        <label class="text-monospace" for="tema">Titulo</label>
-                     </div>
-                     <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group m-0">
-
-                        <label class="text-monospace" for="tema">Escolha um tema ou  
-                           <a class = "bg-info" routerLink='/cadastro-tema'>CRIE UM AQUI</a> 
-                        </label>
-                        
-                        <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                        <option *ngFor='let item of listaTemas' value={{item.id}}>
-                           {{item.descricao}}
-                        </option>
-                        </select>
-                           </div>
-                       </div>
-                   </div>
-                   
-               </div>
-               <div class="card-body">
-                   <div class="tab-content" id="myTabContent">
-                       <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                           <div class="form-group">
-                               <label class="sr-only" for="message">post</label>
-                               <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem'></textarea>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="btn-toolbar justify-content-between">
-                       <div class="btn-group">
-                           <button type="button" class="btn btnPublicar brilhar" (click)='publicar()'>Publicar</button>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <!-- FIM ==== SISTEMA DE POSTAGEM ====  -->
-           <!-- ==== POST ====  -->
-
-           <div class="tab-content" id="nav-tabContent">
-
-               <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
-
-            <div class="row mt-3 mb-3">
-               <div class="col pr-0 d-flex">
-                 <input class="form-control w-75" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
-               </div>
-             </div>
-
-            
-               <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
-                  <div class="card-header m-0">
-                       <div class="col m-0 d-flex justify-content-end">
-
-                       <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
-                           Editar
-                       </button>
-
-                       <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
-                           Apagar
-                       </button>
-
-                   </div>
-
-                     <div class="d-flex justify-content-between">
-                        <div class="d-flex justify-content-between align-items-center">
-                           <div class="mr-2">      
-                              <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
-                           </div>
-                           <div class="ml-2">
-                              <div class="h5 m-0">  {{item.titulo}} </div>
-                              <div class="h7 text-muted"> {{item.tema.descricao}} </div>
-                           </div>
+              <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagens | orderBy : key : reverse">
+                <div class="card-header">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-8">
+                            <h5 class="card-title"> {{item.titulo}} </h5>
+                            <small>Tema: {{item.tema.descricao}} </small>
                         </div>
-                           <div class="highlight">
-                              Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
-                          </div>        
-           
-                     </div>
-                  </div>
-                  <div class="card-body">
-                     <h5 class="card-title"> {{item.titulo}} </h5>
-                     <p class="card-text">
-                        {{item.mensagem}}
-                     </p>
-                     <hr>
-                     
-                  </div>
-               </div>
+                        <div class="col-md-4 d-flex justify-content-end">
+
+                            <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
+                                Editar
+                            </button>
+
+                            <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
+                                Apagar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body" >
+                  <p class="card-text" aria-describedby="texto"> {{item.texto}} </p>
+                  <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                    Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
 
 
-               </div>
-               <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
-                               
-                   <div class="row mt-3 mb-3">
-                       <div class="col pr-0 d-flex">
-                         <input class="form-control w-75" type="search" placeholder="Pesquisar postagem" (keyup) = 'findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
-                       </div>
-                     </div>
-   
-                   <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                       <div *ngFor="let post of tema.postagem">
-                           <div class="card-header">
-                               <div class="d-flex justify-content-between">
-                                   <div class="d-flex justify-content-between align-items-center">
-                                       <div class="mr-2">
-                                           <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
-                                       </div>
-                                       <div class="ml-2">
-                                           <div class="h5 m-0"> {{post.titulo}} </div>
-                                       </div>
-                                   </div>
-                                   <div>
-                                       <div class="highlight">
-                                           Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="card-body">
-                               <h5 class="card-title"> {{post.titulo}} </h5>
-                               <p class="card-text">
-                                   {{post.mensagem}}
-                               </p>
-                               <hr>
-                               <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', post.id]"> EDITAR </button>
-                               <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', post.id]"> DELETAR </button>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
 
-           <!--  ==== POST ====  -->
-           <!--  ==== COLUNA MEIO ====  -->
-       </div>
-       <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
-       <div class="col-md-3">
-           <div class="card bg bg-info mb-3 mt-3">
-               <div class="card-body">
-                   <h4 class="card-title">MENTALIDADE</h4>
-                   <hr>
-                   <h5 class="card-subtitle mb-2">MENTALIDADE DE CRESCIMENTO</h5>
-                   <p class="card-text"> Tudo que você precisa saber para desenvolver uma mentalidade de sucesso
-                       Comece a aceitar as mudanças. ...
-                       Comece a definir metas. ...
-                       Comece a se comprometer com as coisas. ...
-                       Comece a identificar o seu propósito. ...
-                       Comece a acreditar em você e seus objetivos. ...
-                       Comece a cultivar a paciência. ...
-                       </p>
-                   <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link"> PRA VER MAIS CLICA AQUI</a>
-               </div>
-           </div>
-           <div class="card bg bg-danger mb-3 mt-3">
-               <div class="card-body">
-                   <h4 class="card-title bg-danger">DESAFIO</h4>
-                   <hr>
-                   <h5 class="card-subtitle mb-2">QUEM DESCOBRIU O BRASIL?</h5>
-                   <p class="card-text"> Tudo que você precisa saber para desenvolver uma mentalidade de sucesso
-                       Comece a aceitar as mudanças. ...
-                       Comece a definir metas. ...
-                       Comece a se comprometer com as coisas. ...
-                       Comece a identificar o seu propósito. ...
-                       Comece a acreditar em você e seus objetivos. ...
-                       Comece a cultivar a paciência. ...
-                       <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-                       </p>
-                   <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link"> PRA VER MAIS CLICA AQUI</a>
-               </div>
-           </div>
-           <div class="card bg bg-wa mb-3 mt-3">
-               <div class="card-body">
-                   <h4 class="card-title">DICA</h4>
-                   <hr>
-                   <h5 class="card-subtitle mb-2">ESTUDO NA QUARENTENA</h5>
-                   <p class="card-text"> Em quarentena? 7 dicas para estudar em casa e não perder o ritmo
-                       Siga uma rotina. ...
-                       Defina um local de estudos. ...
-                       Tenha equilíbrio. ...
-                       Conecte-se com seus colegas. ...
-                       Peça ajuda da família. ...
-                       </p>
-                   <a href="https://guiadoestudante.abril.com.br/estudo/coronavirus-7-dicas-para-estudar-em-casa-e-nao-perder-o-ritmo/" class="card-link"> PRA VER MAIS CLICA AQUI</a>
-               </div>
-           </div>
-       </div>
-   </div>
+
+        <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
+          <div class="row mt-3 mb-3">
+            <div class="col-md-10 pr-0">
+              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+            </div>
+            <div class="col-md-2 pl-0">
+              <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12" *ngFor="let item of listaTemas | orderBy : key : reverse">
+              <div *ngFor='let post of item.postagem'>
+
+                <div class="card mt-5 mb-5" >
+                  <div class="card-header">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-12">
+                            <h5 class="card-title"> {{post.titulo}} </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body" >
+                  <p class="card-text" aria-describedby="texto"> {{post.texto}} </p>
+                  <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                    Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
+                </div>
+
+                </div>
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 
-<!-- <div *ngIf="teste; else falso">
 
-</div>
-<ng-template #falso>
-
-</ng-template> -->

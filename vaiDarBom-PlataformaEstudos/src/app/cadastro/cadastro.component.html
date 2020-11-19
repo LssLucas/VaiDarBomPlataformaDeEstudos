@@ -5,76 +5,60 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Cadastrar</h5>
 
-         <!-- COLUNA DE NOME E USUARIO LOGIN -->
-        <div class="col">
-            <div class="group">
-                <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Nome</label>
-            </div>
+                    <!-- COLUNA DE NOME E USUARIO LOGIN -->
+                    <div class="col">
 
-            <div class="group">
-                <input type="text" [(ngModel)]='user.usuario' id="usuario" name="nomeUsuario" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Usuario de login</label>
-                <span>No máximo 100 caracteres</span>
-            </div>
-        </div>
-         <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.cidade' [(ngModel)]='user.nome' id="nome" name="nome" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nome</label>
+                        </div>
 
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.usuario' id="usuario" name="usuario" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Usuario de login</label>
+                        </div>
 
-          <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
-        <div class="col">
-
-            <div class="group">
-                <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Senha</label>
-                <span>No minimo 8 caracteres</span>
-            </div>
-
-            <div class="group">
-                <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Confirmar Senha</label>
-                <span>   </span>
-            </div>
-            
-            <div class="group">
-                <input type="text" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>cidade</label>
-                <span>   </span>
-            </div>
-
-        </div>
-
-        
-        <div class="col">
-                <select name="select-simples" class="ls-select">
-                    <option value="MG">SELECIONE SUA IDADE</option>
-                  <option value="MG">6º ANO</option>
-                  <option value="SP">7º ANO</option>
-                  <option value="RJ">8º ANO</option>
-                </select>
-            <div class="group">
-                
-                <textarea class="text" rows="3">        
-                
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.foto' id="usuario" name="usuario" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Foto </label>
+                        </div>
+                    </div>
+                    <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
+                    <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
+                    <div class="col">
+                     
+                        <div class="group">
+                            <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>
                 </textarea>
-                <span class="falasobrevc">Fale sobre você</span>
-              </div>
-        </div>
-        <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
-        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)='cadastrar()'>Logar</button>
+                            <span class="falasobrevc">Fale sobre você</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="group">
+                            <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Senha</label>
+                        </div>
 
-    </div>
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Confirmar Senha</label>
+                        </div>
+                    </div>
+
+                    <!-- FIM - COLUNA DE SENHA E CONFIRMAR SENHA -->
+                    <button class="btn btn-lg btnCadastrar btn-block text-uppercase" (click)='cadastrar()'>cadastrar</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
