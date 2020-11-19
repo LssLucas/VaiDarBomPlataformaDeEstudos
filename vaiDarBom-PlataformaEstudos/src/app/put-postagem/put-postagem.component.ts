@@ -4,6 +4,7 @@ import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import { AlertasService } from './../service/alertas.service';
 
 @Component({
   selector: 'app-put-postagem',
@@ -22,6 +23,7 @@ export class PutPostagemComponent implements OnInit {
     private temaService: TemaService,
     private postagemService: PostagemService,
     private router: Router,
+    private alerta: AlertasService,
     private route: ActivatedRoute
   ) { }
 
@@ -45,7 +47,7 @@ export class PutPostagemComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.router.navigate(['/feed'])
-      alert('Postagem modificada com sucesso!')
+      this.alerta.showAlerSucess('Postagem modificada com sucesso!')
     }, err => {
       if( err.status == '500' ){
         alert('Preencha todos os campos requeridos corretamente antes de enviar!')
