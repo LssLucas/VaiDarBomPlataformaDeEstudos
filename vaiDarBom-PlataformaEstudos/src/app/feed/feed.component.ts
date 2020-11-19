@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit {
   idUser = environment.token //Quero deixar no alt da tag img o id do usuario
   foto = environment.foto
 
+
   key = 'data'
   reverse = true
 

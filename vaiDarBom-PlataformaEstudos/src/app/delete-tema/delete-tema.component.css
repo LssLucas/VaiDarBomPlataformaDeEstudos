@@ -1,0 +1,9 @@
+.btnDelTema {
+    background-color: #42d1fd;
+    color: #7b43d5;
+}
+
+.btnDelTema:hover {
+    background-color: #7b43d5;
+    color: #42d1fd;
+}

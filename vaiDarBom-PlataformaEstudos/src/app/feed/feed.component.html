@@ -1,8 +1,10 @@
 <div class="container-fluid gedf-wrapper">
 
     <div class='d-flex justify-content-center m-3'>
-        <h2 class="mr-2">Como funciona o FEED? </h2>
-        <h2 class="feed-fade"> Aqui você pode postar suas ideias, duvidas</h2>
+
+        <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
+        <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
+
     </div>
 
     <div class="row">
@@ -14,6 +16,7 @@
                 -->
                 <div class="container">
                     <!-- NOME DO USUARIO -->
+
                     <h2 class="text-center">
                         {{cidadeUser}}
                     </h2>
@@ -26,6 +29,7 @@
                     <!-- DECRICÃO BASICA DO USUARIO-->
                     <p class="ng-binding"><i class="margin-right w3-text-theme"></i> {{anoUser}}
                     </p>
+
                     
                     <!-- COISA QUE O USUARIO CURTE FAZER -->
                     <h3>Sobre mim: </h3>
@@ -59,7 +63,8 @@
                         <div class="col-md-6">
                             <div class="form-group m-0">
                                 <label for="tema">Escolha um tema ou
-                                    <a class="bg-info" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
+
+                                    <a class="novoTema" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
                                 </label>
                                 <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                                     <option *ngFor='let item of listaTemas' value={{item.id}}>
@@ -91,14 +96,17 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-12 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+
+                        <div class="col d-flex">
+                            <input class="form-control d-flex" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+
                         </div>
                     </div>
                     <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
                         <div class="card-header m-0">
                             <div class="col m-0 d-flex justify-content-end">
                                 <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
+
                                     Editar
                                 </button>
                                 <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
@@ -108,12 +116,14 @@
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mr-2">
+
                                         {{cidadeUser}}
                                         <img class="rounded-circle" width="45" src="{{foto}}" alt="">
                                     </div>
                                     <div class="ml-2">
                                         <h3 class="h5 m-0"> {{item.titulo}} </h3>
                                         <h4 class="h7 text-muted"> {{item.tema.descricao}} </h4>
+                                      
                                     </div>
                                 </div>
                                 <div class="highlight">
@@ -122,6 +132,7 @@
                             </div>
                         </div>
                         <div class="card-body">
+
                             <p class="card-text">
                                 {{item.mensagem}}
                             </p>
@@ -130,17 +141,16 @@
                     </div>
                 </div>
 
-
-
-                <!-- -->
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+                        <div class="col d-flex">
+                            <input class="form-control" type="search" placeholder="Pesquisar tema" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                         </div>
                     </div>
+
                     <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                        <div *ngFor="let item of tema.postagem">
+                        <div *ngFor="let post of tema.postagem">
                             <div class="card-header">
                                 <div class="col m-0 d-flex justify-content-end">
                                     <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
@@ -157,6 +167,7 @@
                                             <img class="rounded-circle" width="45" src="{{foto}}" alt="">
                                         </div>
                                         <div class="ml-2">
+
                                             <h3 class="h5 m-0"> {{item.titulo}} </h3>
                                         <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
                                             
@@ -164,19 +175,22 @@
                                     </div>
                                     <div>
                                         <div class="highlight">
-                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                            Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
                                         </div>
                                     </div>
+
                                    </div>
                                 
                             </div>
                             <div class="card-body">
+
                                 <p class="card-text">
-                                    {{item.mensagem}}
+                                    {{post.mensagem}}
                                 </p>
                                 <hr>
-                                
+
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -195,7 +209,9 @@
                     <p class="card-text text-justify"> Tudo que você precisa saber para desenvolver uma mentalidade de sucesso Comece a aceitar as mudanças. ... Comece a definir metas. ... Comece a se comprometer com as coisas. ... Comece a identificar o seu propósito. ... Comece a acreditar
                         em você e seus objetivos. ... Comece a cultivar a paciência. ...
                     </p>
-                    <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link"> PRA VER MAIS
+
+                    <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link text-primary" target="_blank"> PRA VER MAIS
+
                         CLICA AQUI</a>
                 </div>
             </div>
@@ -203,14 +219,13 @@
                 <div class="card-body">
                     <h4 class="card-title text-danger">DESAFIO</h4>
                     <hr>
+
                     <h6 class="card-subtitle mb-2">MATEMATICA</h6>
                     <p class="card-text d-flex"> 50 + 50 = ?
-
-                       
-                        
-                        
+                    
                     </p>
                     <button class="btn btn-outline-warning w-100" type="button" (click)='resposta()'>RESPOSTA</button>
+
                 </div>
             </div>
             <div class="card bg bg-wa mb-3 mt-3 border border-info">
@@ -220,7 +235,8 @@
                     <h6 class="card-subtitle mb-2">ESTUDO NA QUARENTENA</h6>
                     <p class="card-text text-justify"> Em quarentena? 7 dicas para estudar em casa e não perder o ritmo Siga uma rotina. ... Defina um local de estudos. ... Tenha equilíbrio. ... Conecte-se com seus colegas. ... Peça ajuda da família. ...
                     </p>
-                    <a href="https://guiadoestudante.abril.com.br/estudo/coronavirus-7-dicas-para-estudar-em-casa-e-nao-perder-o-ritmo/" class="card-link"> PRA VER MAIS CLICA AQUI</a>
+                    <a href="https://guiadoestudante.abril.com.br/estudo/coronavirus-7-dicas-para-estudar-em-casa-e-nao-perder-o-ritmo/" class="card-link text-info" target="_blank"> PRA VER MAIS CLICA AQUI</a>
+
                 </div>
             </div>
         </div>
