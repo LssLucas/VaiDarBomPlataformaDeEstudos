@@ -1,8 +1,10 @@
 <div class="container-fluid gedf-wrapper">
 
     <div class='d-flex justify-content-center m-3'>
+
         <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
         <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
+
     </div>
 
     <div class="row">
@@ -14,49 +16,28 @@
                 -->
                 <div class="container">
                     <!-- NOME DO USUARIO -->
-                    <h4 class="text-center">
-                        {{nomeUser}}
-                    </h4>
+
+                    <h2 class="text-center">
+                        {{cidadeUser}}
+                    </h2>
                     <hr>
                     <!-- AVATAR -->
-                    <p class="text-center"><img src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
+                    <p class="text-center"><img src="{{foto}}" class="rounded-circle" style="height:106px;width:106px" alt="Avatar">
                     </p>
                     <hr>
                     <!-- PULO DE LINHA -->
                     <!-- DECRICÃO BASICA DO USUARIO-->
                     <p class="ng-binding"><i class="margin-right w3-text-theme"></i> {{anoUser}}
                     </p>
-                    <!-- ENDEREÇO DO USUARIO-->
-                    <p class="ng-binding">
-                        {{cidadeUser}}
-                    </p>
+
+                    
                     <!-- COISA QUE O USUARIO CURTE FAZER -->
-                    <h2>Sobre mim: </h2>
+                    <h3>Sobre mim: </h3>
                     <p class="ng-binding">
                         {{bioUser}}
                     </p>
                 </div>
                 <!--  ==== FIM ====  -->
-            </div>
-            <div class="card gedf-card mb-3 mt-3">
-                <div class="card-body">
-                    <nav class="d-flex justify-content-center">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <!-- TITULO OU TEMA -->
-                            </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <!-- TITULO OU TEMA -->
-                                Matematica
-                            </h6>
-                            <p class="card-text">
-                                <!-- MENSAGEM -->
-                                Existem formas mais simples de resolver calculos de multiplicação, veja:
-                            </p>
-                            <a href="#" class="card-link">DA UMA OLHADA :D </a>
-                        </div>
-                    </nav>
-                </div>
             </div>
         </div>
 
@@ -82,6 +63,7 @@
                         <div class="col-md-6">
                             <div class="form-group m-0">
                                 <label for="tema">Escolha um tema ou
+
                                     <a class="novoTema" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
                                 </label>
                                 <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
@@ -112,31 +94,36 @@
             <!-- FIM ==== SISTEMA DE POSTAGEM ===  -->
             <!-- ==== POST ====  -->
             <div class="tab-content" id="nav-tabContent">
-
                 <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
+
                         <div class="col d-flex">
                             <input class="form-control d-flex" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+
                         </div>
                     </div>
                     <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
                         <div class="card-header m-0">
                             <div class="col m-0 d-flex justify-content-end">
                                 <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
-                            Editar
-                        </button>
+
+                                    Editar
+                                </button>
                                 <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
-                            Apagar
-                        </button>
+                                    Apagar
+                                </button>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mr-2">
-                                        <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+
+                                        {{cidadeUser}}
+                                        <img class="rounded-circle" width="45" src="{{foto}}" alt="">
                                     </div>
                                     <div class="ml-2">
-                                        <div class="h5 m-0"> {{item.titulo}} </div>
-                                        <div class="h7 text-muted"> {{item.tema.descricao}} </div>
+                                        <h3 class="h5 m-0"> {{item.titulo}} </h3>
+                                        <h4 class="h7 text-muted"> {{item.tema.descricao}} </h4>
+                                      
                                     </div>
                                 </div>
                                 <div class="highlight">
@@ -145,7 +132,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"> {{item.titulo}} </h5>
+
                             <p class="card-text">
                                 {{item.mensagem}}
                             </p>
@@ -153,6 +140,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
 
                     <div class="row mt-3 mb-3">
@@ -164,13 +152,25 @@
                     <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
                         <div *ngFor="let post of tema.postagem">
                             <div class="card-header">
+                                <div class="col m-0 d-flex justify-content-end">
+                                    <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
+                                        Apagar
+                                    </button>
+                                </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="mr-2">
-                                            <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
+                                            {{cidadeUser}}
+                                            <img class="rounded-circle" width="45" src="{{foto}}" alt="">
                                         </div>
                                         <div class="ml-2">
-                                            <div class="h5 m-0"> {{post.titulo}} </div>
+
+                                            <h3 class="h5 m-0"> {{item.titulo}} </h3>
+                                        <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
+                                            
                                         </div>
                                     </div>
                                     <div>
@@ -178,17 +178,17 @@
                                             Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
                                         </div>
                                     </div>
-                                </div>
 
+                                   </div>
+                                
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"> {{post.titulo}} </h5>
+
                                 <p class="card-text">
                                     {{post.mensagem}}
                                 </p>
                                 <hr>
-                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', post.id]"> EDITAR </button>
-                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', post.id]"> DELETAR </button>
+
                             </div>
 
                         </div>
@@ -209,7 +209,9 @@
                     <p class="card-text text-justify"> Tudo que você precisa saber para desenvolver uma mentalidade de sucesso Comece a aceitar as mudanças. ... Comece a definir metas. ... Comece a se comprometer com as coisas. ... Comece a identificar o seu propósito. ... Comece a acreditar
                         em você e seus objetivos. ... Comece a cultivar a paciência. ...
                     </p>
+
                     <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link text-primary" target="_blank"> PRA VER MAIS
+
                         CLICA AQUI</a>
                 </div>
             </div>
@@ -217,13 +219,13 @@
                 <div class="card-body">
                     <h4 class="card-title text-danger">DESAFIO</h4>
                     <hr>
-                    <h6 class="card-subtitle mb-2">QUEM DESCOBRIU O BRASIL?</h6>
-                    <p class="card-text text-justify"> Tudo que você precisa saber para desenvolver uma mentalidade de sucesso Comece a aceitar as mudanças. ... Comece a definir metas. ... Comece a se comprometer com as coisas. ... Comece a identificar o seu propósito. ... Comece a acreditar
-                        em você e seus objetivos. ... Comece a cultivar a paciência. ...
-                        <!--<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>-->
+
+                    <h6 class="card-subtitle mb-2">MATEMATICA</h6>
+                    <p class="card-text d-flex"> 50 + 50 = ?
+                    
                     </p>
-                    <a href="https://www.agendor.com.br/blog/mentalidade-de-sucesso/" class="card-link text-danger" target="_blank"> PRA VER MAIS
-                        CLICA AQUI</a>
+                    <button class="btn btn-outline-warning w-100" type="button" (click)='resposta()'>RESPOSTA</button>
+
                 </div>
             </div>
             <div class="card bg bg-wa mb-3 mt-3 border border-info">
@@ -234,6 +236,7 @@
                     <p class="card-text text-justify"> Em quarentena? 7 dicas para estudar em casa e não perder o ritmo Siga uma rotina. ... Defina um local de estudos. ... Tenha equilíbrio. ... Conecte-se com seus colegas. ... Peça ajuda da família. ...
                     </p>
                     <a href="https://guiadoestudante.abril.com.br/estudo/coronavirus-7-dicas-para-estudar-em-casa-e-nao-perder-o-ritmo/" class="card-link text-info" target="_blank"> PRA VER MAIS CLICA AQUI</a>
+
                 </div>
             </div>
         </div>

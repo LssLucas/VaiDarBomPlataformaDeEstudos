@@ -7,5 +7,5 @@ export class UserLogin{
     public foto: string
     public bio: string
     public cidade: string
-    public ano: string 
+    public anoUser: string 
 }

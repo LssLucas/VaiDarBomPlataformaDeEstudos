@@ -7,11 +7,13 @@
 
                     <!-- COLUNA DE NOME E USUARIO LOGIN -->
                     <div class="col">
+
+
                         <div class="group">
-                            <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
+                            <input type="text" [(ngModel)]='user.cidade' [(ngModel)]='user.nome' id="nome" name="nome" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label for="nome">Nome</label>
+                            <label>Nome</label>
                         </div>
 
                         <div class="group">
@@ -20,29 +22,18 @@
                             <span class="bar"></span>
                             <label>Usuario de login</label>
                         </div>
+
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.foto' id="usuario" name="usuario" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Foto </label>
+                        </div>
                     </div>
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <div class="col">
-                        <!--<select name="select-simples" class="ls-select" [(ngModel)]="selectedValue">
-                            <option value="selected">SELECIONE SUA IDADE</option>
-                            <option value="sextoano">6º ANO</option>
-                            <option value="setimoano">7º ANO</option>
-                            <option value="oitavoano">8º ANO</option> 
-                            <option value="nonoano">9º ANO</option>
-                        </select>-->
-                        <div class="group">
-                            <input type="text" [(ngModel)]='user.ano' id="ano" name="ano" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Ano Matriculado</label>
-                        </div>
-                        <div class="group">
-                            <input type="text" [(ngModel)]='user.cidade' id="cidade" name="cidade" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Cidade</label>
-                        </div>
+                     
                         <div class="group">
                             <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>
                 </textarea>

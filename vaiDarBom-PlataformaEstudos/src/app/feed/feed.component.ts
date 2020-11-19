@@ -20,6 +20,8 @@ export class FeedComponent implements OnInit {
   nomeUser = environment.nome
   anoUser = environment.ano
   idUser = environment.token //Quero deixar no alt da tag img o id do usuario
+  foto = environment.foto
+
 
   key = 'data'
   reverse = true
@@ -50,6 +52,9 @@ export class FeedComponent implements OnInit {
     window.scroll(0, 0)
     let token = environment.token
     let nome = environment.nome
+    let foto = environment.foto
+    let cidade = environment.cidade
+    let bio = environment.bio
   
     this.findAllPostagens()
     this.findAllTemas()
@@ -78,7 +83,7 @@ export class FeedComponent implements OnInit {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         this.postagem = new Postagem()
-        //this.alerta.showAlertSuccess('Postagem realizada com sucesso!')
+        this.alerta.showAlerSucess('Postagem realizada com sucesso!')
         this.findAllPostagens()
       })
     }
@@ -115,5 +120,9 @@ export class FeedComponent implements OnInit {
        this.listaTemas = resp
      })
    }
+ }
+
+ resposta(){
+  this.alerta.showAlerSucess(' A respota é 100')
  }
 }
