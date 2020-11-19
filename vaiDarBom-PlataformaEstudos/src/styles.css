@@ -2,7 +2,10 @@ body {
     background: linear-gradient(to right, #7b43d5a4, #42d1fd2f);
 }
 
-h5 {
+h5,
+.font-color,
+.novoTema:link {
     color: #7b43d5;
     font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
 }

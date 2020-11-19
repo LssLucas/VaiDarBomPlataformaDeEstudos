@@ -24,13 +24,19 @@
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <div class="col">
-                        <select name="select-simples" class="ls-select">
+                        <!--<select name="select-simples" class="ls-select" [(ngModel)]="selectedValue">
                             <option value="selected">SELECIONE SUA IDADE</option>
                             <option value="sextoano">6º ANO</option>
                             <option value="setimoano">7º ANO</option>
-                            <option value="oitavoano">8º ANO</option>
+                            <option value="oitavoano">8º ANO</option> 
                             <option value="nonoano">9º ANO</option>
-                        </select>
+                        </select>-->
+                        <div class="group">
+                            <input type="text" [(ngModel)]='user.ano' id="ano" name="ano" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Ano Matriculado</label>
+                        </div>
                         <div class="group">
                             <input type="text" [(ngModel)]='user.cidade' id="cidade" name="cidade" required>
                             <span class="highlight"></span>
