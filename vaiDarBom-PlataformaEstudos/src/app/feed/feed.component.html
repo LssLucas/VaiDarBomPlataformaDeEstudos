@@ -1,8 +1,8 @@
 <div class="container-fluid gedf-wrapper">
 
     <div class='d-flex justify-content-center m-3'>
-        <h2 class="mr-2">Como funciona o FEED? </h2>
-        <h2 class="feed-fade"> Aqui você pode postar suas ideias, duvidas</h2>
+        <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
+        <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
     </div>
 
     <div class="row">
@@ -82,7 +82,7 @@
                         <div class="col-md-6">
                             <div class="form-group m-0">
                                 <label for="tema">Escolha um tema ou
-                                    <a class="bg-info" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
+                                    <a class="novoTema" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
                                 </label>
                                 <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                                     <option *ngFor='let item of listaTemas' value={{item.id}}>
@@ -112,21 +112,22 @@
             <!-- FIM ==== SISTEMA DE POSTAGEM ===  -->
             <!-- ==== POST ====  -->
             <div class="tab-content" id="nav-tabContent">
+
                 <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-12 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        <div class="col d-flex">
+                            <input class="form-control d-flex" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
                         </div>
                     </div>
                     <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
                         <div class="card-header m-0">
                             <div class="col m-0 d-flex justify-content-end">
                                 <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
-                                    Editar
-                                </button>
+                            Editar
+                        </button>
                                 <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
-                                    Apagar
-                                </button>
+                            Apagar
+                        </button>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -153,13 +154,15 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        <div class="col d-flex">
+                            <input class="form-control" type="search" placeholder="Pesquisar tema" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                         </div>
                     </div>
+
                     <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                        <div *ngFor="let item of tema.postagem">
+                        <div *ngFor="let post of tema.postagem">
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -167,25 +170,27 @@
                                             <img class="rounded-circle" width="45" src="https://pbs.twimg.com/profile_images/1319579663790968832/yJkdIaCN_400x400.jpg" alt="">
                                         </div>
                                         <div class="ml-2">
-                                            <div class="h5 m-0"> {{item.titulo}} </div>
+                                            <div class="h5 m-0"> {{post.titulo}} </div>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="highlight">
-                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                            Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"> {{item.titulo}} </h5>
+                                <h5 class="card-title"> {{post.titulo}} </h5>
                                 <p class="card-text">
-                                    {{item.mensagem}}
+                                    {{post.mensagem}}
                                 </p>
                                 <hr>
-                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', item.id]"> EDITAR </button>
-                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', item.id]"> DELETAR </button>
+                                <button type="button" class=" mr-3 btn btn-info w-25" [routerLink]="['/editar-post', post.id]"> EDITAR </button>
+                                <button type="button" class="btn btn-danger w-25" [routerLink]="['/delete-post', post.id]"> DELETAR </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
