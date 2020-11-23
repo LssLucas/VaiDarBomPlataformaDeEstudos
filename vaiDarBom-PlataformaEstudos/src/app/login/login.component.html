@@ -1,32 +1,28 @@
 <!-- Configuração do container contendo o formulario  -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="mx-auto">
             <div class="card card-signin my-5">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Entrar</h5>
+                    <h5 class="card-title text-center">LOGIN</h5>
 
-                        <div class="form-label-group">
-                            <input type="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]='userLogin.usuario'>
-                            <label for="inputUsuario"> Usuario </label>
-                        </div>
+                    <div class="group">
+                        <input type="textgit" [(ngModel)]='userLogin.usuario' id="nome" name="nome" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>USUARIO</label>
+                    </div>
 
-                        <!-- input da senha -->
-                        <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required [(ngModel)]='userLogin.senha'>
-                            <label for="inputPassword">
-                                Senha
-                            </label>
-                        </div>
 
-                        <!-- controlador para lembrar a senha  DELETADO ATÉ AQUI --> 
-                        <div class="custom-control custom-checkbox mb-3"> <input type="checkbox" class="custom-control-input" id="customCheck1"> <label class="custom-control-label" for="customCheck1">
-                            Lembrar Senha
-                        </label> </div>
+                    <!-- input da senha -->
+                    <div class="group">
+                        <input type="password" [(ngModel)]='userLogin.senha' id="nome" name="nome" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>SENHA</label>
+                    </div>
 
-                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)='entrar()'>Sign in</button>
-
-                   
+                    <button class="btn btn-lg btnEntrar btn-block text-uppercase" type="submit" (click)='entrar()'>Entrar</button>
                 </div>
             </div>
         </div>

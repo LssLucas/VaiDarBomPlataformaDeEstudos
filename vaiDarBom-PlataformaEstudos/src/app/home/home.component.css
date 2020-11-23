@@ -1,16 +1,55 @@
 .parallax {
     background-image: url('https://canaldoensino.com.br/blog/wp-content/uploads/2018/06/manter_o_foco_nos_estudos-01.jpg');
-  
     min-height: 500px;
-  
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
+.textoAzulContornado {
+    list-style-type: none;
+    margin: 0px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-resp {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat ( auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    padding: 30px;
+}
 
 .text-h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    text-shadow: .05em .05em #6f65df;
-    color: #42d1fd;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #7b43d5;
+}
+
+.text-h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-shadow: black;
+    color: white;
+}
+
+#video {
+    width: 750px;
+    margin: 0 auto;
+    display: block;
+}
+
+.text-p {
+    font-family: Arial, Helvetica, sans-serif, 16;
+    color: black;
+    font-weight: bold;
+}
+
+.legenda-carousel {
+    font-size: 20px;
 }

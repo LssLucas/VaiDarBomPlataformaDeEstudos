@@ -17,11 +17,12 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { from } from 'rxjs';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
-import { AlertasComponent } from './alertas/alertas.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,10 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
     OrderModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

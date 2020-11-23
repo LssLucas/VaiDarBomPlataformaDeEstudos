@@ -1,7 +1,8 @@
+import { AlertasService } from './../service/alertas.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PostagemService } from './../service/postagem.service';
+import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Postagem } from '../model/Postagem';
-import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-delete-postagem',
@@ -10,35 +11,35 @@ import { PostagemService } from '../service/postagem.service';
 })
 export class DeletePostagemComponent implements OnInit {
 
-  postagem : Postagem = new Postagem()
+  postagem: Postagem = new Postagem()
+
 
   constructor(
-    private postagemService : PostagemService,
+    private postagemService: PostagemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute, 
+    private alerta: AlertasService
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     let id: number = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
   }
-
-  findByIdPostagem(id:number) {
+  findByIdPostagem(id:number){
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem=resp
     })
   }
 
   btnSim() {
-    this.postagemService.getByIdPostagem(this.postagem.id).subscribe((resp : Postagem) => {
-
+    this.postagemService.deletePostagem(this.postagem.id).subscribe(() => {
       this.router.navigate(['/feed'])
-      alert('Deu bom, seu poste foi pra lixeira :D')
+      this.alerta.showAlertInfo('Postagem apagada com sucesso!')
     })
   }
-  btnNao() {
 
+  btnNao(){
     this.router.navigate(['/feed'])
-
   }
 }
