@@ -119,8 +119,4 @@ export class FeedComponent implements OnInit {
      })
    }
  }
-
- resposta(){
-  this.alerta.showAlerSucess(' A respota é 100')
- }
 }

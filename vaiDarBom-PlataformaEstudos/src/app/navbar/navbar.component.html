@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top pb-0 pt-0">
 
     <a routerLink='/home'>
-        <img class="logoVaiDarBom d-img m-2 rounded" src="../../assets/logoVaiDarBom.jpeg" alt="logoVaiDarBom">
+        <img class="logoVaiDarBom d-img m-2 rounded" src="https://i.ibb.co/xF4v09K/logo-Vai-Dar-Bom.jpg" alt="logoVaiDarBom">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,11 @@
                 </li>
             </div>
 
+            <div *ngIf='auth.btnLogin()'>
+                <li class="nav-item m-2">
+                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/contato'>contato</a>
+                </li>
+            </div>
         </ul>
     </div>
 </nav>
