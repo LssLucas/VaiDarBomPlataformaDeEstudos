@@ -18,36 +18,27 @@ export class DeletePostagemComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     let id: number = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
   }
-  findByIdPostagem(id: number){
-  findByIdPostagem(id:number){
+
+  findByIdPostagem(id:number) {
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem=resp
     })
   }
 
-  btnSim(){
-    this.postagemService.deletePostagem(this.postagem.id).subscribe((resp : Postagem) => {
-
+  btnSim() {
     this.postagemService.getByIdPostagem(this.postagem.id).subscribe((resp : Postagem) => {
 
       this.router.navigate(['/feed'])
       alert('Deu bom, seu poste foi pra lixeira :D')
     })
   }
-
-  btnNao(){
+  btnNao() {
 
     this.router.navigate(['/feed'])
 
   }
-
-}
-
-    
-  }
-
 }
