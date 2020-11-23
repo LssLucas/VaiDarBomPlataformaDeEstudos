@@ -26,7 +26,6 @@ export class DeletePostagemComponent implements OnInit {
     let id: number = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
   }
-
   findByIdPostagem(id:number){
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem=resp

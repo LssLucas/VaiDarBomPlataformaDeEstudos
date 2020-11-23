@@ -14,14 +14,12 @@ import { environment } from './../../environments/environment.prod';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-
   bioUser = environment.bio
   cidadeUser = environment.cidade
   nomeUser = environment.nome
   anoUser = environment.ano
   idUser = environment.token //Quero deixar no alt da tag img o id do usuario
   foto = environment.foto
-
 
   key = 'data'
   reverse = true

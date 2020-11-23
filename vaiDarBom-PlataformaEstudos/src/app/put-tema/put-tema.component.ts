@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-put-tema',

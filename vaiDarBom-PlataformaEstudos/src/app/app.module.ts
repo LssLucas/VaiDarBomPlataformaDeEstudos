@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {OrderModule} from 'ngx-order-pipe'
+import { OrderModule } from 'ngx-order-pipe';
 import { AppRoutingModule } from './app-routing.module';
 import {ModalModule} from 'ngx-bootstrap/modal';
 
