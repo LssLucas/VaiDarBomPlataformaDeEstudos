@@ -23,6 +23,8 @@ import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PerfilComponent } from './perfil/perfil.component';
+import { CardsFeedComponent } from './cards-feed/cards-feed.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     PutTemaComponent,
     DeleteTemaComponent,
     AlertasComponent,
-    DeletePostagemComponent
+    DeletePostagemComponent,
+    PerfilComponent,
+    CardsFeedComponent
   ],
   imports: [
     BrowserModule,
