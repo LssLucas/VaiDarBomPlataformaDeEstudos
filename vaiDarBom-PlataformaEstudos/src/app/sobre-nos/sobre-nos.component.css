@@ -1,0 +1,9 @@
+.btnSobreNos {
+    color: #7b43d5;
+    background-color: #42d1fd;
+}
+
+.btnSobreNos:hover {
+    color: #42d1fd;
+    background-color: #7b43d5d3;
+}
