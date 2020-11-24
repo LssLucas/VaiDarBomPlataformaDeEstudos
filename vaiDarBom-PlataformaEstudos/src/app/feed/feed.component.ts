@@ -6,6 +6,8 @@ import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
 import { environment } from './../../environments/environment.prod';
+import { MensagemService } from '../service/mensagem.service';
+import { Mensagem } from '../model/Mensagem';
 
 
 @Component({
@@ -26,21 +28,29 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+
+  mensagem : Mensagem = new Mensagem()
+  listaMensagem : Mensagem[]
   
   titulo: string
   
 
-
   tema: Tema = new Tema()
+
   listaTemas: Tema[]
+  
   idTema: number
+  idPostagem : number
   nomeTema: string
 
-  teste : boolean
+
+
+  //teste : boolean
 
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
+    private mensagemService: MensagemService,
     private alerta: AlertasService,
     private router: Router 
   ) { }
@@ -69,6 +79,12 @@ export class FeedComponent implements OnInit {
     })
   }
 
+  findAllMensagem() {
+    this.mensagemService.getAllMensagem().subscribe((resp: Mensagem[]) => {
+      this.listaMensagem = resp
+    })
+  }
+
   publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -86,6 +102,26 @@ export class FeedComponent implements OnInit {
       })
     }
   }
+
+  public comentar() {
+
+    this.postagem.id = this.idPostagem 
+    this.mensagem.postagem = this.postagem
+    
+    if (this.mensagem.textoDaMensagem == null ) {
+      this.alerta.showAlertDanger('Preencha todos os campos antes de comentar!')
+    } else if (this.mensagem.textoDaMensagem.length < 10 ) {
+      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo comentario!')
+    } else{
+      this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
+        this.mensagem = resp
+        this.mensagem = new Mensagem()
+        this.findAllMensagem()
+      })
+    }
+  }
+
+  
 
 
   findAllTemas() {
