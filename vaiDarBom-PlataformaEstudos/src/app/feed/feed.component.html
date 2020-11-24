@@ -111,9 +111,26 @@
                                 {{item.mensagem}}
                             </p>
                             <hr>
+                            <div class="btn-group">
+                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem'>
+                                <br>
+                                <button type="button" class="btn btnPublicar brilhar" (click)='comentar()'>Comentar</button>
+                            </div>
                         </div>
+                        <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse">
+                            item.postagem.id = id.postagem
+                            {{item.textoDaMensagem}}
+                        </div>
+
                     </div>
                 </div>
+
+
+
+
+
+                
+                <!-- FIND BY TEMA -->
 
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
 
