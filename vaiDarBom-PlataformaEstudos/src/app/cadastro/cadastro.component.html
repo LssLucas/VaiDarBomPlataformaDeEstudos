@@ -33,7 +33,7 @@
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->
                     <div class="col">
-                     
+
                         <div class="group">
                             <textarea class="text" rows="3" [(ngModel)]='user.bio' id="bio" name="bio" required>
                 </textarea>
@@ -42,14 +42,14 @@
                     </div>
                     <div class="col">
                         <div class="group">
-                            <input type="text" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
+                            <input type="password" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Senha</label>
                         </div>
 
                         <div class="group">
-                            <input type="text" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
+                            <input type="password" [(ngModel)]='user.senha' id="confSenha" name="confSenha" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Confirmar Senha</label>

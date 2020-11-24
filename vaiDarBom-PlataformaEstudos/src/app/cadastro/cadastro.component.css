@@ -175,6 +175,9 @@ textarea:focus~.highlight {
     }
 }
 
+
+/*Animação da label*/
+
 .container-bg {
     margin-bottom: 45px;
     border-radius: 30px;
