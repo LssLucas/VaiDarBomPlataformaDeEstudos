@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 
 
@@ -22,12 +23,11 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent},
   { path:'cadastro-tema', component: PostTemaComponent},
   { path: 'editar-post/:id', component: PutPostagemComponent},
-  //{ path: 'delete-post/:id', component: DeletePostagemComponent},
+  { path: 'delete-post/:id', component: DeletePostagemComponent},
   { path: 'editar-tema/:id', component: PutTemaComponent},
   { path: 'delete-tema/:id', component: DeleteTemaComponent},
   { path:'cadastro-tema', component: PostTemaComponent},
-
-  { path: "delete-post:id", component: DeletePostagemComponent}
+  { path: 'sobre-nos', component: SobreNosComponent}
 ];
 
 @NgModule({

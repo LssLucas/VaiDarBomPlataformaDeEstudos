@@ -20,7 +20,7 @@ export class CadastroComponent implements OnInit {
     private alerta: AlertasService
   ) { }
 
-  ngOnInit() {  }
+  ngOnInit() {}
 
   cadastrar(){
     if( this.senha === this.user.senha ) {

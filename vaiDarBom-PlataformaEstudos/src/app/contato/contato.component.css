@@ -1,8 +1,14 @@
 .h4-contato {
     font-family: 'Roboto Condensed', sans-serif;
-    color: white;
+    color: black;
 }
 
 a {
-    color: white;
+    color: black;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

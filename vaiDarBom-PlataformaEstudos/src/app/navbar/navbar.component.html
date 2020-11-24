@@ -30,16 +30,19 @@
                     <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/cadastro'>Cadastro</a>
                 </li>
             </div>
-
+            <div *ngIf='auth.btnSair()'>
+                <li class="nav-item m-2">
+                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/contato'>contato</a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item m-2">
+                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/sobre-nos'>sobre nós</a>
+                </li>
+            </div>
             <div *ngIf='auth.btnSair()'>
                 <li class="nav-item m-2">
                     <a class="nav-link text-uppercase font-weight-bold p-3" (click)='sair()'>Sair</a>
-                </li>
-            </div>
-
-            <div *ngIf='auth.btnLogin()'>
-                <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/contato'>contato</a>
                 </li>
             </div>
         </ul>

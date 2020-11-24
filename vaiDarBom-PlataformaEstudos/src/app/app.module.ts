@@ -25,6 +25,7 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CardsFeedComponent } from './cards-feed/cards-feed.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CardsFeedComponent } from './cards-feed/cards-feed.component';
     AlertasComponent,
     DeletePostagemComponent,
     PerfilComponent,
-    CardsFeedComponent
+    CardsFeedComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,

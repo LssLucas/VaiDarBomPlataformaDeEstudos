@@ -12,7 +12,6 @@ export class Postagem {
    {   
       "ativo": true,
       "data": "2020-11-12T11:17:37.356Z",   
-      "euLi": 0,   
       "id": 0,  
       "imagem": "string",   
       "link": "string",   
