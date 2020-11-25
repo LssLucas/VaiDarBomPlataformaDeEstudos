@@ -26,6 +26,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CardsFeedComponent } from './cards-feed/cards-feed.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     DeletePostagemComponent,
     PerfilComponent,
     CardsFeedComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,9 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     OrderModule,
     ModalModule.forRoot()
   ],
+
+  entryComponents: [ConfirmModalComponent],
+  
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy

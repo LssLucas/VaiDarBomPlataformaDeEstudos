@@ -70,6 +70,10 @@ export class FeedComponent implements OnInit {
     }
   }
 
+  deletar(){
+    this.alerta.showConfirm()
+  }
+
   findAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
@@ -87,13 +91,6 @@ export class FeedComponent implements OnInit {
       this.postagem=resp
     })
   }
-
-  findByIdPostagemAtual() {
-    this.postagemService.getByIdPostagem(this.idPostagem).subscribe((resp: Postagem) => {
-      this.postagem = resp;
-    })
-  }
-
   
  findByIdTema() {
   this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
@@ -128,6 +125,13 @@ export class FeedComponent implements OnInit {
      })
    }
  }
+
+ deletarPost(id: number) {
+  this.postagemService.deletePostagem(id).subscribe(() => {
+    this.router.navigate(['/feed'])
+    this.alerta.showAlertInfo('Postagem apagada com sucesso!')
+  })
+}
 
   publicar() {
     
