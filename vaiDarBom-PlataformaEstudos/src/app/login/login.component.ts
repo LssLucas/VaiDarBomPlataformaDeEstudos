@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       environment.foto = this.userLogin.foto
       environment.bio = this.userLogin.bio
       environment.cidade = this.userLogin.cidade
+      environment.nome = this.userLogin.nome
+      environment.ano = this.userLogin.anoUser
     })
   }
 

@@ -1,3 +1,4 @@
+import { Mensagem } from './Mensagem'
 import { Tema } from './Tema'
 
 export class Postagem {
@@ -6,6 +7,8 @@ export class Postagem {
   public mensagem: string
   public data: Date
   public tema: Tema
+  public comentario: Mensagem[]
+  public msg: string;
 }
 
 /*

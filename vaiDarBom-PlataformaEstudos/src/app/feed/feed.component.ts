@@ -26,24 +26,21 @@ export class FeedComponent implements OnInit {
   key = 'data'
   reverse = true
 
+  titulo: string
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
 
   mensagem : Mensagem = new Mensagem()
   listaMensagem : Mensagem[]
   
-  titulo: string
-  
 
   tema: Tema = new Tema()
-
   listaTemas: Tema[]
   
   idTema: number
   idPostagem : number
   nomeTema: string
-
-
 
   //teste : boolean
 
@@ -85,43 +82,24 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  publicar() {
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
-    
-    if (this.postagem.titulo == null || this.postagem.mensagem == null || this.postagem.tema == null) {
-      this.alerta.showAlertDanger('Preencha todos os campos antes de publicar!')
-    } else if (this.postagem.mensagem.length < 10) {
-      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo texto!')
-    } else{
-      this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-        this.postagem = resp
-        this.postagem = new Postagem()
-        this.alerta.showAlerSucess('Postagem realizada com sucesso!')
-        this.findAllPostagens()
-      })
-    }
+  findByIdPostagem(id:number) {
+    this.postagemService.getByIdPostagem(this.idPostagem).subscribe((resp: Postagem) => {
+      this.postagem=resp
+    })
   }
 
-  public comentar() {
-
-    this.postagem.id = this.idPostagem 
-    this.mensagem.postagem = this.postagem
-    
-    if (this.mensagem.textoDaMensagem == null ) {
-      this.alerta.showAlertDanger('Preencha todos os campos antes de comentar!')
-    } else if (this.mensagem.textoDaMensagem.length < 10 ) {
-      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo comentario!')
-    } else{
-      this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
-        this.mensagem = resp
-        this.mensagem = new Mensagem()
-        this.findAllMensagem()
-      })
-    }
+  findByIdPostagemAtual() {
+    this.postagemService.getByIdPostagem(this.idPostagem).subscribe((resp: Postagem) => {
+      this.postagem = resp;
+    })
   }
 
   
+ findByIdTema() {
+  this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+    this.tema = resp;
+  })
+}
 
 
   findAllTemas() {
@@ -130,11 +108,6 @@ export class FeedComponent implements OnInit {
     })
   }
 
- findByIdTema() {
-   this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-     this.tema = resp;
-   })
- }
 
  findByTituloPostagem() {
    if (this.titulo === ''){
@@ -155,4 +128,42 @@ export class FeedComponent implements OnInit {
      })
    }
  }
+
+  publicar() {
+    
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
+    
+    if (this.postagem.titulo == null || this.postagem.mensagem == null || this.postagem.tema == null) {
+      this.alerta.showAlertDanger('Preencha todos os campos antes de publicar!')
+    } else if (this.postagem.mensagem.length < 10) {
+      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo texto!')
+    } else{
+      this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+        this.postagem = resp
+        this.postagem = new Postagem()
+        this.alerta.showAlerSucess('Postagem realizada com sucesso!')
+        this.findAllPostagens()
+      })
+    }
+  }
+
+  public comentar(idp : number) {
+    
+    this.postagem.id = idp
+    this.mensagem.postagem = this.postagem
+    
+    if (this.mensagem.textoDaMensagem == null ) {
+      this.alerta.showAlertDanger('Preencha todos os campos antes de comentar!')
+    } else if (this.mensagem.textoDaMensagem.length < 10 ) {
+      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo comentario!')
+    } else{
+
+      this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
+        this.mensagem = resp
+        this.mensagem = new Mensagem()
+        this.findAllMensagem()
+      })
+    }
+  }
 }
