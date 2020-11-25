@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-white sticky-top pb-0 pt-0">
+<nav class="navbar navbar-expand-sm navbar-dark backNav sticky-top pb-0 pt-0 d-flex">
 
     <a routerLink='/home'>
         <img class="logoVaiDarBom d-img m-2 rounded" src="https://i.ibb.co/xF4v09K/logo-Vai-Dar-Bom.jpg" alt="logoVaiDarBom">
@@ -11,38 +11,38 @@
     <div class="collapse navbar-collapse" id="navbarNav">
 
         <ul class="navbar-nav m-auto text-center">
-            <li class="nav-item m-2">
-                <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
+            <li class="nav-item m-2 text-white">
+                <a class="nav-link text-uppercase font-weight-bold " routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
             </li>
 
             <li class="nav-item m-2">
-                <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/feed'>Feed</a>
+                <a class="nav-link text-uppercase font-weight-bold " routerLink='/feed'>Feed</a>
             </li>
 
             <div *ngIf='auth.btnLogin()'>
                 <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+                    <a class="nav-link text-uppercase font-weight-bold " routerLink='/login'>Login</a>
                 </li>
             </div>
 
             <div *ngIf='auth.btnLogin()'>
                 <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/cadastro'>Cadastro</a>
+                    <a class="nav-link text-uppercase font-weight-bold " routerLink='/cadastro'>Cadastro</a>
                 </li>
             </div>
             <div *ngIf='auth.btnSair()'>
                 <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/contato'>contato</a>
+                    <a class="nav-link text-uppercase font-weight-bold " routerLink='/contato'>contato</a>
                 </li>
             </div>
             <div>
                 <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" routerLink='/sobre-nos'>sobre nós</a>
+                    <a class="nav-link text-uppercase font-weight-bold " routerLink='/sobre-nos'>sobre nós</a>
                 </li>
             </div>
             <div *ngIf='auth.btnSair()'>
                 <li class="nav-item m-2">
-                    <a class="nav-link text-uppercase font-weight-bold p-3" (click)='sair()'>Sair</a>
+                    <a class="nav-link text-uppercase font-weight-bold " (click)='sair()'>Sair</a>
                 </li>
             </div>
         </ul>
