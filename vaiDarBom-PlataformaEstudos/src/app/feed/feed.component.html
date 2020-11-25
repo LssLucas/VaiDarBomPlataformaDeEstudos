@@ -1,230 +1,226 @@
 <div class="container-fluid gedf-wrapper">
-    <div class='d-flex justify-content-center m-3'>
-       <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
-       <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
-    </div>
     <div class="row">
-       <div class="col-md-3 p-3">
-          <app-perfil></app-perfil>
-       </div>
-       <!--  ==== COLUNA MEIO ====  -->
+        <div class="col-md-3 p-3">
+            <app-perfil></app-perfil>
+        </div>
+        <!--  ==== COLUNA MEIO ====  -->
 
-       <div class="col-md-6">
+        <div class="col-md-6">
 
-          <!--  ==== SISTEMA DE POSTAGEM ====  -->
+            <!--  ==== SISTEMA DE POSTAGEM ====  -->
 
-          <div class="card mb-3 mt-3">
-             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
-                <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens
+            <div class="card mb-3 mt-3">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens
                 por tema</a>
-             </div>
-             <div class="card-header">
-                <div class="d-flex justify-content-arround align-items-center">
-                   <div class="col-md-5">
-                      <div class="input-group-prepend">
-                         <label for="tema">Titulo</label>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group m-0">
-                         <label for="tema">Escolha um tema ou
+                </div>
+                <div class="card-header">
+                    <div class="d-flex justify-content-arround align-items-center">
+                        <div class="col-md-5">
+                            <div class="input-group-prepend">
+                                <label for="tema">Titulo</label>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]='postagem.titulo'>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group m-0">
+                                <label for="tema">Escolha um tema ou
                          <a class="novoTema" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
                          </label>
-                         <!-- da uma atenção nesse change pra criar o id postagem para comentario-->
-                         <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                                <!-- da uma atenção nesse change pra criar o id postagem para comentario-->
+                                <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                          <option *ngFor='let item of listaTemas' value={{item.id}}>
                             {{item.descricao}}
                          </option>
                          </select>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="card-body">
-                <div class="tab-content" id="myTabContent">
-                   <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                      <div class="form-group">
-                         <label class="sr-only" for="message">post</label>
-                         <div style="border: 1px solid #ccc; border-radius: 5px; padding: 1px; margin: 20px;">
-                            <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem'></textarea>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="btn-toolbar justify-content-between">
-                   <div class="btn-group">
-                      <button type="button" class="btn btnPublicar brilhar" (click)='publicar()'>Publicar</button>
-                   </div>
-                </div>
-             </div>
-          </div>
-          <!-- FIM ==== SISTEMA DE POSTAGEM ===  -->
-          <!-- ==== POST ====  -->
-          <div class="tab-content" id="nav-tabContent">
-             <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
-                <!-- pesquisa por titulo -->
-
-                <div class="row mt-3 mb-3">
-                   <div class="col d-flex">
-                      <input class="form-control d-flex" type="search" placeholder="Pesquisar por titulo" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
-                   </div>
-                </div>
-
-                
-            <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
-                
-                <!--foto, -->
-            <div class="card header">
-                <div class = "m-3">
-                    <div class="row d-flex justify-content-between">
-                       
-                    <div class = "col-3" >
-                        <div class='ml-5'>
-
-                            <img class="rounded-circle" width="75" src="{{foto}}" alt="">
-
+                            </div>
                         </div>
-
-                        <div class = 'ml-3'>
-
-                            <h3>{{nomeUser}}</h3>
-
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                                <div style="border: 1px solid #ccc; border-radius: 5px; padding: 1px; margin: 20px;">
+                                    <textarea class="form-control" id="message" rows="3" placeholder="Ta pensando no que?" [(ngModel)]='postagem.mensagem'></textarea>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="button" class="btn btnPublicar brilhar" (click)='publicar()'>Publicar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM ==== SISTEMA DE POSTAGEM ===  -->
+            <!-- ==== POST ====  -->
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                    <!-- pesquisa por titulo -->
 
+                    <div class="row mt-3 mb-3">
+                        <div class="col d-flex">
+                            <input class="form-control d-flex" type="search" placeholder="Pesquisar por titulo" (keyup)='findByTituloPostagem()' aria-label="Pesquisar" [(ngModel)]='titulo'>
+                        </div>
                     </div>
 
-                    <div class = "col-6  align-self-end">
 
-                        <div class = "">
-                                <h3 class=""> {{item.titulo}} </h3>
+                    <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+
+                        <!--foto, -->
+                        <div class="card header">
+                            <div class="m-3">
+                                <div class="row d-flex justify-content-between">
+
+                                    <div class="col-3">
+                                        <div class='ml-5'>
+
+                                            <img class="rounded-circle" width="75" src="{{foto}}" alt="">
+
+                                        </div>
+
+                                        <div class='ml-3'>
+
+                                            <h3>{{nomeUser}}</h3>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-6  align-self-end">
+
+                                        <div class="">
+                                            <h3 class=""> {{item.titulo}} </h3>
+                                        </div>
+
+                                        <div class="">
+                                            <h4 class=""> {{item.tema.descricao}} </h4>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-3   ">
+
+
+                                        <div class="row">
+                                            <div class="pl-3 pr-3">
+                                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                            </div>
+
+                                            <nav role="navigation">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">...</a>
+                                                        <ul class="dropdown">
+                                                            <li><button type="button" class="btn btn-secondary" (click)='deletarPost(item.id)'>Delete</button></li>
+                                                            <li><a [routerLink]="['/editar-post', item.id]">EDITAR</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
 
-                        <div class = "">
-                                <h4 class=""> {{item.tema.descricao}} </h4>
-                        </div>
+                        <div class="card-body pb-0  ">
 
-                    </div>
-
-                        <div class="col-3   ">
-
-                            
                             <div class="row">
-                                <div class = "pl-3 pr-3">
-                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
-                                 </div>
+                                <div class="col-12 align-items-end">
 
-                                <nav role="navigation">
-                                    <ul>
-                                       <li>
-                                          <a href="#">...</a>
-                                          <ul class="dropdown">
-                                             <li><button type="button" class="btn btn-secondary" (click) = 'deletarPost(item.id)'>Delete</button></li>
-                                             <li><a [routerLink]="['/editar-post', item.id]">EDITAR</a></li>
-                                          </ul>
-                                       </li>
-                                    </ul>
-                                 </nav>
+                                    <p class="card-text">
+                                        {{item.mensagem}}
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="btn-group">
+                                        <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem'>
+                                        <br>
+                                        <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
+                                    </div>
+
+                                </div>
                             </div>
 
-
-                             
-                          </div>
-                      
                         </div>
-                    </div>
-                </div>
-
-                <div class="card-body pb-0  ">
-
-                    <div class="row">
-                        <div class="col-12 align-items-end">
-                            
-                            <p class="card-text">
-                                {{item.mensagem}}
-                             </p>
-
-                             <hr>
-
-                             <div class="btn-group">
-                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
-                                <br>
-                                <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
-                             </div>
-                            
+                        <hr>
+                        <div class="card-footer" *ngFor="let item of listaMensagem | orderBy : key : reverse">
+                            {{item.textoDaMensagem}}
                         </div>
                     </div>
 
+
                 </div>
-                <hr>
-                <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse" >
-                    {{item.textoDaMensagem}}
-                 </div>
-            </div>
 
-
-            </div>
-            
 
 
                 <!-- FIND BY TEMA -->
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
-                   <div class="row mt-3 mb-3">
-                      <div class="col d-flex">
-                         <input class="form-control" type="search" placeholder="Pesquisar tema" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
-                      </div>
-                   </div>
-                   
-                   <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
-                      <div *ngFor="let item of tema.postagem">
-                         <div class="card-header">
-                            <div class="col m-0 d-flex justify-content-end">
-                               <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
+                    <div class="row mt-3 mb-3">
+                        <div class="col d-flex">
+                            <input class="form-control" type="search" placeholder="Pesquisar tema" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+                        </div>
+                    </div>
+
+                    <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
+                        <div *ngFor="let item of tema.postagem">
+                            <div class="card-header">
+                                <div class="col m-0 d-flex justify-content-end">
+                                    <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
                                Editar
                                </button>
-                               <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
+                                    <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">
                                Apagar
                                </button>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            {{cidadeUser}}
+                                            <img class="rounded-circle" width="45" src="{{foto}}" alt="">
+                                        </div>
+                                        <div class="ml-2">
+                                            <h3 class="h5 m-0"> {{item.titulo}} </h3>
+                                            <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="highlight">
+                                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-between">
-                               <div class="d-flex justify-content-between align-items-center">
-                                  <div class="mr-2">
-                                     {{cidadeUser}}
-                                     <img class="rounded-circle" width="45" src="{{foto}}" alt="">
-                                  </div>
-                                  <div class="ml-2">
-                                     <h3 class="h5 m-0"> {{item.titulo}} </h3>
-                                     <h4 class="h7 text-muted"> {{tema.descricao}} </h4>
-                                  </div>
-                               </div>
-                               <div>
-                                  <div class="highlight">
-                                     Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
-                                  </div>
-                               </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    {{item.mensagem}}
+                                </p>
+                                <hr>
                             </div>
-                         </div>
-                         <div class="card-body">
-                            <p class="card-text">
-                               {{item.mensagem}}
-                            </p>
-                            <hr>
-                         </div>
-                      </div>
-                   </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-             <!--  ==== POST ====  -->
-             <!--  ==== COLUNA MEIO ====  -->
-          </div>
-          <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
-          <div class="col-md-3">
-             <app-cards-feed></app-cards-feed>
-          </div>
-       </div>
+            </div>
+            <!--  ==== POST ====  -->
+            <!--  ==== COLUNA MEIO ====  -->
+        </div>
+        <!--  ==== COLUNA DIREITA / CARDS DE INFORMAÇÕES ====  -->
+        <div class="col-md-3">
+            <app-cards-feed></app-cards-feed>
+        </div>
     </div>
-    <!-- <div *ngIf="teste; else falso">
+</div>
+<!-- <div *ngIf="teste; else falso">
        </div>
        <ng-template #falso>
        
