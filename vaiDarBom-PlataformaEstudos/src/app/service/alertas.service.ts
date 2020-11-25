@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AlertasComponent } from '../alertas/alertas.component';
+import { ConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,5 +26,10 @@ export class AlertasService {
 
   showAlertInfo(message: string) {
     this.showAlert(message, 'info')
-}
+  }
+
+    showConfirm() {
+      const bsModadalRef: BsModalRef= this.bsModadalService.show(ConfirmModalComponent)
+    }
+
 }
