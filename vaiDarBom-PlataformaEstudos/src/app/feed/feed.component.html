@@ -1,11 +1,11 @@
 <div class="container-fluid gedf-wrapper">
 
-    <div class='d-flex justify-content-center m-3'>
+    <!--<div class='d-flex justify-content-center m-3'>
 
         <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
         <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
 
-    </div>
+    </div>-->
 
     <div class="row">
 
@@ -93,7 +93,7 @@
                                     <div class="mr-2">
 
                                         {{cidadeUser}}
-                                        <img class="rounded-circle" width="45" src="{{foto}}" alt="">
+                                        <img class="rounded-circle" width="45" src="{{foto}}" alt="Foto de perfil cadastrada na plataforma">
                                     </div>
                                     <div class="ml-2">
                                         <h3 class="h5 m-0"> {{item.titulo}} </h3>
@@ -113,15 +113,15 @@
                             </p>
                             <hr>
                             <div class="btn-group">
-                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
+                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem'>
                                 <br>
                                 <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
                             </div>
                         </div>
-                        <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse" >
-                            
+                        <div class="card-footer" *ngFor="let item of listaMensagem | orderBy : key : reverse">
+
                             {{item.textoDaMensagem}}
-                            
+
                         </div>
 
                     </div>
@@ -131,7 +131,7 @@
 
 
 
-                
+
                 <!-- FIND BY TEMA -->
 
                 <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
@@ -157,7 +157,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="mr-2">
                                             {{cidadeUser}}
-                                            <img class="rounded-circle" width="45" src="{{foto}}" alt="">
+                                            <img class="rounded-circle" width="45" src="{{foto}}" alt="Foto de perfil cadastrada na plataforma">
                                         </div>
                                         <div class="ml-2">
 
