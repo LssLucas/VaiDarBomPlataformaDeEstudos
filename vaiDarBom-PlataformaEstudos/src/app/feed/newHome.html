@@ -1,45 +1,87 @@
-<div class="card-header m-0">
-  <div class="d-flex justify-content-between">
-     <div class="d-flex justify-content-between align-items-center">
-        <div class="ml-3">
-           <img class="rounded-circle" width="75" src="{{foto}}" alt="">
-           <div class="row">
-              <h3> {{nomeUser}} </h3>
+<div class="card header">
+   <div class = "m-3">
+       <div class="row d-flex justify-content-between">
+          
+       <div class = "col-3" >
+           <div class='ml-5'>
+
+               <img class="rounded-circle" width="75" src="{{foto}}" alt="">
+
            </div>
-        </div>
-        <div class="ml-5">
-           <h3 class="h5 m-0"> {{item.titulo}} </h3>
-           <h4 class="h7 text-muted"> {{item.tema.descricao}} </h4>
-        </div>
-     </div>
-     <div class="highlight d-flex justify-content-between align-items-top ">
-        <div class="row">
-           <nav role="navigation">
-              <ul>
-                 <li>
-                    <a href="#">Two</a>
-                    <ul class="dropdown">
-                       <li><a [routerLink]="['/delete-post', item.id]">Sub-1</a></li>
-                       <li><a [routerLink]="['/editar-post', item.id]">Sub-1</a></li>
-                    </ul>
-                 </li>
-              </ul>
-           </nav>
-        </div>
-     </div>
-  </div>
-  <div class="card-body">
-     <p class="card-text">
-        {{item.mensagem}}
-     </p>
-     <hr>
-     <div class="btn-group">
-        <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
-        <br>
-        <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
-     </div>
-  </div>
-  <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse" >
-     {{item.textoDaMensagem}}
-  </div>
+
+           <div class = 'ml-3'>
+
+               <h3>{{nomeUser}}</h3>
+
+           </div>
+
+       </div>
+
+       <div class = "col-6  align-self-end">
+
+           <div class = "">
+                   <h3 class=""> {{item.titulo}} </h3>
+           </div>
+
+           <div class = "">
+                   <h4 class=""> {{item.tema.descricao}} </h4>
+           </div>
+
+       </div>
+
+           <div class="col-3   ">
+
+               
+               <div class="row">
+                   <div class = "pl-3 pr-3">
+                   {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                    </div>
+
+                   <nav role="navigation">
+                       <ul>
+                          <li>
+                             <a href="#">...</a>
+                             <ul class="dropdown">
+                                <li><button type="button" class="btn btn-secondary" (click) = 'deletarPost(item.id)'>Delete</button></li>
+                                <li><a [routerLink]="['/editar-post', item.id]">EDITAR</a></li>
+                             </ul>
+                          </li>
+                       </ul>
+                    </nav>
+               </div>
+                
+             </div>
+         
+           </div>
+       </div>
+   </div>
+
+   <div class="card-body pb-0  ">
+
+       <div class="row">
+           <div class="col-12 align-items-end">
+               
+               <p class="card-text">
+                   {{item.mensagem}}
+                </p>
+
+                <hr>
+
+                <div class="btn-group">
+                   <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
+                   <br>
+                   <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
+                </div>
+               
+           </div>
+       </div>
+
+   </div>
+   <hr>
+   <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse" >
+       {{item.textoDaMensagem}}
+    </div>
+</div>
+
+
 </div>

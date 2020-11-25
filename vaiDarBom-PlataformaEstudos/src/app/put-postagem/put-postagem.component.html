@@ -1,12 +1,18 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="mx-auto">
-            <div class="card card-signin my-5">
+
+        <div class="col-md-3 p-3">
+            <app-perfil></app-perfil>
+         </div>
+
+        <div class="col-md-6">
+            <div class="card mt-3">
                 <div class="card-body">
-                    <h5 class="card-title text-center d-flex">AQUI É ONDE VOCÊ EDITA SUAS POSTAGEM :D</h5>
+
+                    <h5 class="card-title text-center">AQUI É ONDE VOCÊ EDITA SUAS POSTAGEM :D</h5>
 
 
-                    <div class="col">
+                    <div class="">
 
                         <div class="group">
                             <input type="text" id="nome" name="nome" required [(ngModel)]="postagem.titulo">
@@ -26,16 +32,16 @@
                         <div class="">
 
                             <select name="tema" id='tema' [(ngModel)]="idTema" (change)="findByIdTema()" class="form-control">
-            <option *ngFor="let item of ListaTemas" value={{item.id}}>
-               {{item.descricao}}
-            </option>
-            </select>
-                            <p class="" for="tema">Escolha um tema ou <a class="novoTema" routerLink="/cadastrar-tema">Cadastre um novo</a></p>
+
+                            <option *ngFor="let item of ListaTemas" value={{item.id}}>
+                            {{item.descricao}}
+                            </option>
+                            </select>
+                            
                         </div>
 
 
-
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-center mr-5 ml-5 m-2">
                             <button type="button" class="btn btnPublicar w-100" (click)="salvar()">SALVAR</button>
                         </div>
 
@@ -45,5 +51,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3">
+            <app-cards-feed></app-cards-feed>
+         </div>
+
     </div>
 </div>
