@@ -175,6 +175,7 @@
                          <input class="form-control" type="search" placeholder="Pesquisar tema" (keyup)='findByNomeTema()' aria-label="Pesquisar" [(ngModel)]='nomeTema'>
                       </div>
                    </div>
+                   
                    <div class="card gedf-card mb-3" *ngFor="let tema of listaTemas | orderBy : key : reverse">
                       <div *ngFor="let item of tema.postagem">
                          <div class="card-header">

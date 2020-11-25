@@ -1,7 +1,3 @@
-.nav {
-    background-color: #8f6aca;
-}
-
 .logoVaiDarBom {
     height: 60px;
     width: 60px;
@@ -40,10 +36,8 @@ ul {
 ul li {
     list-style-type: none;
     width: 100px;
-
     height: 45px;
     margin: 0px;
-    border: 2px solid #ffffff;
     border-radius: 10%;
     transition: all 0.5s;
     position: relative;
@@ -59,8 +53,8 @@ ul li:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #42d1fd;
-    border-radius: 10%;
+    background-color: #EB285F;
+    border-radius: 5px;
     transition: all 0.5s;
     opacity: 0;
     z-index: -1;
@@ -81,7 +75,6 @@ ul li:hover:before {
     }
 }
 
-ul li:hover i {
-    color: white;
-    border: white;
+.backNav {
+    background-color: #10B8EB;
 }

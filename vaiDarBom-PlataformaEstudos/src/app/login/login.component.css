@@ -5,7 +5,6 @@
 
 .card-signin {
     border: 0;
-    border-radius: 0rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1)
 }
 
@@ -128,10 +127,9 @@ textarea {
     border-top: 1px solid white;
 }
 
-
-/* input:focus {
+input:focus {
     outline: none;
-} */
+}
 
 label {
     color: #7b43d5;
@@ -245,6 +243,9 @@ textarea:focus~.highlight {
     margin-bottom: 45px;
     border-radius: 30px;
 }
+
+
+/*-------   BOTÃO ENTRAR    -------*/
 
 .btnEntrar {
     background-color: #42d1fd;
