@@ -128,8 +128,8 @@ export class FeedComponent implements OnInit {
 
  deletarPost(id: number) {
   this.postagemService.deletePostagem(id).subscribe(() => {
-    this.router.navigate(['/feed'])
     this.alerta.showAlertInfo('Postagem apagada com sucesso!')
+     this.router.navigate(['/feed'])
   })
 }
 
@@ -166,7 +166,7 @@ export class FeedComponent implements OnInit {
       this.mensagemService.postMensagem(this.mensagem).subscribe((resp: Mensagem) => {
         this.mensagem = resp
         this.mensagem = new Mensagem()
-        this.findAllMensagem()
+        this.findAllPostagens()
       })
     }
   }
