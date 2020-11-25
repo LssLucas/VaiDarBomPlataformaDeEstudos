@@ -10,7 +10,7 @@
 
 
                         <div class="group">
-                            <input type="text" [(ngModel)]='user.cidade' [(ngModel)]='user.nome' id="nome" name="nome" required>
+                            <input type="text" [(ngModel)]='user.nome' id="nome" name="nome" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Nome</label>
@@ -29,6 +29,19 @@
                             <span class="bar"></span>
                             <label>Foto </label>
                         </div>
+
+                        <div class="group">
+                            <select name="ano" id='ano' class="form-control" [(ngModel)]='user.anoUser'>
+                                <option value="AINDA NÃO CHEGUEI NO 6º ANO">NÃO CHEGUEI NA 6º</option>
+                                <option value="MEU ANO LETIVO : 6 º SÉRIE">6º</option>
+                                <option value="MEU ANO LETIVO : 7 º SÉRIE">7º</option>
+                                <option value="MEU ANO LETIVO : 8 º SÉRIE">8º</option>
+                                <option value="MEU ANO LETIVO : 9 º SÉRIE">9º</option>
+                                <option value="JÁ PASSEI DO 9º ANO :D">PASSEI DO 9º </option>
+                            </select>
+                        </div>
+
+                     
                     </div>
                     <!-- FIM - COLUNA DE NOME E USUARIO LOGIN -->
                     <!-- COLUNA DE SENHA E CONFIRMAR SENHA -->

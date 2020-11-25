@@ -38,6 +38,7 @@
 
                                     <a class="novoTema" routerLink='/cadastro-tema'>CRIE UM AQUI</a>
                                 </label>
+                                <!-- da uma atenção nesse change pra criar o id postagem para comentario-->
                                 <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                                     <option *ngFor='let item of listaTemas' value={{item.id}}>
                                         {{item.descricao}}
@@ -112,14 +113,15 @@
                             </p>
                             <hr>
                             <div class="btn-group">
-                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem'>
+                                <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
                                 <br>
-                                <button type="button" class="btn btnPublicar brilhar" (click)='comentar()'>Comentar</button>
+                                <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
                             </div>
                         </div>
-                        <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse">
-                            item.postagem.id = id.postagem
+                        <div class="card-footer" *ngFor= "let item of listaMensagem | orderBy : key : reverse" >
+                            
                             {{item.textoDaMensagem}}
+                            
                         </div>
 
                     </div>
