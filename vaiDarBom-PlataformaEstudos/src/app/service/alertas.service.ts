@@ -20,8 +20,8 @@ export class AlertasService {
     this.showAlert(message, 'danger')
   }
 
-  showAlerSucess(message: string) {
-    this.showAlert(message, 'sucess')
+  showAlertSuccess(message: string) {
+    this.showAlert(message, 'success')
   }
 
   showAlertInfo(message: string) {

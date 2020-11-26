@@ -47,10 +47,10 @@ export class PutPostagemComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.router.navigate(['/feed'])
-      this.alerta.showAlerSucess('Postagem modificada com sucesso!')
+      this.alerta.showAlertSuccess('Postagem modificada com sucesso!')
     }, err => {
       if( err.status == '500' ){
-        alert('Preencha todos os campos requeridos corretamente antes de enviar!')
+        this.alerta.showAlertDanger('Preencha todos os campos requeridos corretamente antes de enviar!')
       }
     })
 

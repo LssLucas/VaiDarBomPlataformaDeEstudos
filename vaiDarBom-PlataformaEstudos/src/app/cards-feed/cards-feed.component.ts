@@ -52,7 +52,7 @@ export class CardsFeedComponent implements OnInit {
   }
   resposta(){
 
-    this.alerta.showAlerSucess(this.desafioResp)
+    this.alerta.showAlertInfo(this.desafioResp)
 
     }
 

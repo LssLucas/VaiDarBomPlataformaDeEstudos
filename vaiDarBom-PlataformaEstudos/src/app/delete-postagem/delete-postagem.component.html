@@ -1,35 +1,39 @@
-<div class="container">
-  <div class="row">
-      <div class="mx-auto">
-          <div class="card card-signin my-5">
-              <div class="card-body">
-                  <h5 class="card-title text-center">{{postagem.titulo}}</h5>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 p-3">
+            <app-perfil></app-perfil>
+        </div>
+        <div class="mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{postagem.titulo}}</h5>
 
-                  <hr>
-                
-                      
-               <div class="col">
+                    <hr>
 
-                <div class="group">
-                  <p class="card-text" aria-describedby="texto">{{postagem.mensagem}} </p>
-                    <small id="texto" class="form-text m-0 text-muted mb-3">
-                      Postado em {{ postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
+
+                    <div class="col">
+
+                        <div class="group">
+                            <p class="card-text" aria-describedby="texto">{{postagem.mensagem}} </p>
+                            <small id="texto" class="form-text m-0 text-muted mb-3">
+                Postado em {{ postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-                  
-               </div>
-               <div class="row">
-                <div class="col">
-                  <div class="d-flex justify-content-around">
-                    <button class="btn btn-outline-success" (click)="btnSim()">Sim</button>
-                    <button class="btn btn-outline-danger" (click)="btnNao()" >Não</button>
-                  </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-outline-success" (click)="btnSim()">Sim</button>
+                            <button class="btn btn-outline-danger" (click)="btnNao()">Não</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              </div>
-              
-          </div>
+            </div>
 
-          
-      </div>
-  </div>
+        </div>
+        <div class="col-md-3">
+            <app-cards-feed></app-cards-feed>
+        </div>
+    </div>
+</div>

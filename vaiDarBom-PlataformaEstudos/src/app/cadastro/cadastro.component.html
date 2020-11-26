@@ -36,19 +36,9 @@
                             <span class="bar"></span>
                             <label>Foto </label>
                         </div>
-                        <!--<div class="form-group">
-                            <label>Example select</label>
-                            <select name="ano" id='ano' class="form-control" [(ngModel)]='user.anoUser'>
-                                <option >NÃO CHEGUEI NA 6º</option>
-                                <option >6º</option>
-                                <option >7º</option>
-                                <option >8º</option>
-                                <option >9º</option>
-                                <option >PASSEI DO 9º </option>
-                                <option selected>Ano matriculade</option>
-                            </select>
-                        </div>-->
+
                         <div class="group">
+                            <p id="selectAno">Ano Letivo</p>
                             <select name="ano" id='ano' class="form-control" [(ngModel)]='user.anoUser'>
                                 <option value="AINDA NÃO CHEGUEI NO 6º ANO">NÃO CHEGUEI NA 6º</option>
                                 <option value="MEU ANO LETIVO : 6 º SÉRIE">6º</option>
@@ -56,8 +46,8 @@
                                 <option value="MEU ANO LETIVO : 8 º SÉRIE">8º</option>
                                 <option value="MEU ANO LETIVO : 9 º SÉRIE">9º</option>
                                 <option value="JÁ PASSEI DO 9º ANO :D">PASSEI DO 9º </option>
-                                <option selected>Ano matriculade</option>
                             </select>
+
                         </div>
 
 
@@ -75,6 +65,7 @@
                             <label class="falasobrevc">Fale sobre você</label>
                         </div>
                     </div>
+
                     <div class="col">
                         <div class="group">
                             <input type="password" (input)='conferirSenha($event)' value='{{senha}}' id="senha" name="senha" required>

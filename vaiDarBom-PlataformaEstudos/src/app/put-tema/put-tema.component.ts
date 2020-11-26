@@ -38,7 +38,7 @@ export class PutTemaComponent implements OnInit {
     this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       this.router.navigate(['/cadastro-tema'])
-      this.alerta.showAlerSucess('Tema alterado com sucesso!')
+      this.alerta.showAlertSuccess('Tema alterado com sucesso!')
     })
   }
 

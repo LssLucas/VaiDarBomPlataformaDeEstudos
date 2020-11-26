@@ -20,59 +20,57 @@
 
 
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
+
+
 /* drop */
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 nav {
-  font-family: monospace;
+    font-family: monospace;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
 
 li {
-
-  display: block;
-  float: left;
-  position: relative;
-  text-decoration: none;
-  transition-duration: 0.5s;
+    display: block;
+    float: left;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
 }
-  
+
 li a {
-  color: rgb(30, 19, 241);
-}
-
-li:hover {
-  background: red;
-  cursor: pointer;
+    color: rgb(30, 19, 241);
 }
 
 ul li ul {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  transition: all 0.5s ease;
-  left: 0;
-  display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    left: 0;
+    display: none;
 }
 
-ul li:hover > ul,
+ul li:hover>ul,
 ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
+    visibility: visible;
+    opacity: 1;
+    display: block;
 }
 
 ul li ul li {
-  clear: both;
-  width: 100%;
+    clear: both;
+    width: 100%;
 }
+
 
 /* drop */
 
@@ -388,12 +386,17 @@ a {
 
 /* -----------*/
 
-.btnPublicar {
+.btnPublicar,
+.btnComentar,
+.btnPublicarComentario {
     background-color: #42d1fd2f;
     color: #7b43d5;
+    text-decoration: none;
 }
 
-.btnPublicar:hover {
+.btnPublicar:hover,
+.btnComentar:hover,
+.btnPublicarComentario:hover {
     background-color: #7b43d52d;
     color: #7b43d5;
 }
@@ -412,4 +415,23 @@ a {
         left: 0;
         opacity: 1
     }
+}
+
+.btnFeedMenu {
+    height: 30px;
+    width: 30px;
+}
+
+.btnFeedMenu:hover {
+    background-color: none;
+}
+
+.btnDeletePostagem {
+    background-color: #EB285F;
+    color: white;
+}
+
+.btnEditarPostagem {
+    background-color: #EBDE28;
+    color: white;
 }

@@ -130,8 +130,10 @@ export class FeedComponent implements OnInit {
   this.postagemService.deletePostagem(id).subscribe(() => {
     this.alerta.showAlertInfo('Postagem apagada com sucesso!')
      this.router.navigate(['/feed'])
+     this.postagemService.getAllPostagens()
   })
 }
+
 
   publicar() {
     
@@ -146,7 +148,7 @@ export class FeedComponent implements OnInit {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         this.postagem = new Postagem()
-        this.alerta.showAlerSucess('Postagem realizada com sucesso!')
+        this.alerta.showAlertSuccess('Postagem realizada com sucesso!')
         this.findAllPostagens()
       })
     }

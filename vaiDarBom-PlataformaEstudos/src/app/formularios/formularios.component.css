@@ -60,7 +60,8 @@ textarea {
     border-top: 1px solid white;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
 
@@ -80,6 +81,7 @@ label {
 
 input:focus~label,
 input:valid~label,
+textarea:focus~label,
 textarea:valid~label {
     top: -20px;
     font-size: 14px;
@@ -116,6 +118,8 @@ textarea:valid~label {
 
 input:focus~.bar:before,
 input:focus~.bar:after,
+textarea:focus~.bar:before,
+textarea:focus~.bar:after,
 textarea:valid~label {
     width: 50%;
 }
