@@ -1,7 +1,6 @@
 <div class="container-fluid gedf-wrapper">
    <div class='d-flex justify-content-center m-3'>
-      <h2 class="mr-2 font-color">Como funciona o FEED? </h2>
-      <h2 class="feed-fade font-color"> Aqui você pode postar suas ideias, duvidas</h2>
+     
    </div>
    <div class="row">
    <div class="col-md-3 p-3">
@@ -70,105 +69,108 @@
          <div class="card gedf-card mb-3" *ngFor="let item of listaPostagens | orderBy : key : reverse">
             <!--foto, -->
             <div class="card header">
-               <div class = "m-3">
-                  <div class="row d-flex justify-content-between">
-                     <div class = "col-3" >
-                        <div class='ml-3'>
-                           <img class="rounded-circle" width="75" src="{{foto}}" alt="">
-                        </div>
-                        <div class = 'ml-3'>
-                           <h3>{{nomeUser}}</h3>
-                        </div>
-                     </div>
-                     <div class = "col-6  align-self-end">
-                        <div class = "">
-                           <h3 class=""> {{item.titulo}} </h3>
-                        </div>
-                        <div class = "">
-                           <h4 class=""> {{item.tema.descricao}} </h4>
-                        </div>
-                     </div>
-                     <div class="col-3   ">
-                        <div class="row">
-                           <div class = "pl-3 pr-3">
-                              {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+               <div class="m-3">
+                   <div class="row d-flex justify-content-between">
+                       <div class="col-3">
+                           <div class='ml-3'>
+                               <img class="rounded-circle" width="75" src="{{foto}}" alt="">
                            </div>
-                           <nav role="navigation">
-                              <ul>
-                                 <li>
-                                    <a href="#">...</a>
-                                    <ul class="dropdown">
-                                       <li><button type="button" class="btn btn-secondary" (click) = 'deletarPost(item.id)'>Delete</button></li>
-                                       <li><button type="button" class="btn btn-secondary" [routerLink]="['/editar-post', item.id]" >Editar</button></li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </nav>
-                        </div>
-                     </div>
-                  </div>
+                           <div class='ml-3'>
+                               <h3>{{nomeUser}}</h3>
+                           </div>
+                       </div>
+                       <div class="col-6  align-self-end">
+                           <div class="">
+                               <h3 class=""> {{item.titulo}} </h3>
+                           </div>
+                           <div class="">
+                               <h4 class=""> {{item.tema.descricao}} </h4>
+                           </div>
+                       </div>
+                       <div class="col-3   ">
+                           <div class="row">
+                               <div class="pl-3 pr-3">
+                                   {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+                               </div>
+                               <nav role="navigation">
+                                   <ul>
+                                       <li>
+                                           <a href="#">...</a>
+                                           <ul class="dropdown">
+                                               <li><button type="button" class="btn btn-secondary" (click)='deletarPost(item.id)'>Delete</button></li>
+                                               <li><button type="button" class="btn btn-secondary" [routerLink]="['/editar-post', item.id]">Editar</button></li>
+                                           </ul>
+                                       </li>
+                                   </ul>
+                               </nav>
+                           </div>
+                       </div>
+                   </div>
                </div>
-            </div>
-            <div class="card-body pb-0  ">
+           </div>
+           <div class="card-body pb-0  ">
                <div class="row">
-                  <div class="col-12 align-items-end">
-                     <p class="card-text">
-                        {{item.mensagem}}
-                     </p>
-                     <hr>
-                  </div>
+                   <div class="col-12 align-items-end">
+                       <p class="card-text">
+                           {{item.mensagem}}
+                       </p>
+                       <hr>
+                   </div>
                </div>
-            </div>
-            <div class="accordion" [attr.id]="'coment' + item.id">
-               <div class="mt-2" id="headingTwo">
-                  <h5 class="mb-0">
-                     <button class="btn btn-link collapsed " type="button" data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + item.id" aria-expanded="false" aria-controls="collapseTwo">
-                        <p class="text-primary font-weight-bold">
-                           <i class="fa fa-comment-o" aria-hidden="true"></i> Comentar
-                        </p>
-                     </button>
-                  </h5>
+           </div>
+           <div class="accordion container" [attr.id]="'coment' + item.id">
+
+               <div class="mb-2" id="headingTwo">
+                   <button class="btn btn-link collapsed btnComentar font-weight-bold" type="button" data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + item.id" aria-expanded="false" aria-controls="collapseTwo">
+                       Comentar
+                   </button>
+
                </div>
                <div [attr.id]="'comentButton' + item.id" class="collapse" aria-labelledby="headingTwo" [attr.data-parent]="'#' + 'coment' + item.id">
-               <div class="row mt-3 mb-3 d-flex justify-content-center">
-                  <div class="col-md-11">
-                     <div class="row">
-                        <div class="col-md-10 pr-1">
-                           <div class="form-group">
-                              <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Digite aqui seu comentário"  [(ngModel)]='mensagem.textoDaMensagem'>
-                           </div>
-                        </div>
-                        <div class="col-md-2 pl-1">
-                           <button class="btn btn-outline-primary w-100" (click)='comentar(item.id)'>Publicar</button>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row d-flex justify-content-center" *ngFor='let comment of item.comment | orderBy : key : reverse'>
-                  <div class="col-md-11">
-                     <div class="card mb-3 shadow border-0">
-                        <div class="card-body">
+                   <div class="row mt-3 mb-3 d-flex justify-content-center">
+                       <div class="col-md-12">
                            <div class="row">
+                               <div class="col-md-10 pr-1">
+                                   <div class="form-group">
+                                       <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Digite aqui seu comentário" [(ngModel)]='mensagem.textoDaMensagem'>
+                                   </div>
+                               </div>
+                               <div class="col-md-2 pl-1">
+                                   <button class="btn btnPublicarComentario w-100" (click)='comentar(item.id)'>Publicar</button>
+                               </div>
                            </div>
-                           <div class="row">
-                              <div class="col-md-10">
-                                 <p class="card-text ml-4" aria-describedby="texto">{{comment.textoDaMensagem}} </p>
-                              </div>
+                       </div>
+                       <div class="row d-flex" *ngFor='let comment of item.comentario | orderBy : key : reverse'>
+                           <div class="col-md-12">
+                               <div class="card mb-3 shadow border-0">
+                                   <div class="card-body">
+                                       <div class="row">
+
+
+                                       </div>
+                                       <div class="row">
+                                           <div class="col-md-10">
+                                               <p class="card-text ml-4" aria-describedby="texto">
+                                                   {{comment.textoDaMensagem}} </p>
+                                           </div>
+                                       </div>
+
+                                       <hr>
+
+                                       <div class="d-flex justify-content-end">
+                                           <small id="texto" class="form-text m-0 text-muted ">
+Postado em {{ comment.data | date:'dd/MM/yyyy'}} às
+{{comment.data | date:'HH:mm'}}
+</small>
+                                       </div>
+                                   </div>
+                               </div>
                            </div>
-                           <hr>
-                           <div class="d-flex justify-content-end">
-                              <small id="texto" class="form-text m-0 text-muted text-monospace">
-                              Postado em {{ comment.data | date:'dd/MM/yyyy'}} às {{comment.data | date:'HH:mm'}}
-                              </small>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                       </div>
+                   </div>
                </div>
-            </div>
-         </div>
-      </div>
-   </div>
+           </div>
+       </div>
    <!-- FIND BY TEMA -->
    <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
       <div class="row mt-3 mb-3">
@@ -183,7 +185,7 @@
                <div class = "m-3">
                   <div class="row d-flex justify-content-between">
                      <div class = "col-3" >
-                        <div class='ml-5'>
+                        <div class='ml-4'>
                            <img class="rounded-circle" width="75" src="{{foto}}" alt="">
                         </div>
                         <div class = 'ml-3'>
@@ -206,7 +208,7 @@
                                     <a href="#">...</a>
                                     <ul class="dropdown">
                                        <li><button type="button" class="btn btn-secondary" (click) = 'deletarPost(item.id)'>Delete</button></li>
-                                       <li><a [routerLink]="['/editar-post', item.id]">EDITAR</a></li>
+                                       <li><button type="button" class="btn btn-secondary" [routerLink]="['/editar-post', item.id]" >Editar</button></li>
                                     </ul>
                                  </li>
                               </ul>
