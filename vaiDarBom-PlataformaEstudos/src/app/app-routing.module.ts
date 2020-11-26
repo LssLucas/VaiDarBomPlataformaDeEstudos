@@ -21,12 +21,12 @@ const routes: Routes = [
   {path: 'contato', component: ContatoComponent},
   { path: 'login', component: LoginComponent},
   { path: 'cadastro', component: CadastroComponent},
-  { path:'cadastro-tema', component: PostTemaComponent},
+  { path: 'cadastro-tema', component: PostTemaComponent},
   { path: 'editar-post/:id', component: PutPostagemComponent},
   { path: 'delete-post/:id', component: DeletePostagemComponent},
   { path: 'editar-tema/:id', component: PutTemaComponent},
   { path: 'delete-tema/:id', component: DeleteTemaComponent},
-  { path:'cadastro-tema', component: PostTemaComponent},
+  { path: 'cadastro-tema', component: PostTemaComponent},
   { path: 'sobre-nos', component: SobreNosComponent}
 ];
 

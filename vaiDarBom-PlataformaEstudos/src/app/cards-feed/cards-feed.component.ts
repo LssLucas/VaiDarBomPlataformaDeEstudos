@@ -29,7 +29,7 @@ export class CardsFeedComponent implements OnInit {
     let bio = environment.bio
   }
   resposta(){
-    this.alerta.showAlerSucess(' A resposta é 100')
+    this.alerta.showAlertSuccess(' A resposta é 100')
    }
 
 }

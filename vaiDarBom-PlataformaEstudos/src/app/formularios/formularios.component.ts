@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-formularios',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private alerta: AlertasService
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+  }
+
+  enviarFormContato(){
+    this.router.navigate(['/feed'])
+    this.alerta.showAlertSuccess('Mensagem enviada com sucesso')
   }
 
 }

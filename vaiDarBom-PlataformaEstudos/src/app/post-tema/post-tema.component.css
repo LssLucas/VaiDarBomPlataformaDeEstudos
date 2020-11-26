@@ -7,3 +7,32 @@
     background-color: #7b43d5;
     color: #42d1fd;
 }
+
+.textModificacoes {
+    color: #10B8EB;
+}
+
+.tituloPostTema {
+    background-color: #EB285F;
+    color: white;
+}
+
+.btnEditarTema {
+    color: #7b43d5;
+    background-color: #42d1fd;
+}
+
+.btnEditarTema:hover {
+    color: white;
+    background-color: #EBDE28;
+}
+
+.btnApagarTema {
+    color: #7b43d5;
+    background-color: #42d1fd;
+}
+
+.btnApagarTema:hover {
+    color: white;
+    background-color: #EB285F;
+}
