@@ -67,11 +67,7 @@
 
                 <hr>
 
-                <div class="btn-group">
-                   <input type="text" placeholder="Comente aqui..." [(ngModel)]='mensagem.textoDaMensagem' >
-                   <br>
-                   <button type="button" class="btn btnPublicar brilhar" (click)='comentar( item.id )'>Comentar</button>
-                </div>
+            
                
            </div>
        </div>
@@ -84,4 +80,70 @@
 </div>
 
 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card-header">
+    <div class = "col-3" >
+       <div class='ml-5'>
+
+           <img class="rounded-circle" width="75" src="{{foto}}" alt="">
+
+       </div>
+
+       <div class = 'ml-3'>
+
+           <h3>{{nomeUser}}</h3>
+
+       </div>
+
+   </div>
+
+   <div class = "col-6  align-self-end">
+
+    <div class = "">
+            <h3 class=""> {{item.titulo}} </h3>
+    </div>
+
+    <div class = "">
+            <h4 class=""> {{tema.descricao}} </h4>
+    </div>
+
+</div>
+
+    <div class="col-3   ">
+
+        
+        <div class="row">
+            <div class = "pl-3 pr-3">
+            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}
+             </div>
+
+            <nav role="navigation">
+                <ul>
+                   <li>
+                      <a href="#">...</a>
+                      <ul class="dropdown">
+                         <li><button type="button" class="btn btn-secondary" (click) = 'deletarPost(item.id)'>Delete</button></li>
+                         <li><a [routerLink]="['/editar-post', item.id]">EDITAR</a></li>
+                      </ul>
+                   </li>
+                </ul>
+             </nav>
+        </div>
+         
+      </div>
+ </div>
+</div>
 </div>
